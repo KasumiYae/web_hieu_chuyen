@@ -195,15 +195,21 @@ img {
 }
 
 .header-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
-
+.header-inner {
+     max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; gap: 32px;
+  height: var(--navbar-h); padding: 0 24px;
+}
 .logo-area {
     display: flex;
     align-items: center;
@@ -212,9 +218,11 @@ img {
 }
 
 .logo-svg {
-    width: 36px;
-    height: 36px;
-    transition: var(--transition-normal);
+    width: 75px;
+    height: 75px;
+    background-image: url('image/logo-sociologic.png'); /* Replace with actual logo path */
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .logo-text {
