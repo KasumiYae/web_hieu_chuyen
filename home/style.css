@@ -230,11 +230,11 @@ button {
 }
 
 .left-side {
-    background-image: url("image/anh_nen_hero.jpg"); /* Fallback if single image handles layout split */
+    background-image: url("image/backhome.jpeg"); /* Fallback if single image handles layout split */
 }
 
 .right-side {
-    background-image: url("image/anh_nen_hero.jpg");
+    background-image: url("image/backhome.jpeg");
     background-position: right center;
 }
 
