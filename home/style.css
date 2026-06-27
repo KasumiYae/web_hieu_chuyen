@@ -222,20 +222,17 @@ button {
 }
 
 .hero-side {
-    width: 50%;
+    width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.1s ease-out;
 }
 
-.left-side {
-    background-image: url("image/backhome.jpeg"); /* Fallback if single image handles layout split */
-}
 
-.right-side {
+
+.img-back {
     background-image: url("image/backhome.jpeg");
-    background-position: right center;
+    
 }
 
 /* Visual blending layer over image mirroring layout */
