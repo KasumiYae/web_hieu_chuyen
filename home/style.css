@@ -1645,3 +1645,12 @@ button {
     }
 }
 
+
+
+
+
+/* Ép các khối giá trị nổi bật hiển thị ngay lập tức, không đợi hiệu ứng cuộn */
+.value-item.scroll-animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
