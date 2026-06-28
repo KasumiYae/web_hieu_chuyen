@@ -114,6 +114,37 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateSlider);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const mapVideo = document.querySelector('.map-visual-video');
+    const mapAudioToggle = document.getElementById('mapAudioToggle');
+
+    if (!mapVideo || !mapAudioToggle) return;
+
+    function syncMapAudioButton() {
+        const isMuted = mapVideo.muted;
+        mapAudioToggle.classList.toggle('is-on', !isMuted);
+        mapAudioToggle.setAttribute('aria-pressed', String(!isMuted));
+        mapAudioToggle.setAttribute('aria-label', isMuted ? 'Bật tiếng video' : 'Tắt tiếng video');
+    }
+
+    mapAudioToggle.addEventListener('click', async (event) => {
+        event.stopPropagation();
+        mapVideo.muted = !mapVideo.muted;
+
+        if (mapVideo.paused) {
+            try {
+                await mapVideo.play();
+            } catch (error) {
+                mapVideo.muted = true;
+            }
+        }
+
+        syncMapAudioButton();
+    });
+
+    syncMapAudioButton();
+});
+
 // ==========================================================================
 // REGISTRATION MODAL FUNCTIONALITY
 // ==========================================================================

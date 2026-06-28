@@ -120,7 +120,14 @@
                 </div>
             </div>
         </div>
-        <div class="map-right-visual" style="background-image: url('image/khu_vuc_3_1.jpg');">
+        <div class="map-right-visual">
+            <video class="map-visual-video" autoplay muted loop playsinline preload="metadata">
+                <source src="image/map-visual.mp4" type="video/mp4">
+            </video>
+            <button class="map-audio-toggle" id="mapAudioToggle" type="button" aria-pressed="false" aria-label="Bật tiếng video">
+                <span class="map-audio-icon map-audio-icon-muted" aria-hidden="true">🔇</span>
+                <span class="map-audio-icon map-audio-icon-unmuted" aria-hidden="true">🔊</span>
+            </button>
             <div class="map-overlay-card" onclick="openPopup('popup-map')">
                 <div class="map-card-icon">🗺️</div>
                 <div class="map-card-text">

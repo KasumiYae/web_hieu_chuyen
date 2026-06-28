@@ -398,13 +398,73 @@ h6 {
 
 .map-right-visual {
     flex: 1.2;
-    background-size: cover;
-    background-position: center;
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     padding: 40px;
+    overflow: hidden;
+}
+
+.map-visual-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.map-right-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26, 34, 51, 0.12) 0%, rgba(26, 34, 51, 0.38) 100%);
+}
+
+.map-audio-toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    background: rgba(26, 34, 51, 0.56);
+    color: var(--white);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.map-audio-toggle:hover {
+    transform: translateY(-1px);
+    background: rgba(26, 34, 51, 0.72);
+    border-color: rgba(255, 255, 255, 0.36);
+}
+
+.map-audio-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.map-audio-icon-unmuted {
+    display: none;
+}
+
+.map-audio-toggle.is-on .map-audio-icon-muted {
+    display: none;
+}
+
+.map-audio-toggle.is-on .map-audio-icon-unmuted {
+    display: inline;
 }
 
 .map-overlay-card {
@@ -418,6 +478,8 @@ h6 {
     cursor: pointer;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .map-overlay-card:hover {
@@ -780,6 +842,12 @@ h6 {
     .card-img { height: 240px; }
     .map-section { flex-direction: column; }
     .map-right-visual { height: 350px; }
+    .map-audio-toggle {
+        top: 18px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+    }
     .slide { flex: 0 0 calc(50% - 10px); min-width: calc(50% - 10px); }
 }
 
