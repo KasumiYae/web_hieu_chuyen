@@ -25,6 +25,7 @@
   --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
   --navbar-h: 70px;
   --transition: 0.35s cubic-bezier(.4, 0, .2, 1);
+  --transition-normal: 0.35s cubic-bezier(.4, 0, .2, 1);
 }
 
 html {
@@ -67,8 +68,10 @@ img {
   display: flex;
   align-items: center;
   gap: 32px;
+  flex: 1;
+  min-width: 0;
   height: var(--navbar-h);
-  padding: 0 24px;
+  padding: 0;
 }
 
 .nav-logo {
@@ -86,16 +89,15 @@ img {
 }
 
 .logo-name {
-  color: var(--gold);
+  color: var(--white);
   font-weight: 700;
-  font-size: .95rem;
-  letter-spacing: .12em;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .logo-sub {
-  color: rgba(255, 255, 255, .5);
-  font-size: .6rem;
-  letter-spacing: .2em;
+  display: none;
 }
 
 .logo-svg {
@@ -109,18 +111,22 @@ img {
 
 .nav-menu {
   display: flex;
-  gap: 28px;
-  margin: 0 auto;
+  gap: 30px;
+  margin: 0;
+  align-items: center;
 }
 
 .nav-menu a {
   color: rgba(255, 255, 255, .8);
   text-decoration: none;
-  font-size: .88rem;
-  letter-spacing: .04em;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   position: relative;
   padding-bottom: 4px;
   transition: color var(--transition);
+  opacity: 0.8;
 }
 
 .nav-menu a::after {
@@ -130,7 +136,7 @@ img {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--gold);
+  background: var(--white);
   transform: scaleX(0);
   transition: transform var(--transition);
   transform-origin: left;
@@ -139,6 +145,7 @@ img {
 .nav-menu a:hover,
 .nav-menu a.active {
   color: var(--white);
+  opacity: 1;
 }
 
 .nav-menu a:hover::after,
@@ -157,6 +164,8 @@ img {
   letter-spacing: 0.5px;
   transition: var(--transition-normal);
   background-color: #f4c242;
+  color: #111111;
+  flex-shrink: 0;
 }
 
 .btn-yellow {
@@ -1067,6 +1076,23 @@ img {
 }
 
 @media (max-width: 768px) {
+
+  .navbar {
+    padding: 20px 24px;
+  }
+
+  .nav-inner {
+    gap: 16px;
+  }
+
+  .logo-svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .logo-name {
+    font-size: 1rem;
+  }
 
   .nav-menu,
   .btn-cta-nav {

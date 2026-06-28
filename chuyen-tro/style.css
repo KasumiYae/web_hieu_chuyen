@@ -39,6 +39,7 @@
     --font-handwritten: 'Caveat', cursive, sans-serif;
 
     /* Layout Constants */
+    --navbar-h: 75px;
     --header-height: 80px;
     --header-height-scrolled: 70px;
     --border-radius-sm: 4px;
@@ -194,49 +195,49 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
     background-color: transparent;
-    display: flex;
-    align-items: center;
     z-index: 1000;
     transition: var(--transition-normal);
+    padding: 25px 8%;
 }
 
 .main-header.scrolled {
-    height: var(--header-height-scrolled);
     background-color: rgba(12, 35, 64, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-md);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 16px 8%;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 8%;
-    position: absolute;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    position: static;
     width: 100%;
-    top: 0;
-    left: 0;
     z-index: 100;
+    gap: 24px;
 }
 
 .header-inner {
-    max-width: 1280px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 32px;
+    flex: 1;
+    min-width: 0;
     height: var(--navbar-h);
-    padding: 0 24px;
+    padding: 0;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     color: var(--white);
+    flex-shrink: 0;
+    text-decoration: none;
 }
 
 .logo-svg {
@@ -251,38 +252,42 @@ img {
 .logo-text {
     display: flex;
     flex-direction: column;
+    line-height: 1;
 }
 
 .logo-title {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .logo-subtitle {
-    font-size: 0.65rem;
-    font-weight: 500;
-    opacity: 0.8;
+    display: none;
 }
 
 /* Nav Menu */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 30px;
 }
 
 .nav-item {
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.8);
     position: relative;
-    padding: 6px 0;
+    padding: 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
 }
 
 .nav-item:hover,
 .nav-item.active {
-    color: var(--primary-color);
+    color: var(--white);
+    opacity: 1;
 }
 
 .nav-item.active::after {
@@ -304,6 +309,21 @@ img {
     display: none;
     font-size: 1.5rem;
     color: var(--white);
+}
+
+.header-cta {
+    flex-shrink: 0;
+}
+
+.header-cta .btn-primary {
+    background-color: #f4c242;
+    color: #111111;
+    box-shadow: none;
+}
+
+.header-cta .btn-primary:hover {
+    background-color: #cb9236;
+    box-shadow: none;
 }
 
 /* ==========================================================================
@@ -1322,6 +1342,29 @@ img {
 
 @media (max-width: 900px) {
 
+    .main-header,
+    .main-header.scrolled {
+        padding: 20px 24px;
+    }
+
+    .header-container {
+        gap: 16px;
+    }
+
+    .header-inner {
+        gap: 16px;
+        justify-content: space-between;
+    }
+
+    .logo-svg {
+        width: 56px;
+        height: 56px;
+    }
+
+    .logo-title {
+        font-size: 1rem;
+    }
+
     /* Navbar styling on Mobile */
     .mobile-menu-toggle {
         display: block;
@@ -1329,14 +1372,14 @@ img {
 
     .nav-menu {
         position: fixed;
-        top: var(--header-height);
+        top: 0;
         left: -100%;
         width: 100%;
-        height: calc(100vh - var(--header-height));
+        height: 100vh;
         background-color: var(--secondary-color);
         flex-direction: column;
         align-items: center;
-        padding-top: 50px;
+        padding: 120px 24px 40px;
         gap: 32px;
         transition: left 0.4s ease;
         z-index: 999;
@@ -1347,8 +1390,8 @@ img {
     }
 
     .main-header.scrolled .nav-menu {
-        top: var(--header-height-scrolled);
-        height: calc(100vh - var(--header-height-scrolled));
+        top: 0;
+        height: 100vh;
     }
 
     .header-cta {

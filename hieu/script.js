@@ -3,7 +3,7 @@
 // SECTION 1: khu_vuc_1_1.jpeg
 // SECTION 2: khu_vuc_2_1.jpg, khu_vuc_2_2.jpeg, khu_vuc_2_3.jpg, khu_vuc_2_4.jpg, khu_vuc_2_5.jpg, khu_vuc_2_6.jpg, khu_vuc_2_7.jpg, khu_vuc_2_8.jpg
 // SECTION 3: khu_vuc_3_1.jpg, khu_vuc_3_2.png
-// SECTION 4: khu_vuc_4_1.jpg, khu_vuc_4_2.jpg, khu_vuc_4_3.JPG, khu_vuc_4_4.jpg, khu_vuc_4_5.JPG, khu_vuc_4_6.jpeg, khu_vuc_4_7.jpeg, khu_vuc_4_8.jpeg, khu_vuc_4_9.jpeg, khu_vuc_4_10.jpeg
+// SECTION 4: khu_vuc_4_1.jpg, khu_vuc_4_2.jpg, khu_vuc_4_3.JPG, khu_vuc_4_4.jpg, khu_vuc_4_5.JPG, khu_vuc_4_6.jpeg, khu_vuc_4_7.jpeg, khu_vuc_4_8.jpeg, khu_vuc_4_9.jpeg, khu_vuc_4_10.jpeg, khu_vuc_4_11.jpeg, khu_vuc_4_12.jpeg, khu_vuc_4_13.jpeg, khu_vuc_4_14.jpeg, khu_vuc_4_15.jpeg, khu_vuc_4_16.jpeg
 
 // Global Navigation Missing Page Handler
 function handleMissingPage(event) {
