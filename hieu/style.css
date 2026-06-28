@@ -55,7 +55,7 @@ body {
 .logo-svg {
     width: 75px;
     height: 75px;
-    background-image: url('image/logo-sociologic.png'); /* Replace with actual logo path */
+    background-image: url('image/logo.jpeg'); /* Replace with actual logo path */
     background-size: contain;
     background-repeat: no-repeat;
 }
