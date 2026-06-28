@@ -1644,3 +1644,33 @@ button {
         font-size: 1.5rem;
     }
 }
+
+
+.section-values {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.section-values::before,
+.section-values::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.section-values::before {
+    left: 0;
+    background-image: url("image/galery_anh_hoat_Dong.jpg");
+}
+
+.section-values::after {
+    right: 0;
+    background-image: url("image/4.jpg");
+}
