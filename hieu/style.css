@@ -1,11 +1,14 @@
+@import url("../theme.css");
+
 /* style.css */
 :root {
-    --primary-color: #0A1D37;
-    --accent-color: #E2A746;
-    --bg-light: #F4EFE6;
-    --bg-dark: #07162C;
-    --text-main: #1D2A3A;
-    --text-light: #627D98;
+    --primary-color: var(--theme-royal-blue);
+    --accent-color: var(--theme-golden-yellow);
+    --accent-strong: var(--theme-burnt-orange);
+    --bg-light: var(--theme-warm-white);
+    --bg-dark: var(--theme-charcoal-navy);
+    --text-main: var(--theme-charcoal-navy);
+    --text-light: var(--theme-muted);
     --white: #FFFFFF;
     --navbar-h: 78px;
 }
@@ -14,7 +17,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--theme-font-body);
 }
 
 body {
@@ -30,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Playfair Display", serif;
+    font-family: var(--theme-font-display);
 }
 
 /* NAVBAR */
@@ -99,13 +102,13 @@ h6 {
 }
 
 .btn-yellow {
-    background-color: #f4c242;
-    color: #111111;
+    background-color: var(--accent-color);
+    color: var(--text-main);
 }
 
 
 .btn-cta-nav:hover {
-    background-color: #cb9236;
+    background-color: var(--accent-strong);
 }
 
 .nav-menu {
@@ -260,7 +263,7 @@ h6 {
 
 .card-item {
     display: flex;
-    background-color: #EFEAE0;
+    background-color: var(--theme-surface-soft);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
@@ -531,7 +534,7 @@ h6 {
 
 .quote-mark {
     font-size: 5rem;
-    font-family: Georgia, serif;
+    font-family: var(--theme-font-subhead);
     color: var(--primary-color);
     line-height: 1;
     opacity: 0.15;
@@ -585,7 +588,7 @@ h6 {
     display: flex;
     gap: 0;
     max-width: 500px;
-    background-color: #EFEAE0;
+    background-color: var(--theme-surface-soft);
     padding: 4px;
     border-radius: 4px;
 }
@@ -614,7 +617,7 @@ h6 {
 }
 
 .subscribe-form button:hover {
-    background-color: #cb9236;
+    background-color: var(--accent-strong);
 }
 
 .mountain-graphic {
@@ -715,7 +718,7 @@ h6 {
 }
 
 .popup-didyouknow {
-    background-color: #EFEAE0;
+    background-color: var(--theme-surface-soft);
     padding: 25px 30px;
     border-radius: 4px;
     margin-top: 40px;
@@ -787,7 +790,7 @@ h6 {
     .slide { flex: 0 0 100%; min-width: 100%; }
     .popup-content { padding: 30px 20px; }
     .subscribe-form { flex-direction: column; background: none; gap: 10px; }
-    .subscribe-form input { background-color: #EFEAE0; border-radius: 4px; }
+    .subscribe-form input { background-color: var(--theme-surface-soft); border-radius: 4px; }
     .subscribe-form button { padding: 15px; border-radius: 4px; }
     .btn-cta-nav { display: none; } /* Hide inside simplified mobile header bar if required */
 }
@@ -840,7 +843,7 @@ h6 {
     right: 20px;
     font-size: 2rem;
     line-height: 1;
-    color: #718096;
+    color: var(--text-light);
     transition: 0.2s ease;
     z-index: 10;
     cursor: pointer;
@@ -850,7 +853,7 @@ h6 {
 }
 
 .modal-close:hover {
-    color: #e28a38;
+    color: var(--accent-strong);
 }
 
 .modal-scroll-container {
@@ -870,14 +873,14 @@ h6 {
 
 .register-header h2 {
     font-size: 2rem;
-    color: #0c2340;
+    color: var(--primary-color);
     margin-bottom: 8px;
     letter-spacing: 1px;
 }
 
 .register-header p {
     font-size: 0.9rem;
-    color: #718096;
+    color: var(--text-light);
 }
 
 .register-form {
@@ -901,7 +904,7 @@ h6 {
 .form-group label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #1b365d;
+    color: var(--primary-color);
 }
 
 .form-group label .required {
@@ -911,13 +914,13 @@ h6 {
 .form-group input, 
 .form-group select, 
 .form-group textarea {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: var(--theme-font-body);
     font-size: 0.95rem;
     padding: 12px 16px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--theme-border);
     border-radius: 6px;
-    background-color: #fff;
-    color: #1b365d;
+    background-color: var(--white);
+    color: var(--text-main);
     transition: 0.2s ease;
     outline: none;
 }
@@ -925,8 +928,8 @@ h6 {
 .form-group input:focus, 
 .form-group select:focus, 
 .form-group textarea:focus {
-    border-color: #e28a38;
-    box-shadow: 0 0 0 3px rgba(226, 138, 56, 0.15);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.18);
 }
 
 .form-group textarea {
@@ -950,25 +953,25 @@ h6 {
 
 .success-icon {
     font-size: 4rem;
-    color: #10b981;
+    color: var(--theme-forest-green);
     margin-bottom: 20px;
 }
 
 .register-success-msg h3 {
     font-size: 1.6rem;
-    color: #0c2340;
+    color: var(--primary-color);
     margin-bottom: 12px;
 }
 
 .register-success-msg p {
     font-size: 1rem;
-    color: #4a5568;
+    color: var(--text-light);
     margin-bottom: 8px;
 }
 
 .success-note {
     font-size: 0.85rem !important;
-    color: #718096 !important;
+    color: var(--text-light) !important;
     margin-bottom: 30px !important;
 }
 
@@ -991,15 +994,15 @@ h6 {
 }
 
 .btn-primary {
-    background-color: #e28a38;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(226, 138, 56, 0.2);
+    background-color: var(--accent-color);
+    color: var(--text-main);
+    box-shadow: 0 4px 10px rgba(244, 180, 0, 0.24);
 }
 
 .btn-primary:hover {
-    background-color: #c97123;
+    background-color: var(--accent-strong);
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(27, 54, 93, 0.08), 0 6px 15px rgba(226, 138, 56, 0.3);
+    box-shadow: 0 8px 16px rgba(26, 34, 51, 0.08), 0 6px 15px rgba(217, 119, 6, 0.24);
 }
 
 .btn-primary:disabled {
@@ -1008,15 +1011,15 @@ h6 {
 }
 
 .btn-secondary {
-    background-color: #0c2340;
+    background-color: var(--primary-color);
     color: #fff;
-    box-shadow: 0 4px 10px rgba(12, 35, 64, 0.15);
+    box-shadow: 0 4px 10px rgba(13, 59, 142, 0.18);
 }
 
 .btn-secondary:hover {
-    background-color: #07162a;
+    background-color: var(--bg-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(27, 54, 93, 0.08), 0 6px 15px rgba(12, 35, 64, 0.25);
+    box-shadow: 0 8px 16px rgba(26, 34, 51, 0.08), 0 6px 15px rgba(26, 34, 51, 0.22);
 }
 
 .btn-block {

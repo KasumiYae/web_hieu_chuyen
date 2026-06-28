@@ -49,6 +49,19 @@ document.querySelectorAll('.popup-overlay').forEach(overlay => {
 
 // Interactive Image Carousel Engine
 document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+        navbar?.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    navItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            document.getElementById('navMenu')?.classList.remove('active');
+        });
+    });
+
     const track = document.querySelector('.slider-track');
     const nextBtn = document.querySelector('.next-btn');
     const prevBtn = document.querySelector('.prev-btn');

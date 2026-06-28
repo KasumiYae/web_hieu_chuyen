@@ -1,22 +1,18 @@
+@import url("../theme.css");
+
 /* ==========================================================================
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 :root {
     /* Color Palette */
-    --primary-color: #e28a38;
-    /* Warm orange/mustard */
-    --primary-hover: #c97123;
-    /* Darker orange */
-    --secondary-color: #0c2340;
-    /* Deep Navy */
-    --secondary-hover: #07162a;
-    /* Darker Navy */
+    --primary-color: var(--theme-golden-yellow);
+    --primary-hover: var(--theme-burnt-orange);
+    --secondary-color: var(--theme-royal-blue);
+    --secondary-hover: var(--theme-charcoal-navy);
     --accent-red: #c53030;
 
-    --bg-cream: #f9f6f0;
-    /* Main warm light background */
-    --bg-corkboard: #f3ebe1;
-    /* Sticky notes corkboard backdrop */
+    --bg-cream: var(--theme-warm-white);
+    --bg-corkboard: var(--theme-surface-soft);
 
     /* Sticky Notes Colors */
     --note-yellow: #fef9c3;
@@ -25,18 +21,15 @@
     --note-green: #f0fdf4;
 
     /* Text Colors */
-    --text-dark: #1b365d;
-    /* Heading text */
-    --text-body: #4a5568;
-    /* Regular body text */
-    --text-light: #718096;
-    /* Subtitles/meta */
+    --text-dark: var(--theme-charcoal-navy);
+    --text-body: var(--theme-muted);
+    --text-light: var(--theme-muted-soft);
     --white: #ffffff;
 
     /* Typography */
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Montserrat', sans-serif;
-    --font-handwritten: 'Cormorant Garamond', serif;
+    --font-serif: var(--theme-font-display);
+    --font-sans: var(--theme-font-body);
+    --font-handwritten: var(--theme-font-subhead);
     --navbar-h: 80px;
 
     /* Layout Constants */
@@ -1232,7 +1225,7 @@ img {
     font-family: var(--font-sans);
     font-size: 0.95rem;
     padding: 12px 16px;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--theme-border);
     border-radius: 6px;
     background-color: var(--white);
     color: var(--text-dark);
@@ -1244,7 +1237,7 @@ img {
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(226, 138, 56, 0.15);
+    box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.18);
 }
 
 .form-group textarea {
@@ -1257,7 +1250,7 @@ img {
 
 .success-icon {
     font-size: 4rem;
-    color: #10b981;
+    color: var(--theme-forest-green);
     margin-bottom: 20px;
 }
 
