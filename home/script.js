@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- NAVBAR BURGER & RESPONSIVE MOBILE MENU ---
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const navMenu = document.getElementById("navMenu");
+    const backgroundAudio = document.getElementById("backgroundAudio");
+    const audioToggle = document.getElementById("audioToggle");
 
     hamburgerBtn.addEventListener("click", () => {
         hamburgerBtn.classList.toggle("active");
@@ -55,6 +57,47 @@ document.addEventListener("DOMContentLoaded", () => {
             hamburgerBtn.classList.remove("active");
             navMenu.classList.remove("mobile-open");
         });
+    });
+
+    function setAudioState(isPlaying) {
+        if (!audioToggle) return;
+
+        audioToggle.classList.toggle("is-playing", isPlaying);
+        audioToggle.setAttribute("aria-pressed", String(isPlaying));
+        audioToggle.setAttribute(
+            "aria-label",
+            isPlaying ? "Tắt âm thanh nền" : "Phát âm thanh nền"
+        );
+    }
+
+    audioToggle?.addEventListener("click", async () => {
+        if (!backgroundAudio) return;
+
+        if (backgroundAudio.paused) {
+            try {
+                backgroundAudio.volume = 0.7;
+                await backgroundAudio.play();
+            } catch (error) {
+                setAudioState(false);
+            }
+            return;
+        }
+
+        backgroundAudio.pause();
+    });
+
+    backgroundAudio?.addEventListener("play", () => {
+        setAudioState(true);
+    });
+
+    backgroundAudio?.addEventListener("pause", () => {
+        if (!backgroundAudio.ended) {
+            setAudioState(false);
+        }
+    });
+
+    backgroundAudio?.addEventListener("ended", () => {
+        setAudioState(false);
     });
 
     // --- STICKY NAV ON SCROLL ---

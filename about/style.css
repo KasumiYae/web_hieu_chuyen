@@ -21,8 +21,8 @@
   --off: #F7F5F0;
   --text: #2C2C2C;
   --muted: #6B7280;
-  --font-display: 'Georgia', 'Times New Roman', serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
   --navbar-h: 70px;
   --transition: 0.35s cubic-bezier(.4, 0, .2, 1);
 }
@@ -74,37 +74,16 @@ img {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logo-name {
-  color: var(--gold);
-  font-weight: 700;
-  font-size: .95rem;
-  letter-spacing: .12em;
-}
-
-.logo-sub {
-  color: rgba(255, 255, 255, .5);
-  font-size: .6rem;
-  letter-spacing: .2em;
-}
-
-.logo-svg {
-  width: 75px;
-  height: 75px;
-  background-image: url('image/logo.jpeg');
-  /* Replace with actual logo path */
-  background-size: contain;
-  background-repeat: no-repeat;
+.logo-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff url("image/logo.jpeg") center 18% / 155% no-repeat;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .16);
 }
 
 .nav-menu {

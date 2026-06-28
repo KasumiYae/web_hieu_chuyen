@@ -35,8 +35,9 @@
 
     /* Typography */
     --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-handwritten: 'Caveat', cursive, sans-serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-handwritten: 'Cormorant Garamond', serif;
+    --navbar-h: 80px;
 
     /* Layout Constants */
     --header-height: 80px;
@@ -228,41 +229,22 @@ img {
     display: flex;
     align-items: center;
     gap: 32px;
-    height: var(--navbar-h);
+    height: var(--header-height);
     padding: 0 24px;
 }
 
-.logo-area {
-    display: flex;
+.nav-logo {
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
-    color: var(--white);
+    flex-shrink: 0;
 }
 
-.logo-svg {
-    width: 75px;
-    height: 75px;
-    background-image: url('image/logo.jpeg');
-    /* Replace with actual logo path */
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.logo-subtitle {
-    font-size: 0.65rem;
-    font-weight: 500;
-    opacity: 0.8;
+.logo-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #ffffff url("image/logo.jpeg") center 18% / 155% no-repeat;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
 
 /* Nav Menu */

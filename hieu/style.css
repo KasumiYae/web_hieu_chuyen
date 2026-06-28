@@ -7,13 +7,14 @@
     --text-main: #1D2A3A;
     --text-light: #627D98;
     --white: #FFFFFF;
+    --navbar-h: 78px;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -21,6 +22,15 @@ body {
     color: var(--text-main);
     overflow-x: hidden;
     line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", serif;
 }
 
 /* NAVBAR */
@@ -41,30 +51,19 @@ body {
   height: var(--navbar-h); padding: 0 24px;
 }
 
-.logo {
-    color: var(--white);
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-.logo-area {
-    display: flex;
+.nav-logo {
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-}
-.logo-svg {
-    width: 75px;
-    height: 75px;
-    background-image: url('image/logo.jpeg'); /* Replace with actual logo path */
-    background-size: contain;
-    background-repeat: no-repeat;
+    flex-shrink: 0;
+    text-decoration: none;
 }
 
-.logo span {
-    display: block;
-    font-size: 0.65rem;
-    color: var(--accent-color);
-    letter-spacing: 2px;
+.logo-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #ffffff url("image/logo.jpeg") center 18% / 155% no-repeat;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
 
 .nav-links {
@@ -747,7 +746,11 @@ body {
         display: flex;
     }
     
-    .nav-links {
+    .btn-cta-nav {
+        display: none;
+    }
+
+    .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -761,11 +764,11 @@ body {
         box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
     
-    .nav-links.active {
+    .nav-menu.active {
         display: flex;
     }
     
-    .nav-links a {
+    .nav-menu a {
         display: block;
         padding: 10px 0;
     }

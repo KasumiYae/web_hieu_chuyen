@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiểu-Chuyện - Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -15,16 +20,12 @@
     <header class="main-header">
         <div class="header-container">
             <div class="header-inner">
-                <div class="logo-area">
-                    <svg class="logo-svg">
-                    </svg>
-                    <div class="logo-inner">
-                        <span class="logo-text-main">Hiểu-chuyện</span>
-                    </div>
-                </div>
+                <a href="../home/index.html" class="nav-logo" aria-label="Về trang chủ Hiểu-Chuyện">
+                    <span class="logo-mark" aria-hidden="true"></span>
+                </a>
 
                 <nav class="nav-menu" id="navMenu">
-                    <a href="../home/index.html" class="nav-item active">Homepage</a>
+                    <a href="../home/index.html" class="nav-item active">Trang chủ</a>
                     <a href="../about/index.html" class="nav-item">About Us</a>
                     <a href="../hieu/index.html" class="nav-item">Hiểu</a>
                     <a href="../chuyen-tro/chuyen.html" class="nav-item">Chuyện trò</a>
@@ -32,6 +33,26 @@
                 </nav>
             </div>
             <div class="header-cta">
+                <button class="audio-toggle nav-audio-toggle" id="audioToggle" type="button" aria-pressed="false"
+                    aria-label="Phát âm thanh nền">
+                    <span class="audio-toggle-icon audio-icon-on" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M5 14H9L14 18V6L9 10H5V14Z" stroke="currentColor" stroke-width="1.8"
+                                stroke-linejoin="round" />
+                            <path d="M17 9C18.2 9.9 19 11.36 19 13C19 14.64 18.2 16.1 17 17" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                    <span class="audio-toggle-icon audio-icon-off" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M5 14H9L14 18V6L9 10H5V14Z" stroke="currentColor" stroke-width="1.8"
+                                stroke-linejoin="round" />
+                            <path d="M17 9C18.2 9.9 19 11.36 19 13C19 14.64 18.2 16.1 17 17" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" />
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </button>
                 <button class="btn-cta btn-yellow btn-register-trigger">
                     ĐĂNG KÝ NGAY
 
@@ -44,6 +65,10 @@
             </div>
         </div>
     </header>
+
+    <audio id="backgroundAudio" loop preload="metadata">
+        <source src="audio/background-audio.mov">
+    </audio>
 
     <!-- SECTION 1 - HERO -->
     <section class="section-hero">

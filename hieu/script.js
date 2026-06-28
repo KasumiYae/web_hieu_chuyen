@@ -14,9 +14,9 @@ function handleMissingPage(event) {
 
 // Mobile Navbar Hamburger Toggle Engine
 function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    if (navLinks) {
-        navLinks.classList.toggle('active');
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu) {
+        navMenu.classList.toggle('active');
     }
 }
 
