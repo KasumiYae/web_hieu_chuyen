@@ -28,12 +28,12 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--surface-base);
+    background-color: var(--brand-blue-deep);
     color: var(--text-main);
 }
 
 body {
-    background-color: var(--surface-base);
+    background-color: var(--brand-blue-deep);
     color: var(--text-main);
     overflow-x: hidden;
     position: relative;
@@ -424,7 +424,7 @@ button {
 /* SECTION 2: GIÁ TRỊ CỐT LÕI */
 /* ================================================================ */
 .section-values {
-    background-color: var(--surface-base);
+    background: var(--text-main);
     padding: 100px 0;
 }
 
@@ -437,7 +437,7 @@ button {
 .sub-title-top {
     font-size: 12px;
     letter-spacing: 2px;
-    color: var(--brand-green);
+    color: var(--accent-gold);
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -445,14 +445,14 @@ button {
 .section-title {
     font-size: 32px;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--surface-white);
     line-height: 1.4;
     margin-bottom: 20px;
 }
 
 .section-subtitle-desc {
     font-size: 16px;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.78);
     line-height: 1.6;
 }
 
@@ -468,7 +468,7 @@ button {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--surface-soft);
+    background-color: rgba(255, 255, 255, 0.18);
     z-index: 1;
 }
 
@@ -522,19 +522,19 @@ button {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: var(--text-main);
+    color: var(--surface-white);
 }
 
 .val-sub {
     font-size: 13px;
-    color: #888888;
+    color: rgba(255, 255, 255, 0.72);
     margin-bottom: 12px;
     font-style: italic;
 }
 
 .val-desc {
     font-size: 14px;
-    color: #555555;
+    color: rgba(255, 255, 255, 0.82);
     line-height: 1.6;
     padding: 0 10px;
 }
@@ -543,7 +543,7 @@ button {
 /* SECTION 03: TRAILER */
 /* ================================================================ */
 .section-trailer {
-    background-color: #141414;
+    background-color: var(--text-main);
     color: #ffffff;
     padding: 80px 0;
 }
@@ -565,53 +565,18 @@ button {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    background-image: url("image/anh_nen_hero.jpg");
-    /* Uses background photo placeholder gracefully */
-    background-size: cover;
-    background-position: center;
+    background-color: #000000;
     border-radius: 8px;
     overflow: hidden;
-    cursor: pointer;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.video-thumbnail-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+.trailer-inline-video {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-.video-container:hover .video-thumbnail-overlay {
-    background-color: rgba(0, 0, 0, 0.15);
-}
-
-.play-btn-circle {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.video-container:hover .play-btn-circle {
-    transform: scale(1.1);
-    background-color: var(--accent-gold);
-}
-
-.play-icon {
-    color: var(--text-main);
-    font-size: 20px;
-    margin-left: 4px;
+    display: block;
+    object-fit: cover;
+    background-color: #000000;
 }
 
 .trailer-right {
@@ -667,7 +632,7 @@ button {
 .section-highlights {
     position: relative;
     padding: 120px 0;
-    background-color: var(--surface-base);
+    background: var(--text-main);
     overflow: hidden;
 }
 
@@ -679,7 +644,8 @@ button {
     height: 100%;
     background-image: url("image/ruong_bac_thang.jpg");
     background-size: cover;
-    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-position: 42% 18%;
     z-index: 1;
 }
 
@@ -701,33 +667,33 @@ button {
 .high-title {
     font-size: 32px;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--surface-white);
     line-height: 1.4;
     margin-bottom: 20px;
 }
 
 .high-subtitle {
     font-size: 16px;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.82);
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
 .btn-more-info {
     padding: 12px 24px;
-    border: 1px solid var(--brand-blue);
+    border: 1px solid rgba(255, 255, 255, 0.76);
     font-size: 13px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     letter-spacing: 0.5px;
-    color: var(--brand-blue);
+    color: var(--surface-white);
 }
 
 .btn-more-info:hover {
-    background-color: var(--brand-blue);
-    color: var(--surface-white);
+    background-color: var(--surface-white);
+    color: var(--brand-blue-deep);
 }
 
 .highlights-right {
@@ -794,7 +760,7 @@ button {
 /* SECTION 05: HÀNH TRÌNH TRẢI NGHIỆM */
 /* ================================================================ */
 .section-journeys {
-    background-color: #141414;
+    background-color: var(--text-main);
     padding: 100px 0;
     color: #ffffff;
 }
@@ -920,7 +886,7 @@ button {
 /* SECTION 06: GIỚI THIỆU SOCIOLOGIC */
 /* ================================================================ */
 .section-sociologic {
-    background-color: #0b0b0b;
+    background-color: var(--text-main);
     color: #ffffff;
     padding: 100px 0;
 }
@@ -1031,7 +997,7 @@ button {
 /* SECTION 07: CTA CUỐI TRANG */
 /* ================================================================ */
 .section-cta-footer {
-    background-color: var(--surface-base);
+    background: var(--text-main);
     padding: 80px 0;
 }
 
@@ -1045,7 +1011,7 @@ button {
 .cta-footer-tag {
     font-size: 11px;
     letter-spacing: 2px;
-    color: var(--brand-green);
+    color: var(--accent-gold);
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -1053,7 +1019,7 @@ button {
 .cta-footer-heading {
     font-size: 28px;
     font-weight: 600;
-    color: var(--text-main);
+    color: var(--surface-white);
 }
 
 .cta-footer-buttons {
@@ -1065,10 +1031,10 @@ button {
 .btn-outline-dark,
 .btn-outline-dark-link {
     padding: 14px 28px;
-    border: 1px solid var(--brand-blue);
+    border: 1px solid rgba(255, 255, 255, 0.78);
     font-size: 13px;
     font-weight: 600;
-    color: var(--brand-blue);
+    color: var(--surface-white);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -1081,8 +1047,8 @@ button {
 
 .btn-outline-dark:hover,
 .btn-outline-dark-link:hover {
-    background-color: var(--brand-blue);
-    color: var(--surface-white);
+    background-color: var(--surface-white);
+    color: var(--brand-blue-deep);
     transform: translateY(-2px);
 }
 

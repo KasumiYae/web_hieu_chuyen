@@ -7,7 +7,7 @@ SECTION 1 HERO
 anh_nen_hero.jpg
 
 SECTION 3 TRAILER
-0617.mp4
+media/mu-cang-chai-trailer.mp4
 anh_nen_hero.jpg (Thumbnail fallback)
 
 SECTION 4 GIÁ TRỊ NỔI BẬT

@@ -166,12 +166,12 @@
     <section class="section-trailer">
         <div class="container-fluid trailer-grid">
             <div class="trailer-left">
-                <div class="video-container" id="videoContainer" onclick="openVideoPopup()">
-                    <div class="video-thumbnail-overlay">
-                        <div class="play-btn-circle">
-                            <span class="play-icon">▶</span>
-                        </div>
-                    </div>
+                <div class="video-container">
+                    <video class="trailer-inline-video" controls preload="metadata" playsinline
+                        poster="image/anh_nen_hero.jpg">
+                        <source src="media/mu-cang-chai-trailer.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video.
+                    </video>
                 </div>
             </div>
             <div class="trailer-right">
@@ -356,7 +356,7 @@
             <button class="popup-close-btn" onclick="closeVideoPopup()">✕</button>
             <div class="popup-video-body">
                 <video id="mainTrailerVideo" controls>
-                    <source src="image/0617.mp4" type="video/mp4"> <!----------------------------- chèn sau -->
+                    <source src="media/mu-cang-chai-trailer.mp4" type="video/mp4">
                     Trình duyệt của bạn không hỗ trợ video.
                 </video>
             </div>
