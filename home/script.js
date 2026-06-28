@@ -59,6 +59,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealItems.forEach((item) => revealObserver.observe(item));
 
+  const backgroundAudio = document.getElementById("backgroundAudio");
+  const audioToggle = document.getElementById("audioToggle");
+
+  function setAudioState(isPlaying) {
+    if (!audioToggle) {
+      return;
+    }
+
+    audioToggle.classList.toggle("is-playing", isPlaying);
+    audioToggle.setAttribute("aria-pressed", String(isPlaying));
+    audioToggle.setAttribute(
+      "aria-label",
+      isPlaying ? "Tắt âm thanh nền" : "Phát âm thanh nền"
+    );
+  }
+
+  audioToggle?.addEventListener("click", async () => {
+    if (!backgroundAudio) {
+      return;
+    }
+
+    if (backgroundAudio.paused) {
+      try {
+        backgroundAudio.volume = 0.7;
+        await backgroundAudio.play();
+        setAudioState(true);
+      } catch (error) {
+        setAudioState(false);
+      }
+      return;
+    }
+
+    backgroundAudio.pause();
+    setAudioState(false);
+  });
+
+  backgroundAudio?.addEventListener("ended", () => {
+    setAudioState(false);
+  });
+
+  backgroundAudio?.addEventListener("pause", () => {
+    if (!backgroundAudio.ended) {
+      setAudioState(false);
+    }
+  });
+
+  backgroundAudio?.addEventListener("play", () => {
+    setAudioState(true);
+  });
+
   const statCards = document.querySelectorAll("[data-count]");
   let statsStarted = false;
 

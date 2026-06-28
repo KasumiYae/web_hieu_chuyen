@@ -23,6 +23,29 @@
         </span>
       </a>
 
+      <button class="audio-toggle nav-audio-toggle" id="audioToggle" type="button" aria-pressed="false"
+        aria-label="Phát âm thanh nền">
+        <span class="audio-toggle-icon audio-icon-on" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 14H9L14 18V6L9 10H5V14Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M17 9C18.2 9.9 19 11.36 19 13C19 14.64 18.2 16.1 17 17" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="audio-toggle-icon audio-icon-off" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 14H9L14 18V6L9 10H5V14Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M17 9C18.2 9.9 19 11.36 19 13C19 14.64 18.2 16.1 17 17" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" />
+            <path d="M6 6L18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </span>
+      </button>
+
+      <audio id="backgroundAudio" loop preload="metadata">
+        <source src="audio/background-audio.mov">
+      </audio>
+
       <nav class="nav-menu" aria-label="Điều hướng chính">
         <a href="../home/index.html" class="active">Trang chủ</a>
         <a href="../about/index.html">About Us</a>
