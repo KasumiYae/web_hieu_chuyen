@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
     });
+
+    mobileMenu.querySelectorAll('a, button').forEach((item) => {
+      item.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
   }
 
   /* ---------- AOS (scroll reveal) ---------- */

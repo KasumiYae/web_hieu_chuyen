@@ -227,6 +227,13 @@ header.navbar .btn-cta-nav {
     flex-shrink: 0;
 }
 
+header.main-header .header-cta,
+header.navbar .header-cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 header.main-header .btn-cta,
 header.main-header .header-cta .btn-primary,
 header.navbar .btn-cta-nav,

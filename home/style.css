@@ -119,7 +119,7 @@ button {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #ffffff url("image/logo.jpeg") center 18% / 155% no-repeat;
+    background: #000000 url("../assets/icon.png") center 48% / 172% no-repeat;
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
 

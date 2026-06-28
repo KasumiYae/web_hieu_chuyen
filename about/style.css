@@ -49,19 +49,21 @@ img {
 
 /* ---------- NAVBAR ---------- */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 8%;
-  position: absolute;
+  display: block;
+  padding: 0;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .navbar.scrolled {
   box-shadow: 0 4px 24px rgba(0, 0, 0, .4);
+}
+
+.header-container {
+  position: relative;
 }
 
 .nav-inner {
@@ -85,7 +87,7 @@ img {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #ffffff url("image/logo.jpeg") center 18% / 155% no-repeat;
+  background: #000000 url("../assets/icon.png") center 48% / 172% no-repeat;
   box-shadow: 0 8px 22px rgba(0, 0, 0, .16);
 }
 
@@ -176,7 +178,15 @@ img {
   flex-direction: column;
   gap: 0;
   background: var(--navy);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1320px, calc(100% - 32px));
   border-top: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(9, 14, 24, 0.24);
 }
 
 .mobile-menu a {
@@ -211,7 +221,7 @@ img {
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: var(--navbar-h);
+  padding-top: calc(var(--navbar-h) + 48px);
 }
 
 .hero-bg {
@@ -1055,6 +1065,12 @@ img {
     display: none;
   }
 
+  .mobile-menu .btn-cta-nav {
+    display: inline-flex;
+    width: calc(100% - 48px);
+    justify-content: center;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -1117,6 +1133,10 @@ img {
 }
 
 @media (max-width: 480px) {
+  .mobile-menu {
+    width: calc(100% - 20px);
+  }
+
   .mentor-carousel-wrap {
     padding: 0 36px;
   }
