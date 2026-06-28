@@ -58,7 +58,7 @@ const STORIES_DATA = {
 // APP INITIALIZATION & EVENT LISTENERS
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // 1. STICKY NAVBAR SCROLL EVENT
     const mainHeader = document.getElementById("mainHeader");
     window.addEventListener("scroll", () => {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. MOBILE MENU TOGGLE
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
-    
+
     menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("open");
         const isOpened = navMenu.classList.contains("open");
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
             const storyId = btn.getAttribute("data-story");
             const data = STORIES_DATA[storyId];
-            
+
             if (data) {
                 // Set Header Details
                 modalStoryBadge.textContent = data.badge;
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================================================
     const moreStoriesModal = document.getElementById("moreStoriesModal");
     const btnMoreStories = document.getElementById("btnMoreStories");
-    
+
     if (btnMoreStories) {
         btnMoreStories.addEventListener("click", () => {
             openModal(moreStoriesModal);
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================================================
     const moreFeedbackModal = document.getElementById("moreFeedbackModal");
     const btnMoreFeedback = document.getElementById("btnMoreFeedback");
-    
+
     if (btnMoreFeedback) {
         btnMoreFeedback.addEventListener("click", () => {
             openModal(moreFeedbackModal);
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (registerForm) {
         registerForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            
+
             // Gather input values (could send to backend / Google Sheets via fetch)
             const formData = {
                 fullName: document.getElementById("fullName").value,
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 role: document.getElementById("role").value,
                 message: document.getElementById("message").value,
             };
-            
+
             console.log("Submitting Register Form:", formData);
 
             // Simulate server request delay
@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // SCROLL ANIMATIONS (INTERSECTION OBSERVER)
     // ==========================================================================
     const animatedElements = document.querySelectorAll("[data-aos]");
-    
+
     if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

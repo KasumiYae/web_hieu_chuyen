@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
   missionBlocks.forEach(b => missionObs.observe(b));
 
   /* ---------- Section 3 slide-in (trigger on scroll) ---------- */
-  const debateLeft  = document.getElementById('debateLeft');
+  const debateLeft = document.getElementById('debateLeft');
   const debateRight = document.getElementById('debateRight');
   const debateQuote = document.getElementById('debateQuote');
 
   if (debateLeft) {
-    debateLeft.style.transform  = 'translateX(-100%)';
+    debateLeft.style.transform = 'translateX(-100%)';
     debateLeft.style.transition = 'none';
     debateRight.style.transform = 'translateX(100%)';
     debateRight.style.transition = 'none';
@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const debateObs = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        debateLeft.style.transition  = 'transform .9s cubic-bezier(.4,0,.2,1)';
+        debateLeft.style.transition = 'transform .9s cubic-bezier(.4,0,.2,1)';
         debateRight.style.transition = 'transform .9s cubic-bezier(.4,0,.2,1) .1s';
         debateQuote.style.transition = 'opacity .7s ease .7s';
-        debateLeft.style.transform  = 'translateX(0)';
+        debateLeft.style.transform = 'translateX(0)';
         debateRight.style.transform = 'translateX(0)';
-        debateQuote.style.opacity   = '1';
+        debateQuote.style.opacity = '1';
         debateObs.disconnect();
       }
     }, { threshold: 0.2 });
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Nguyễn Nhật Hùng',
       role: 'Đồng sáng lập & Giám đốc học thuật',
-      img:  'image/section5_1hung.png',
+      img: 'image/section5_1hung.png',
       detail: `<ul>
         <li>Học bổng Đại sứ "Một vành đai, một con đường" 2018 – Đại học Bắc Kinh, Trung Quốc</li>
         <li>Học bổng Thủ lĩnh trẻ YSEALI Academic Fellowship 2023 – Đại học Connecticut, Mỹ</li>
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Nguyễn Khánh Linh',
       role: 'Đồng sáng lập & Giám đốc Điều hành',
-      img:  'image/section5_linh.png',
+      img: 'image/section5_linh.png',
       detail: `<ul>
         <li>Học bổng Global UGRAD – Bộ Ngoại giao Hoa Kỳ, học tại Washington, Hoa Kỳ</li>
         <li>Cố vấn chuyên môn UPR – hợp tác với UNDP Việt Nam</li>
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Vũ Hoàng Anh',
       role: 'Huấn luyện viên',
-      img:  'image/section5_hoang.png',
+      img: 'image/section5_hoang.png',
       detail: `<ul>
         <li>Học bổng Global UGRAD – Bộ Ngoại giao Hoa Kỳ, học tại Missouri, Hoa Kỳ</li>
         <li>Top 10 Tranh biện viên xuất sắc nhất Châu Á, EFL – ABP 2024</li>
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Nguyễn Quỳnh Trang',
       role: 'Huấn luyện viên',
-      img:  'image/section5_trang.png',
+      img: 'image/section5_trang.png',
       detail: `<ul>
         <li>IELTS Academic 8.0 Overall</li>
         <li>Giám khảo ABP 2024; Diliman Pre-ABP 2023; Intertext Pre-ABP 2024</li>
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Đỗ Thị Ngọc Anh',
       role: 'Huấn luyện viên',
-      img:  'image/section5_anh.png',
+      img: 'image/section5_anh.png',
       detail: `<ul>
         <li>Quán quân – Diễn án Luật Nhân đạo quốc tế Vòng Quốc gia 2025</li>
         <li>Đại diện Việt Nam, Top 8 vòng Châu Á Thái Bình Dương – IHL 2025, Hồng Kông</li>
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Lương Hải Anh',
       role: 'Huấn luyện viên',
-      img:  'image/section5_haianh.png',
+      img: 'image/section5_haianh.png',
       detail: `<ul>
         <li>IELTS Academic 8.0 Overall</li>
         <li>Trưởng Ban giám khảo – National Schools Debating Championships 2026</li>
@@ -156,13 +156,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  const track       = document.getElementById('mentorTrack');
-  const prevBtn     = document.getElementById('prevBtn');
-  const nextBtn     = document.getElementById('nextBtn');
-  const dotsWrap    = document.getElementById('carouselDots');
-  const overlay     = document.getElementById('mentorOverlay');
-  const popup       = document.getElementById('mentorPopup');
-  const popupClose  = document.getElementById('popupClose');
+  const track = document.getElementById('mentorTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsWrap = document.getElementById('carouselDots');
+  const overlay = document.getElementById('mentorOverlay');
+  const popup = document.getElementById('mentorPopup');
+  const popupClose = document.getElementById('popupClose');
 
   const VISIBLE = 4; // cards shown at once on desktop
   let currentIndex = 0;
@@ -181,14 +181,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateCarousel() {
-    const vis     = getVisibleCount();
-    const total   = mentorData.length;
-    const maxIdx  = Math.max(0, total - vis);
-    currentIndex  = Math.min(currentIndex, maxIdx);
+    const vis = getVisibleCount();
+    const total = mentorData.length;
+    const maxIdx = Math.max(0, total - vis);
+    currentIndex = Math.min(currentIndex, maxIdx);
 
-    const cardWidth   = track.children[0]?.offsetWidth || 0;
-    const gap         = 24;
-    const offset      = currentIndex * (cardWidth + gap);
+    const cardWidth = track.children[0]?.offsetWidth || 0;
+    const gap = 24;
+    const offset = currentIndex * (cardWidth + gap);
     track.style.transform = `translateX(-${offset}px)`;
 
     prevBtn.disabled = currentIndex === 0;
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   prevBtn.addEventListener('click', () => { currentIndex = Math.max(0, currentIndex - 1); updateCarousel(); });
   nextBtn.addEventListener('click', () => {
-    const vis    = getVisibleCount();
+    const vis = getVisibleCount();
     const maxIdx = Math.max(0, mentorData.length - vis);
     currentIndex = Math.min(currentIndex + 1, maxIdx);
     updateCarousel();
@@ -220,12 +220,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.mentor-card').forEach(card => {
     card.addEventListener('click', () => {
       const idx = parseInt(card.dataset.mentor);
-      const m   = mentorData[idx];
-      document.getElementById('popupImg').src    = m.img;
-      document.getElementById('popupImg').alt    = m.name;
-      document.getElementById('popupName').textContent  = m.name;
-      document.getElementById('popupRole').textContent  = m.role;
-      document.getElementById('popupDetail').innerHTML  = m.detail;
+      const m = mentorData[idx];
+      document.getElementById('popupImg').src = m.img;
+      document.getElementById('popupImg').alt = m.name;
+      document.getElementById('popupName').textContent = m.name;
+      document.getElementById('popupRole').textContent = m.role;
+      document.getElementById('popupDetail').innerHTML = m.detail;
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
 
@@ -264,92 +264,92 @@ document.addEventListener('DOMContentLoaded', () => {
 // REGISTRATION MODAL FUNCTIONALITY
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-    // Modal control utilities
-    function openModal(modalEl) {
-        modalEl.classList.add("open");
-        document.body.style.overflow = "hidden";
-    }
+  // Modal control utilities
+  function openModal(modalEl) {
+    modalEl.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
 
-    function closeModal(modalEl) {
-        modalEl.classList.remove("open");
-        document.body.style.overflow = "";
-    }
+  function closeModal(modalEl) {
+    modalEl.classList.remove("open");
+    document.body.style.overflow = "";
+  }
 
-    // Set up generic close buttons for all modals
-    const closeButtons = document.querySelectorAll(".modal-close");
-    closeButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            const openModalEl = e.target.closest(".modal-overlay");
-            if (openModalEl) closeModal(openModalEl);
-        });
+  // Set up generic close buttons for all modals
+  const closeButtons = document.querySelectorAll(".modal-close");
+  closeButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const openModalEl = e.target.closest(".modal-overlay");
+      if (openModalEl) closeModal(openModalEl);
     });
+  });
 
-    // Close modal on overlay click
-    const modalOverlays = document.querySelectorAll(".modal-overlay");
-    modalOverlays.forEach(overlay => {
-        overlay.addEventListener("click", (e) => {
-            if (e.target === overlay) {
-                closeModal(overlay);
-            }
-        });
+  // Close modal on overlay click
+  const modalOverlays = document.querySelectorAll(".modal-overlay");
+  modalOverlays.forEach(overlay => {
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        closeModal(overlay);
+      }
     });
+  });
 
-    // Escape Key listener to close modal
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            const activeModal = document.querySelector(".modal-overlay.open");
-            if (activeModal) closeModal(activeModal);
-        }
-    });
-
-    // Registration form modal
-    const registerModal = document.getElementById("registerModal");
-    const registerForm = document.getElementById("registerForm");
-    const registerSuccess = document.getElementById("registerSuccess");
-    const regTriggers = document.querySelectorAll(".btn-register-trigger");
-
-    regTriggers.forEach(btn => {
-        btn.addEventListener("click", () => {
-            registerForm.reset();
-            registerForm.style.display = "flex";
-            registerSuccess.style.display = "none";
-            openModal(registerModal);
-        });
-    });
-
-    // Form Submission
-    if (registerForm) {
-        registerForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            
-            const formData = {
-                fullName: document.getElementById("fullName").value,
-                phone: document.getElementById("phoneNumber").value,
-                email: document.getElementById("email").value,
-                birthYear: document.getElementById("birthYear").value,
-                role: document.getElementById("role").value,
-                message: document.getElementById("message").value,
-            };
-            
-            console.log("Submitting Register Form:", formData);
-
-            const submitBtn = registerForm.querySelector("button[type='submit']");
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Đang gửi thông tin...";
-
-            setTimeout(() => {
-                registerForm.style.display = "none";
-                registerSuccess.style.display = "block";
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Gửi thông tin đăng ký";
-            }, 1200);
-        });
+  // Escape Key listener to close modal
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const activeModal = document.querySelector(".modal-overlay.open");
+      if (activeModal) closeModal(activeModal);
     }
+  });
 
-    const btnCloseSuccess = document.querySelector(".btn-close-success");
-    if (btnCloseSuccess) {
-        btnCloseSuccess.addEventListener("click", () => {
-            closeModal(registerModal);
-        });
-    }
+  // Registration form modal
+  const registerModal = document.getElementById("registerModal");
+  const registerForm = document.getElementById("registerForm");
+  const registerSuccess = document.getElementById("registerSuccess");
+  const regTriggers = document.querySelectorAll(".btn-register-trigger");
+
+  regTriggers.forEach(btn => {
+    btn.addEventListener("click", () => {
+      registerForm.reset();
+      registerForm.style.display = "flex";
+      registerSuccess.style.display = "none";
+      openModal(registerModal);
+    });
+  });
+
+  // Form Submission
+  if (registerForm) {
+    registerForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = {
+        fullName: document.getElementById("fullName").value,
+        phone: document.getElementById("phoneNumber").value,
+        email: document.getElementById("email").value,
+        birthYear: document.getElementById("birthYear").value,
+        role: document.getElementById("role").value,
+        message: document.getElementById("message").value,
+      };
+
+      console.log("Submitting Register Form:", formData);
+
+      const submitBtn = registerForm.querySelector("button[type='submit']");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Đang gửi thông tin...";
+
+      setTimeout(() => {
+        registerForm.style.display = "none";
+        registerSuccess.style.display = "block";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Gửi thông tin đăng ký";
+      }, 1200);
+    });
+  }
+
+  const btnCloseSuccess = document.querySelector(".btn-close-success");
+  if (btnCloseSuccess) {
+    btnCloseSuccess.addEventListener("click", () => {
+      closeModal(registerModal);
+    });
+  }
 });

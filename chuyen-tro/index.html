@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,42 @@
     <!-- Google Fonts: Playfair Display (Serif), Inter (Sans-serif) and Caveat (Handwritten style for feedback) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Sticky Header -->
     <header class="main-header" id="mainHeader">
         <div class="header-container">
             <div class="header-inner">
-            <a href="#" class="logo-area">
-                <!-- Inline SVG Logo of Hieu-Chuyen Camp (Mountain + Sun + Text) -->
-                <svg class="logo-svg" >
-            
-                </svg>
-                <div class="logo-text">
-                    <span class="logo-title">HIỂU-CHUYỆN</span>
-                    <span class="logo-subtitle">SUMMER CAMP</span>
-                </div>
-            </a>
+                <a href="#" class="logo-area">
+                    <!-- Inline SVG Logo of Hieu-Chuyen Camp (Mountain + Sun + Text) -->
+                    <svg class="logo-svg">
 
-            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-title">HIỂU-CHUYỆN</span>
+                        <span class="logo-subtitle">SUMMER CAMP</span>
+                    </div>
+                </a>
 
-            <nav class="nav-menu" id="navMenu">
-                <a href="../home/index.html" class="nav-item">Homepage</a>
-                <a href="../about/index.html" class="nav-item" >About Us</a>
-                <a href="../hieu/index.html" class="nav-item " >Hiểu</a>
-                <a href="../chuyen-tro/chuyen.html" class="nav-item " >Chuyện trò</a>
-                <a href="../chuyen-tro/index.html " class="nav-item active" >Tự viết câu chuyện</a>
-            </nav>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <nav class="nav-menu" id="navMenu">
+                    <a href="../home/index.html" class="nav-item">Homepage</a>
+                    <a href="../about/index.html" class="nav-item">About Us</a>
+                    <a href="../hieu/index.html" class="nav-item ">Hiểu</a>
+                    <a href="../chuyen-tro/chuyen.html" class="nav-item ">Chuyện trò</a>
+                    <a href="../chuyen-tro/index.html " class="nav-item active">Tự viết câu chuyện</a>
+                </nav>
             </div>
             <div class="header-cta">
                 <button class="btn btn-primary btn-register-trigger">ĐĂNG KÝ NGAY</button>
@@ -48,19 +52,21 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="story-page" style="background-image: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.65)), url('image/1.jpeg');">
+    <section class="hero-section" id="story-page"
+        style="background-image: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.65)), url('image/1.jpeg');">
         <div class="hero-container">
             <div class="hero-content">
                 <span class="hero-badge">TỰ VIẾT</span>
                 <h1 class="hero-title">Mỗi người đều có một câu chuyện để kể.</h1>
                 <p class="hero-intro">Không phải ai cũng thay đổi sau một chuyến đi.</p>
                 <p class="hero-description">
-                    Nhưng đôi khi, chỉ một cuộc trò chuyện, một người bạn mới hay một trải nghiệm nhỏ cũng đủ để khiến chúng ta nhìn mọi thứ theo một cách khác.
+                    Nhưng đôi khi, chỉ một cuộc trò chuyện, một người bạn mới hay một trải nghiệm nhỏ cũng đủ để khiến
+                    chúng ta nhìn mọi thứ theo một cách khác.
                 </p>
                 <p class="hero-subtext">
                     Đây là những câu chuyện được viết bởi chính các bạn đã từng đồng hành cùng Hiểu-Chuyện Summer Camp.
                 </p>
-                
+
                 <div class="scroll-indicator">
                     <div class="mouse-icon">
                         <span class="mouse-wheel"></span>
@@ -77,24 +83,29 @@
             <div class="section-header text-center">
                 <span class="section-number">01</span>
                 <h2 class="section-title serif">Câu chuyện của người tham gia</h2>
-                <p class="section-subtitle">Những trải nghiệm chân thật từ các bạn học sinh sau hành trình tại Đế Xu Phình.</p>
+                <p class="section-subtitle">Những trải nghiệm chân thật từ các bạn học sinh sau hành trình tại Đế Xu
+                    Phình.</p>
             </div>
 
             <div class="stories-list">
                 <!-- Card 01 (Image left, content right) -->
                 <div class="story-card" data-aos="fade-up">
                     <div class="story-image-wrapper">
-                        <img src="image/2.jpeg" alt="Lần đầu mình hiểu rằng lắng nghe cũng là một kỹ năng" class="story-img">
+                        <img src="image/2.jpeg" alt="Lần đầu mình hiểu rằng lắng nghe cũng là một kỹ năng"
+                            class="story-img">
                     </div>
                     <div class="story-postcard">
                         <div class="washi-tape washi-tape-top-right"></div>
                         <div class="postmark-stamp">
                             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.3"/>
-                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2"/>
-                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3" font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
-                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3" font-size="7">SUMMER CAMP</text>
-                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2"/>
+                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4"
+                                    stroke-opacity="0.3" />
+                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2" />
+                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
+                                    font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
+                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
+                                    font-size="7">SUMMER CAMP</text>
+                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2" />
                             </svg>
                         </div>
                         <div class="postcard-content">
@@ -105,9 +116,12 @@
                             <h3 class="story-card-title serif">Lần đầu mình hiểu rằng lắng nghe cũng là một kỹ năng</h3>
                             <p class="story-author"><strong>Nguyễn Minh Anh</strong> • 15 tuổi</p>
                             <p class="story-snippet">
-                                Trước đây mình luôn nghĩ ai nói to hơn sẽ là người thắng trong một cuộc tranh luận. Sau trại hè, mình nhận ra điều khiến người khác muốn lắng nghe mình lại là cách mình biết lắng nghe họ trước.
+                                Trước đây mình luôn nghĩ ai nói to hơn sẽ là người thắng trong một cuộc tranh luận. Sau
+                                trại hè, mình nhận ra điều khiến người khác muốn lắng nghe mình lại là cách mình biết
+                                lắng nghe họ trước.
                             </p>
-                            <button class="btn-read-story" data-story="1">Đọc câu chuyện <i class="fa-solid fa-arrow-right-long"></i></button>
+                            <button class="btn-read-story" data-story="1">Đọc câu chuyện <i
+                                    class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
                 </div>
@@ -115,17 +129,20 @@
                 <!-- Card 02 (Content left, image right) -->
                 <div class="story-card card-reverse" data-aos="fade-up">
                     <div class="story-image-wrapper">
-                        <img src="image/3.jpeg"" alt="Những người bạn mình không nghĩ sẽ gặp" class="story-img">
+                        <img src="image/3.jpeg"" alt=" Những người bạn mình không nghĩ sẽ gặp" class="story-img">
                     </div>
                     <div class="story-postcard">
                         <div class="washi-tape washi-tape-top-left"></div>
                         <div class="postmark-stamp">
                             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.3"/>
-                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2"/>
-                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3" font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
-                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3" font-size="7">SUMMER CAMP</text>
-                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2"/>
+                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4"
+                                    stroke-opacity="0.3" />
+                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2" />
+                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
+                                    font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
+                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
+                                    font-size="7">SUMMER CAMP</text>
+                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2" />
                             </svg>
                         </div>
                         <div class="postcard-content">
@@ -136,9 +153,11 @@
                             <h3 class="story-card-title serif">Những người bạn mình không nghĩ sẽ gặp</h3>
                             <p class="story-author"><strong>Lê Gia Huy</strong> • 14 tuổi</p>
                             <p class="story-snippet">
-                                Mình đến trại hè với suy nghĩ sẽ chỉ tham gia vài hoạt động rồi về. Không ngờ điều mình nhớ nhất lại là những người bạn mới.
+                                Mình đến trại hè với suy nghĩ sẽ chỉ tham gia vài hoạt động rồi về. Không ngờ điều mình
+                                nhớ nhất lại là những người bạn mới.
                             </p>
-                            <button class="btn-read-story" data-story="2">Đọc câu chuyện <i class="fa-solid fa-arrow-right-long"></i></button>
+                            <button class="btn-read-story" data-story="2">Đọc câu chuyện <i
+                                    class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
                 </div>
@@ -152,11 +171,14 @@
                         <div class="washi-tape washi-tape-top-right"></div>
                         <div class="postmark-stamp">
                             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.3"/>
-                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2"/>
-                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3" font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
-                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3" font-size="7">SUMMER CAMP</text>
-                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2"/>
+                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4"
+                                    stroke-opacity="0.3" />
+                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2" />
+                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
+                                    font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
+                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
+                                    font-size="7">SUMMER CAMP</text>
+                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2" />
                             </svg>
                         </div>
                         <div class="postcard-content">
@@ -167,9 +189,11 @@
                             <h3 class="story-card-title serif">Điều mình mang về không nằm trong chiếc balo</h3>
                             <p class="story-author"><strong>Trần Khánh Linh</strong> • 16 tuổi</p>
                             <p class="story-snippet">
-                                Điều đáng nhớ nhất sau chuyến đi không phải những món quà lưu niệm. Mà là những điều mình học được từ con người nơi đây.
+                                Điều đáng nhớ nhất sau chuyến đi không phải những món quà lưu niệm. Mà là những điều
+                                mình học được từ con người nơi đây.
                             </p>
-                            <button class="btn-read-story" data-story="3">Đọc câu chuyện <i class="fa-solid fa-arrow-right-long"></i></button>
+                            <button class="btn-read-story" data-story="3">Đọc câu chuyện <i
+                                    class="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
                 </div>
@@ -177,7 +201,8 @@
 
             <!-- CTA Section 01 -->
             <div class="section-cta text-center">
-                <button class="btn btn-secondary" id="btnMoreStories">Xem thêm câu chuyện của các bạn <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="btn btn-secondary" id="btnMoreStories">Xem thêm câu chuyện của các bạn <i
+                        class="fa-solid fa-arrow-right-long"></i></button>
             </div>
         </div>
     </section>
@@ -188,7 +213,8 @@
             <div class="section-header text-center">
                 <span class="section-number">02</span>
                 <h2 class="section-title serif">Feedback từ phụ huynh và giáo viên</h2>
-                <p class="section-subtitle">Những thay đổi của các bạn không chỉ được cảm nhận bởi chính mình mà còn được nhìn thấy từ những người đồng hành mỗi ngày.</p>
+                <p class="section-subtitle">Những thay đổi của các bạn không chỉ được cảm nhận bởi chính mình mà còn
+                    được nhìn thấy từ những người đồng hành mỗi ngày.</p>
             </div>
 
             <div class="corkboard">
@@ -205,7 +231,9 @@
                     </div>
                     <div class="note-doodle doodle-heart">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke-dasharray="100" stroke-dashoffset="0"/>
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                stroke-dasharray="100" stroke-dashoffset="0" />
                         </svg>
                     </div>
                 </div>
@@ -236,10 +264,10 @@
                     </div>
                     <div class="note-doodle doodle-smile">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10" stroke-dasharray="100"/>
-                            <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke-linecap="round"/>
-                            <line x1="9" y1="9" x2="9.01" y2="9" stroke-linecap="round" stroke-width="2"/>
-                            <line x1="15" y1="9" x2="15.01" y2="9" stroke-linecap="round" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="10" stroke-dasharray="100" />
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke-linecap="round" />
+                            <line x1="9" y1="9" x2="9.01" y2="9" stroke-linecap="round" stroke-width="2" />
+                            <line x1="15" y1="9" x2="15.01" y2="9" stroke-linecap="round" stroke-width="2" />
                         </svg>
                     </div>
                 </div>
@@ -249,7 +277,8 @@
                     <div class="washi-tape washi-tape-note-slant"></div>
                     <div class="note-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
                     <div class="note-body">
-                        “Điều tôi ấn tượng nhất là các em tự tin hơn khi trình bày ý kiến nhưng vẫn tôn trọng góc nhìn của người khác.”
+                        “Điều tôi ấn tượng nhất là các em tự tin hơn khi trình bày ý kiến nhưng vẫn tôn trọng góc nhìn
+                        của người khác.”
                     </div>
                     <div class="note-author">
                         <span class="author-name">Cô Vũ Mai Anh</span>
@@ -260,7 +289,8 @@
 
             <!-- CTA Section 02 -->
             <div class="section-cta text-center">
-                <button class="btn btn-outline" id="btnMoreFeedback">Xem thêm feedback <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="btn btn-outline" id="btnMoreFeedback">Xem thêm feedback <i
+                        class="fa-solid fa-arrow-right-long"></i></button>
             </div>
         </div>
     </section>
@@ -270,15 +300,20 @@
         <!-- Subtle Mountain Line Drawing Overlay -->
         <div class="mountain-overlay">
             <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,224L120,202.7C240,181,480,139,720,144C960,149,1200,203,1320,229.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z" fill="#071424" fill-opacity="0.3"></path>
-                <path d="M0,192L80,213.3C160,235,320,277,480,288C640,299,800,277,960,256C1120,235,1280,213,1360,202.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" fill="#050e1b" fill-opacity="0.5"></path>
+                <path
+                    d="M0,224L120,202.7C240,181,480,139,720,144C960,149,1200,203,1320,229.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+                    fill="#071424" fill-opacity="0.3"></path>
+                <path
+                    d="M0,192L80,213.3C160,235,320,277,480,288C640,299,800,277,960,256C1120,235,1280,213,1360,202.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+                    fill="#050e1b" fill-opacity="0.5"></path>
             </svg>
         </div>
 
         <div class="container footer-container">
             <div class="footer-cta-box">
                 <div class="paper-plane-decoration">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="paper-plane-svg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        class="paper-plane-svg">
                         <path d="M22 2L2 8.66L11.5 12.5L22 2ZM22 2L15.33 22L11.5 12.5L22 2Z" />
                         <path d="M11.5 12.5L14.5 15.5" />
                         <!-- Wind trails -->
@@ -289,10 +324,12 @@
                 <div class="footer-cta-text">
                     <h2 class="serif">Câu chuyện tiếp theo có thể là của bạn.</h2>
                     <p class="cta-bold">Mỗi người sẽ có một hành trình khác nhau.</p>
-                    <p class="cta-normal">Điều quan trọng không phải bạn thay đổi nhanh đến đâu, mà là bạn sẵn sàng bắt đầu từ những trải nghiệm đầu tiên.</p>
+                    <p class="cta-normal">Điều quan trọng không phải bạn thay đổi nhanh đến đâu, mà là bạn sẵn sàng bắt
+                        đầu từ những trải nghiệm đầu tiên.</p>
                 </div>
                 <div class="footer-cta-action">
-                    <button class="btn btn-primary btn-cta-large btn-register-trigger">Đăng ký Hiểu-Chuyện Summer Camp <i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="btn btn-primary btn-cta-large btn-register-trigger">Đăng ký Hiểu-Chuyện Summer Camp
+                        <i class="fa-solid fa-chevron-right"></i></button>
                     <span class="footer-note-text">Cùng nhau tạo nên một mùa hè đáng nhớ!</span>
                 </div>
             </div>
@@ -320,7 +357,7 @@
                     <h2 class="story-modal-title serif" id="modalStoryTitle">Tiêu đề câu chuyện</h2>
                     <p class="story-modal-author" id="modalStoryAuthor">Nguyễn Minh Anh • 15 tuổi</p>
                 </div>
-                
+
                 <div class="story-modal-body">
                     <div class="story-full-text" id="modalStoryText">
                         <!-- Full story paragraphs loaded by JS -->
@@ -345,7 +382,8 @@
             <div class="modal-scroll-container">
                 <div class="modal-header-simple text-center">
                     <h2 class="serif modal-main-title">Những câu chuyện khác</h2>
-                    <p class="modal-main-desc">Góc nhìn đa chiều từ những người đồng hành trong hành trình trải nghiệm</p>
+                    <p class="modal-main-desc">Góc nhìn đa chiều từ những người đồng hành trong hành trình trải nghiệm
+                    </p>
                 </div>
                 <div class="other-stories-grid">
                     <div class="other-story-item">
@@ -413,27 +451,32 @@
                 <div class="other-feedbacks-list">
                     <div class="other-feedback-item">
                         <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Con dành nhiều thời gian trò chuyện với gia đình hơn sau chương trình.”</p>
+                        <p class="other-feedback-text">“Con dành nhiều thời gian trò chuyện với gia đình hơn sau chương
+                            trình.”</p>
                         <span class="other-feedback-author">— Phụ huynh</span>
                     </div>
                     <div class="other-feedback-item">
                         <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Em chủ động tham gia các hoạt động của lớp và tự tin hơn khi làm việc nhóm.”</p>
+                        <p class="other-feedback-text">“Em chủ động tham gia các hoạt động của lớp và tự tin hơn khi làm
+                            việc nhóm.”</p>
                         <span class="other-feedback-author">— Giáo viên</span>
                     </div>
                     <div class="other-feedback-item">
                         <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Điều con mang về không chỉ là kiến thức mà còn là những người bạn rất đặc biệt.”</p>
+                        <p class="other-feedback-text">“Điều con mang về không chỉ là kiến thức mà còn là những người
+                            bạn rất đặc biệt.”</p>
                         <span class="other-feedback-author">— Phụ huynh</span>
                     </div>
                     <div class="other-feedback-item">
                         <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Các em biết quan sát, lắng nghe và hỗ trợ nhau nhiều hơn trong các hoạt động.”</p>
+                        <p class="other-feedback-text">“Các em biết quan sát, lắng nghe và hỗ trợ nhau nhiều hơn trong
+                            các hoạt động.”</p>
                         <span class="other-feedback-author">— Mentor</span>
                     </div>
                     <div class="other-feedback-item">
                         <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Con trưởng thành hơn trong cách suy nghĩ và biết quan tâm đến cảm xúc của người khác.”</p>
+                        <p class="other-feedback-text">“Con trưởng thành hơn trong cách suy nghĩ và biết quan tâm đến
+                            cảm xúc của người khác.”</p>
                         <span class="other-feedback-author">— Phụ huynh</span>
                     </div>
                 </div>
@@ -455,11 +498,12 @@
                         <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
                         <input type="text" id="fullName" name="fullName" required placeholder="Nhập đầy đủ họ và tên">
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="phoneNumber">Số điện thoại liên hệ <span class="required">*</span></label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Nhập số điện thoại">
+                            <input type="tel" id="phoneNumber" name="phoneNumber" required
+                                placeholder="Nhập số điện thoại">
                         </div>
                         <div class="form-group">
                             <label for="email">Địa chỉ Email <span class="required">*</span></label>
@@ -470,7 +514,8 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="birthYear">Năm sinh của học sinh</label>
-                            <input type="number" id="birthYear" name="birthYear" min="2005" max="2020" placeholder="Ví dụ: 2011">
+                            <input type="number" id="birthYear" name="birthYear" min="2005" max="2020"
+                                placeholder="Ví dụ: 2011">
                         </div>
                         <div class="form-group">
                             <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
@@ -485,7 +530,8 @@
 
                     <div class="form-group">
                         <label for="message">Lời nhắn gửi hoặc điều bạn băn khoăn</label>
-                        <textarea id="message" name="message" rows="3" placeholder="Chia sẻ thêm thông tin hoặc những câu hỏi của bạn dành cho ban tổ chức..."></textarea>
+                        <textarea id="message" name="message" rows="3"
+                            placeholder="Chia sẻ thêm thông tin hoặc những câu hỏi của bạn dành cho ban tổ chức..."></textarea>
                     </div>
 
                     <div class="form-actions">
@@ -498,7 +544,8 @@
                     <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
                     <h3 class="serif">ĐĂNG KÝ THÀNH CÔNG!</h3>
                     <p>Cảm ơn bạn đã quan tâm đến Hiểu-Chuyện Summer Camp.</p>
-                    <p class="success-note">Ban tổ chức sẽ liên hệ lại với bạn qua Số điện thoại hoặc Email trong vòng 24h làm việc sắp tới.</p>
+                    <p class="success-note">Ban tổ chức sẽ liên hệ lại với bạn qua Số điện thoại hoặc Email trong vòng
+                        24h làm việc sắp tới.</p>
                     <button class="btn btn-secondary btn-close-success">Đóng cửa sổ</button>
                 </div>
             </div>
@@ -508,4 +555,5 @@
     <!-- Script file -->
     <script src="script.js"></script>
 </body>
+
 </html>

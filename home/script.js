@@ -38,7 +38,7 @@ function handleMissingPage(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // --- NAVBAR BURGER & RESPONSIVE MOBILE MENU ---
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const navMenu = document.getElementById("navMenu");
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     scrollDownBtn.addEventListener("click", () => {
         const nextSection = document.getElementById("section-values");
-        if(nextSection) {
+        if (nextSection) {
             nextSection.scrollIntoView({ behavior: "smooth" });
         }
     });
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const animateOnScroll = () => {
         if (!valuesSection) return;
-        
+
         let sectionTop = valuesSection.offsetTop;
         let sectionHeight = valuesSection.offsetHeight;
         let windowScroll = window.scrollY;
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Compute path line rendering mapping
         let progressStart = sectionTop - windowHeight + 200;
         let progressEnd = sectionTop + sectionHeight - windowHeight;
-        
+
         if (windowScroll > progressStart && windowScroll < progressEnd) {
             let totalSpread = progressEnd - progressStart;
             let currentOffset = windowScroll - progressStart;
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         statNumbers.forEach(counter => {
             const targetValue = parseInt(counter.getAttribute("data-target"), 10);
             let currentValue = 0;
-            
+
             // Format displays matching original text request
             let appendText = "+";
             if (targetValue === 1000) appendText = "+ Học sinh";
@@ -225,7 +225,7 @@ function handleFormSubmit(event) {
     event.preventDefault();
     // Closes parent modal window container seamlessly
     closePopup('popup-register');
-    
+
     // External form routing matching requirement exactly
     const clientRedirectUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdWT-OEQNEdGnJjxMEb5JeJTMoPLL8IZgJX_9yKinmZUm02Xg/viewform?fbzx=1842672626731450041";
     window.open(clientRedirectUrl, '_blank');
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (registerForm) {
         registerForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            
+
             const formData = {
                 fullName: document.getElementById("fullName").value,
                 phone: document.getElementById("phoneNumber").value,
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 role: document.getElementById("role").value,
                 message: document.getElementById("message").value,
             };
-            
+
             console.log("Submitting Register Form:", formData);
 
             const submitBtn = registerForm.querySelector("button[type='submit']");
