@@ -1,355 +1,322 @@
-/* ===================================================
-   HIỂU-CHUYỆN — About Us — script.js
-   =================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("navbar");
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mentorOverlay = document.getElementById("mentorOverlay");
+  const registerModal = document.getElementById("registerModal");
 
-document.addEventListener('DOMContentLoaded', () => {
+  function syncBodyLock() {
+    const shouldLock =
+      mobileMenu?.classList.contains("open") ||
+      mentorOverlay?.classList.contains("open") ||
+      registerModal?.classList.contains("open");
 
-  /* ---------- NAVBAR scroll shadow ---------- */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 30);
+    document.body.style.overflow = shouldLock ? "hidden" : "";
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu || !hamburger) {
+      return;
+    }
+
+    mobileMenu.classList.remove("open");
+    hamburger.classList.remove("is-open");
+    syncBodyLock();
+  }
+
+  window.addEventListener("scroll", () => {
+    navbar?.classList.toggle("scrolled", window.scrollY > 24);
   });
 
-  /* ---------- Hamburger ---------- */
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      hamburger.classList.toggle("is-open");
+      syncBodyLock();
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
     });
   }
 
-  /* ---------- AOS (scroll reveal) ---------- */
-  const aosEls = document.querySelectorAll('[data-aos]');
-  const aosObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const delay = e.target.dataset.delay || 0;
-        setTimeout(() => e.target.classList.add('aos-visible'), parseInt(delay));
-        aosObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  aosEls.forEach(el => aosObs.observe(el));
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      closeMobileMenu();
+    }
+  });
 
-  /* ---------- Mission block scroll reveal ---------- */
-  const missionBlocks = document.querySelectorAll('.mission-block');
-  const missionObs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        const delay = parseInt(e.target.dataset.delay || 0);
-        setTimeout(() => e.target.classList.add('visible'), delay);
-        missionObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  missionBlocks.forEach(b => missionObs.observe(b));
+  const revealItems = document.querySelectorAll("[data-reveal]");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
 
-  /* ---------- Section 3 slide-in (trigger on scroll) ---------- */
-  const debateLeft = document.getElementById('debateLeft');
-  const debateRight = document.getElementById('debateRight');
-  const debateQuote = document.getElementById('debateQuote');
+  revealItems.forEach((item) => revealObserver.observe(item));
 
-  if (debateLeft) {
-    debateLeft.style.transform = 'translateX(-100%)';
-    debateLeft.style.transition = 'none';
-    debateRight.style.transform = 'translateX(100%)';
-    debateRight.style.transition = 'none';
-    debateQuote.style.opacity = '0';
-    debateQuote.style.transition = 'none';
+  const storyImage = document.getElementById("storyImage");
+  const storyKicker = document.getElementById("storyKicker");
+  const storyNote = document.getElementById("storyNote");
+  const storySteps = Array.from(document.querySelectorAll(".field-step"));
 
-    const debateObs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        debateLeft.style.transition = 'transform .9s cubic-bezier(.4,0,.2,1)';
-        debateRight.style.transition = 'transform .9s cubic-bezier(.4,0,.2,1) .1s';
-        debateQuote.style.transition = 'opacity .7s ease .7s';
-        debateLeft.style.transform = 'translateX(0)';
-        debateRight.style.transform = 'translateX(0)';
-        debateQuote.style.opacity = '1';
-        debateObs.disconnect();
-      }
-    }, { threshold: 0.2 });
-    debateObs.observe(debateLeft.closest('.debate-section') || debateLeft);
+  function activateStoryStep(step) {
+    if (!step || !storyImage || !storyKicker || !storyNote) {
+      return;
+    }
+
+    storySteps.forEach((item) => item.classList.remove("is-active"));
+    step.classList.add("is-active");
+
+    const nextImage = step.dataset.image;
+    const nextAlt = step.dataset.alt || "";
+    const nextKicker = step.dataset.kicker || "";
+    const nextNote = step.dataset.note || "";
+
+    storyImage.style.opacity = "0.3";
+    window.setTimeout(() => {
+      storyImage.src = nextImage;
+      storyImage.alt = nextAlt;
+      storyKicker.textContent = nextKicker;
+      storyNote.textContent = nextNote;
+      storyImage.style.opacity = "1";
+    }, 140);
   }
 
-  /* ---------- Mentor carousel ---------- */
+  if (storySteps.length > 0) {
+    activateStoryStep(storySteps[0]);
+
+    const stepObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleSteps = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSteps[0]) {
+          activateStoryStep(visibleSteps[0].target);
+        }
+      },
+      {
+        threshold: [0.35, 0.55, 0.75],
+        rootMargin: "-12% 0px -28% 0px",
+      }
+    );
+
+    storySteps.forEach((step) => stepObserver.observe(step));
+  }
+
   const mentorData = [
     {
-      name: 'Nguyễn Nhật Hùng',
-      role: 'Đồng sáng lập & Giám đốc học thuật',
-      img: 'image/section5_1hung.png',
-      detail: `<ul>
-        <li>Học bổng Đại sứ "Một vành đai, một con đường" 2018 – Đại học Bắc Kinh, Trung Quốc</li>
-        <li>Học bổng Thủ lĩnh trẻ YSEALI Academic Fellowship 2023 – Đại học Connecticut, Mỹ</li>
-        <li>Cố vấn chuyên môn: Tranh biện Tiếng Nói Xanh (Vingroup), VTV7 Teen & The Debaters</li>
-        <li>Trưởng Ban Giám khảo – VMDC 2022 & 2025; Hanoi BP Debate Open 2025; VBC 2021 & 2022</li>
-        <li>Giám khảo xuất sắc nhất – VUDC 2022; Southern Vietnam BP Debate Academy 2024</li>
-        <li>Giám khảo chung kết – Cornell-Yonsei Debate Invitational 2019, Hàn Quốc</li>
-        <li>Giám khảo của hơn 120+ cuộc thi tranh biện cấp quốc gia, quốc tế trong 10 năm</li>
-      </ul>`
+      name: "Nguyễn Nhật Hùng",
+      role: "Đồng sáng lập & Giám đốc học thuật",
+      image: "image/section5_1hung.png",
+      detail: `
+        <p>Định hướng phần học thuật của Hiểu-Chuyện bằng tư duy tranh biện, phản biện và thiết kế trải nghiệm học tập có chiều sâu.</p>
+        <ul>
+          <li>Học bổng Đại sứ “Một vành đai, một con đường” tại Đại học Bắc Kinh.</li>
+          <li>YSEALI Academic Fellowship tại Đại học Connecticut, Hoa Kỳ.</li>
+          <li>Cố vấn chuyên môn cho nhiều sân chơi tranh biện và giáo dục thanh thiếu niên.</li>
+          <li>Đồng hành với hàng trăm giải đấu học thuật trong nước và quốc tế.</li>
+        </ul>
+      `,
     },
     {
-      name: 'Nguyễn Khánh Linh',
-      role: 'Đồng sáng lập & Giám đốc Điều hành',
-      img: 'image/section5_linh.png',
-      detail: `<ul>
-        <li>Học bổng Global UGRAD – Bộ Ngoại giao Hoa Kỳ, học tại Washington, Hoa Kỳ</li>
-        <li>Cố vấn chuyên môn UPR – hợp tác với UNDP Việt Nam</li>
-        <li>Trưởng Ban giám khảo VUDC 2022, HDT 2022, CDLO 2024 (Campuchia)</li>
-        <li>Huấn luyện viên đội Quán quân & Á quân Trường Teen và The Debaters, VTV7</li>
-        <li>Quán quân Giải Tranh biện Quốc gia Luật Nghị viện Anh 2020 & Toàn quốc 2022</li>
-        <li>Á quân VUDC 2022; Đại diện thanh niên UNODC Malaysia, AStW Thái Lan</li>
-      </ul>`
+      name: "Nguyễn Khánh Linh",
+      role: "Đồng sáng lập & Giám đốc điều hành",
+      image: "image/section5_linh.png",
+      detail: `
+        <p>Kết nối tư duy giáo dục khai phóng với khả năng tổ chức chương trình, đảm bảo mỗi trải nghiệm đều đi tới một mục tiêu phát triển rõ ràng.</p>
+        <ul>
+          <li>Học bổng Global UGRAD của Bộ Ngoại giao Hoa Kỳ.</li>
+          <li>Cố vấn chuyên môn UPR phối hợp cùng UNDP Việt Nam.</li>
+          <li>Huấn luyện và điều phối nhiều đội tuyển tranh biện học sinh đạt thành tích cao.</li>
+          <li>Đồng kiến tạo mô hình trải nghiệm học tập gắn với cộng đồng.</li>
+        </ul>
+      `,
     },
     {
-      name: 'Vũ Hoàng Anh',
-      role: 'Huấn luyện viên',
-      img: 'image/section5_hoang.png',
-      detail: `<ul>
-        <li>Học bổng Global UGRAD – Bộ Ngoại giao Hoa Kỳ, học tại Missouri, Hoa Kỳ</li>
-        <li>Top 10 Tranh biện viên xuất sắc nhất Châu Á, EFL – ABP 2024</li>
-        <li>Quán quân, Top Người nói xuất sắc – Hanoi Debate Tournament 2021</li>
-        <li>Quán quân – Giải Tranh biện Thế giới Intertext Pre-WUDC 2023</li>
-        <li>Á quân – Giải Tranh biện Quốc gia Việt Nam bậc Đại học 2023</li>
-        <li>Quý quân – Vienna BP Open 2025 (Áo)</li>
-        <li>Cố vấn UPR – hợp tác với UNDP Việt Nam</li>
-      </ul>`
+      name: "Vũ Hoàng Anh",
+      role: "Huấn luyện viên",
+      image: "image/section5_hoang.png",
+      detail: `
+        <p>Mang tới năng lượng tranh biện hiện đại, rõ ràng và gần với học sinh, đặc biệt trong các buổi luyện lập luận và phản hồi.</p>
+        <ul>
+          <li>Học bổng Global UGRAD tại Missouri, Hoa Kỳ.</li>
+          <li>Top 10 tranh biện viên xuất sắc châu Á hạng mục EFL.</li>
+          <li>Đạt nhiều thành tích tại các giải đấu tranh biện quốc gia và quốc tế.</li>
+          <li>Đồng hành cùng học sinh trong các phiên thực hành và phản tư sau hoạt động.</li>
+        </ul>
+      `,
     },
     {
-      name: 'Nguyễn Quỳnh Trang',
-      role: 'Huấn luyện viên',
-      img: 'image/section5_trang.png',
-      detail: `<ul>
-        <li>IELTS Academic 8.0 Overall</li>
-        <li>Giám khảo ABP 2024; Diliman Pre-ABP 2023; Intertext Pre-ABP 2024</li>
-        <li>Top Giám khảo Xuất sắc nhất VBC 2023–2025, NSDC 2023, HDT 2024 & 2025</li>
-        <li>Giám khảo khách mời 50+ giải đấu trong nước, bao gồm Oxford Schools Vietnam Qualifier 2026</li>
-        <li>Ban Tổ chức Giải Vô địch Thế giới WSDC 2023 & WUDC 2024 tại Việt Nam</li>
-        <li>Phó Trưởng Ban Giám khảo Bảng Việt – VBC 2026</li>
-      </ul>`
+      name: "Nguyễn Quỳnh Trang",
+      role: "Huấn luyện viên",
+      image: "image/section5_trang.png",
+      detail: `
+        <p>Đảm nhận vai trò xây dựng nhịp học ổn định, sắc nét và có tính tổ chức cao cho các hoạt động đối thoại, phản biện và trình bày.</p>
+        <ul>
+          <li>IELTS Academic 8.0 Overall.</li>
+          <li>Giám khảo và trưởng nhóm học thuật tại nhiều giải đấu tranh biện lớn.</li>
+          <li>Kinh nghiệm tổ chức, điều phối và phản biện chuyên sâu cho học sinh.</li>
+          <li>Đồng hành với các mô hình đào tạo hướng tới tư duy đa chiều.</li>
+        </ul>
+      `,
     },
     {
-      name: 'Đỗ Thị Ngọc Anh',
-      role: 'Huấn luyện viên',
-      img: 'image/section5_anh.png',
-      detail: `<ul>
-        <li>Quán quân – Diễn án Luật Nhân đạo quốc tế Vòng Quốc gia 2025</li>
-        <li>Đại diện Việt Nam, Top 8 vòng Châu Á Thái Bình Dương – IHL 2025, Hồng Kông</li>
-        <li>Trưởng ban Giám khảo Bảng Tiểu học – Vietnam Middle School Championship 2026</li>
-        <li>Phó Trưởng ban Giám khảo – Hanoi BP Debating Championship 2025</li>
-        <li>Quán quân – Hanoi Debate Tournament 2021</li>
-        <li>Top Giám khảo xuất sắc nhất HDT 2023, NSDC 2023, VMDC 2023, HCM Debate Open 2024, HDT 2024</li>
-      </ul>`
+      name: "Đỗ Thị Ngọc Anh",
+      role: "Huấn luyện viên",
+      image: "image/section5_anh.png",
+      detail: `
+        <p>Đưa vào chương trình một phong cách làm việc sắc sảo nhưng gần gũi, giúp học sinh dám phát biểu và dám thử sức trong môi trường an toàn.</p>
+        <ul>
+          <li>Đại diện Việt Nam tại sân chơi IHL khu vực châu Á - Thái Bình Dương.</li>
+          <li>Giữ nhiều vai trò giám khảo, trưởng ban chuyên môn ở các giải debate học sinh.</li>
+          <li>Giàu kinh nghiệm huấn luyện, phản biện và đồng hành với nhóm nhỏ.</li>
+          <li>Tập trung vào kỹ năng đối thoại có trách nhiệm và tư duy công dân.</li>
+        </ul>
+      `,
     },
     {
-      name: 'Lương Hải Anh',
-      role: 'Huấn luyện viên',
-      img: 'image/section5_haianh.png',
-      detail: `<ul>
-        <li>IELTS Academic 8.0 Overall</li>
-        <li>Trưởng Ban giám khảo – National Schools Debating Championships 2026</li>
-        <li>Phó Trưởng ban giám khảo – VBC 2025; Vietnam Women and Queer Open 2023</li>
-        <li>Giám khảo xuất sắc nhất – HDT 2025, NSDC 2025</li>
-        <li>Á quân – Giải đấu Quốc tế Thượng Hải 2023; NEU Debate Open 2024</li>
-        <li>Quý quân – VBC 2022</li>
-      </ul>`
-    }
+      name: "Lương Hải Anh",
+      role: "Huấn luyện viên",
+      image: "image/section5_haianh.png",
+      detail: `
+        <p>Khuyến khích học sinh xây dựng tiếng nói cá nhân dựa trên tư duy phản biện, đồng thời giữ được sự lắng nghe và cân bằng trong tranh luận.</p>
+        <ul>
+          <li>IELTS Academic 8.0 Overall.</li>
+          <li>Giữ vai trò trưởng hoặc phó ban giám khảo ở nhiều giải debate dành cho học sinh.</li>
+          <li>Có thành tích tại các giải đấu tranh biện trong nước và quốc tế.</li>
+          <li>Đồng hành tốt trong các hoạt động phản tư và phát triển sự tự tin.</li>
+        </ul>
+      `,
+    },
   ];
 
-  const track = document.getElementById('mentorTrack');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const dotsWrap = document.getElementById('carouselDots');
-  const overlay = document.getElementById('mentorOverlay');
-  const popup = document.getElementById('mentorPopup');
-  const popupClose = document.getElementById('popupClose');
+  const popupImg = document.getElementById("popupImg");
+  const popupName = document.getElementById("popupName");
+  const popupRole = document.getElementById("popupRole");
+  const popupDetail = document.getElementById("popupDetail");
+  const popupClose = document.getElementById("popupClose");
+  const mentorCards = document.querySelectorAll(".mentor-card");
 
-  const VISIBLE = 4; // cards shown at once on desktop
-  let currentIndex = 0;
+  function openMentorPopup(index) {
+    const mentor = mentorData[index];
+    if (!mentor || !mentorOverlay || !popupImg || !popupName || !popupRole || !popupDetail) {
+      return;
+    }
 
-  // Build dots
-  const totalSlides = Math.ceil(mentorData.length / VISIBLE);
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement('span');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(dot);
+    popupImg.src = mentor.image;
+    popupImg.alt = mentor.name;
+    popupName.textContent = mentor.name;
+    popupRole.textContent = mentor.role;
+    popupDetail.innerHTML = mentor.detail;
+
+    mentorOverlay.classList.add("open");
+    mentorOverlay.setAttribute("aria-hidden", "false");
+    syncBodyLock();
   }
 
-  function getVisibleCount() {
-    return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : VISIBLE;
+  function closeMentorPopup() {
+    if (!mentorOverlay) {
+      return;
+    }
+
+    mentorOverlay.classList.remove("open");
+    mentorOverlay.setAttribute("aria-hidden", "true");
+    syncBodyLock();
   }
 
-  function updateCarousel() {
-    const vis = getVisibleCount();
-    const total = mentorData.length;
-    const maxIdx = Math.max(0, total - vis);
-    currentIndex = Math.min(currentIndex, maxIdx);
-
-    const cardWidth = track.children[0]?.offsetWidth || 0;
-    const gap = 24;
-    const offset = currentIndex * (cardWidth + gap);
-    track.style.transform = `translateX(-${offset}px)`;
-
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= maxIdx;
-
-    // dots
-    const dotsTotal = Math.ceil(total / vis);
-    const dots = dotsWrap.querySelectorAll('span');
-    dots.forEach((d, i) => d.classList.toggle('active', i === Math.floor(currentIndex / vis)));
-  }
-
-  function goTo(slideIdx) {
-    const vis = getVisibleCount();
-    currentIndex = slideIdx * vis;
-    updateCarousel();
-  }
-
-  prevBtn.addEventListener('click', () => { currentIndex = Math.max(0, currentIndex - 1); updateCarousel(); });
-  nextBtn.addEventListener('click', () => {
-    const vis = getVisibleCount();
-    const maxIdx = Math.max(0, mentorData.length - vis);
-    currentIndex = Math.min(currentIndex + 1, maxIdx);
-    updateCarousel();
-  });
-
-  window.addEventListener('resize', () => { currentIndex = 0; updateCarousel(); });
-
-  // Click card to open popup
-  document.querySelectorAll('.mentor-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const idx = parseInt(card.dataset.mentor);
-      const m = mentorData[idx];
-      document.getElementById('popupImg').src = m.img;
-      document.getElementById('popupImg').alt = m.name;
-      document.getElementById('popupName').textContent = m.name;
-      document.getElementById('popupRole').textContent = m.role;
-      document.getElementById('popupDetail').innerHTML = m.detail;
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-
-      document.querySelectorAll('.mentor-card').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
+  mentorCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      openMentorPopup(Number(card.dataset.mentor));
     });
   });
 
-  function closePopup() {
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-    document.querySelectorAll('.mentor-card').forEach(c => c.classList.remove('active'));
-  }
-
-  popupClose.addEventListener('click', closePopup);
-  overlay.addEventListener('click', e => { if (e.target === overlay) closePopup(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
-
-  // Init carousel after layout
-  setTimeout(updateCarousel, 50);
-
-  /* ---------- Smooth scroll for CTA nav ---------- */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-});
-
-// ==========================================================================
-// REGISTRATION MODAL FUNCTIONALITY
-// ==========================================================================
-document.addEventListener("DOMContentLoaded", () => {
-  // Modal control utilities
-  function openModal(modalEl) {
-    modalEl.classList.add("open");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeModal(modalEl) {
-    modalEl.classList.remove("open");
-    document.body.style.overflow = "";
-  }
-
-  // Set up generic close buttons for all modals
-  const closeButtons = document.querySelectorAll(".modal-close");
-  closeButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      const openModalEl = e.target.closest(".modal-overlay");
-      if (openModalEl) closeModal(openModalEl);
-    });
-  });
-
-  // Close modal on overlay click
-  const modalOverlays = document.querySelectorAll(".modal-overlay");
-  modalOverlays.forEach(overlay => {
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) {
-        closeModal(overlay);
-      }
-    });
-  });
-
-  // Escape Key listener to close modal
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const activeModal = document.querySelector(".modal-overlay.open");
-      if (activeModal) closeModal(activeModal);
+  popupClose?.addEventListener("click", closeMentorPopup);
+  mentorOverlay?.addEventListener("click", (event) => {
+    if (event.target === mentorOverlay) {
+      closeMentorPopup();
     }
   });
 
-  // Registration form modal
-  const registerModal = document.getElementById("registerModal");
   const registerForm = document.getElementById("registerForm");
   const registerSuccess = document.getElementById("registerSuccess");
-  const regTriggers = document.querySelectorAll(".btn-register-trigger");
+  const registerTriggers = document.querySelectorAll(".btn-register-trigger");
+  const closeModalButton = registerModal?.querySelector(".modal-close");
+  const closeSuccessButton = registerModal?.querySelector(".btn-close-success");
 
-  regTriggers.forEach(btn => {
-    btn.addEventListener("click", () => {
-      registerForm.reset();
-      registerForm.style.display = "flex";
-      registerSuccess.style.display = "none";
-      openModal(registerModal);
-    });
+  function openRegisterModal() {
+    if (!registerModal || !registerForm || !registerSuccess) {
+      return;
+    }
+
+    registerForm.reset();
+    registerForm.hidden = false;
+    registerSuccess.hidden = true;
+    registerModal.classList.add("open");
+    registerModal.setAttribute("aria-hidden", "false");
+    closeMobileMenu();
+    syncBodyLock();
+  }
+
+  function closeRegisterModal() {
+    if (!registerModal) {
+      return;
+    }
+
+    registerModal.classList.remove("open");
+    registerModal.setAttribute("aria-hidden", "true");
+    syncBodyLock();
+  }
+
+  registerTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", openRegisterModal);
   });
 
-  // Form Submission
-  if (registerForm) {
-    registerForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+  closeModalButton?.addEventListener("click", closeRegisterModal);
+  closeSuccessButton?.addEventListener("click", closeRegisterModal);
+  registerModal?.addEventListener("click", (event) => {
+    if (event.target === registerModal) {
+      closeRegisterModal();
+    }
+  });
 
-      const formData = {
-        fullName: document.getElementById("fullName").value,
-        phone: document.getElementById("phoneNumber").value,
-        email: document.getElementById("email").value,
-        birthYear: document.getElementById("birthYear").value,
-        role: document.getElementById("role").value,
-        message: document.getElementById("message").value,
-      };
+  registerForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-      console.log("Submitting Register Form:", formData);
+    const submitButton = registerForm.querySelector("button[type='submit']");
+    if (!(submitButton instanceof HTMLButtonElement) || !registerSuccess) {
+      return;
+    }
 
-      const submitBtn = registerForm.querySelector("button[type='submit']");
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Đang gửi thông tin...";
+    submitButton.disabled = true;
+    submitButton.textContent = "Đang gửi thông tin...";
 
-      setTimeout(() => {
-        registerForm.style.display = "none";
-        registerSuccess.style.display = "block";
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Gửi thông tin đăng ký";
-      }, 1200);
-    });
-  }
+    window.setTimeout(() => {
+      registerForm.hidden = true;
+      registerSuccess.hidden = false;
+      submitButton.disabled = false;
+      submitButton.textContent = "Gửi thông tin đăng ký";
+    }, 900);
+  });
 
-  const btnCloseSuccess = document.querySelector(".btn-close-success");
-  if (btnCloseSuccess) {
-    btnCloseSuccess.addEventListener("click", () => {
-      closeModal(registerModal);
-    });
-  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") {
+      return;
+    }
+
+    if (mentorOverlay?.classList.contains("open")) {
+      closeMentorPopup();
+    }
+
+    if (registerModal?.classList.contains("open")) {
+      closeRegisterModal();
+    }
+  });
 });

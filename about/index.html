@@ -2,360 +2,382 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us – Hiểu-Chuyện</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Hiểu-Chuyện</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="../home/index.html" class="nav-logo">
-
-        <svg class="logo-svg">
-        </svg>
-
-        <div class="logo-text">
-          <span class="logo-name">HIẾU-CHUYỆN</span>
-        </div>
+    <div class="section-shell nav-inner">
+      <a href="../home/index.html" class="nav-logo" aria-label="Về trang chủ Hiểu-Chuyện">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-copy">
+          <strong>Hiểu-Chuyện</strong>
+        </span>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
-        <a href="../home/index.html" class="nav-item">Homepage</a>
-        <a href="../about/index.html" class="nav-item active">About Us</a>
-        <a href="../hieu/index.html" class="nav-item">Hiểu</a>
-        <a href="../chuyen-tro/chuyen.html" class="nav-item">Chuyện trò</a>
-        <a href="../chuyen-tro/index.html" class="nav-item">Tự viết câu chuyện</a>
+      <nav class="nav-menu" aria-label="Điều hướng chính">
+        <a href="../home/index.html">Trang chủ</a>
+        <a href="../about/index.html" class="active">About Us</a>
+        <a href="../hieu/index.html">Hiểu</a>
+        <a href="../chuyen-tro/chuyen.html">Chuyện trò</a>
+        <a href="../chuyen-tro/index.html">Tự viết câu chuyện</a>
       </nav>
 
-      <button class="btn-cta-nav btn-register-trigger">ĐĂNG KÝ NGAY</button>
+      <button class="btn btn-nav btn-register-trigger" type="button">Đăng ký ngay</button>
 
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-    </div>
-    
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="../home/index.html">Trang chủ</a>
-      <a href="../about/index.html" class="active">About Us</a>
-      <a href="../hieu/index.html">Hiểu</a>
-      <a href="../chuyen-tro/index.html">Chuyện trò</a>
-      <a href="../tu-viet/index.html">Tự viết câu chuyện</a>
-      <button class="btn-cta-nav btn-register-trigger btn-yellow ">ĐĂNG KÝ NGAY</button>
     </div>
   </header>
 
-  <!-- ===== SECTION 1: HERO ===== -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="image/Section1_1.jpg" alt="Hero background" class="hero-bg-img" />
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../home/index.html">Trang chủ</a>
+    <a href="../about/index.html" class="active">About Us</a>
+    <a href="../hieu/index.html">Hiểu</a>
+    <a href="../chuyen-tro/chuyen.html">Chuyện trò</a>
+    <a href="../chuyen-tro/index.html">Tự viết câu chuyện</a>
+    <button class="btn btn-mobile btn-register-trigger" type="button">Đăng ký ngay</button>
+  </div>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-media">
+        <img src="image/Section4_1.JPG" alt="Học sinh và đội ngũ Hiểu-Chuyện chụp hình cùng cộng đồng">
+      </div>
       <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <span class="hero-tag">ABOUT US</span>
-      <h1 class="hero-heading">
-        <img src="image/Section1_2.jpg" alt="Mọi hành trình đều bắt đầu từ sự thấu hiểu" class="hero-title-img" />
-      </h1>
-      <p class="hero-desc">
-        <img src="image/Section1_3.jpg" alt="Mô tả chương trình" class="hero-desc-img" />
-      </p>
-      <div class="hero-scroll">
-        <span>↓ Kéo xuống để khám phá</span>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== SECTION 2: GIỚI THIỆU ===== -->
-  <section class="intro">
-    <div class="intro-inner">
-      <!-- Left: images grid -->
-      <div class="intro-images" data-aos="fade-right">
-        <div class="img-grid">
-          <div class="img-item img-main">
-            <img src="image/Section2_1.jpg" alt="Tranh biện" />
+      <div class="section-shell hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="section-kicker">Documentary Storytelling</span>
+          <h1>Mỗi hành trình trưởng thành đều bắt đầu từ một lần được lắng nghe.</h1>
+          <p class="hero-lead">
+            Hiểu-Chuyện được thiết kế như một hành trình kể chuyện chậm: đi vào thực tế, đối thoại với khác biệt,
+            rồi trở về để mỗi bạn nhỏ viết rõ hơn câu chuyện của chính mình.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#story" class="btn btn-primary">Khám phá hành trình</a>
+            <button class="btn btn-ghost btn-register-trigger" type="button">Nhận tư vấn</button>
+          </div>
+
+          <div class="scroll-cue" aria-hidden="true">
+            <span></span>
+            <p>Kéo xuống để đi qua từng chương câu chuyện</p>
           </div>
         </div>
-      </div>
 
-      <!-- Right: text -->
-      <div class="intro-text" data-aos="fade-left">
-        <span class="section-eyebrow">GIỚI THIỆU TRẠI HÈ</span>
-        <h2 class="intro-title">HIỂU-CHUYỆN</h2>
-        <div class="intro-divider"></div>
-        <blockquote class="intro-quote" id="introQuote">
-          "Nuôi dưỡng một bạn nhỏ hiểu chuyện – biết thấu hiểu, biết chuyện trò và có hành trang để viết nên câu chuyện
-          của mình."
+        <aside class="hero-note" data-reveal>
+          <span class="note-label">Field Notes</span>
+          <h2>Mù Cang Chải</h2>
+          <p>
+            Một không gian học tập nơi chất liệu đời sống, đối thoại và phản tư đi cùng nhau để hình thành bản lĩnh.
+          </p>
+          <ul>
+            <li>The Sage: tư duy, chiều sâu, sự thấu cảm.</li>
+            <li>The Explorer: trải nghiệm thực tế, dịch chuyển, khám phá.</li>
+            <li>Nhịp kể chậm, nhiều khoảng trắng, chuyển động mềm.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="intro" id="story">
+      <div class="section-shell intro-grid">
+        <div class="intro-copy" data-reveal>
+          <span class="section-kicker">About Hiểu-Chuyện</span>
+          <h2>Chúng tôi kể một mùa hè như kể một bộ phim tài liệu sống.</h2>
+          <p class="intro-sapo">
+            Không chỉ dạy tranh biện, Hiểu-Chuyện tạo ra một nhịp quan sát, đối thoại và sống cùng cộng đồng để mỗi
+            trải nghiệm đều có chiều sâu.
+          </p>
+          <blockquote>
+            “Nuôi dưỡng một bạn nhỏ hiểu chuyện - biết thấu hiểu, biết chuyện trò và có hành trang để viết nên câu
+            chuyện của mình.”
+          </blockquote>
+          <p>
+            Bố cục của chương trình được xây dựng như một narrative-driven design: mở đầu bằng việc lắng nghe, tiếp nối
+            bằng những va chạm thực tế, và khép lại bằng phản tư cá nhân. Mỗi phần không đứng riêng lẻ, mà dẫn dắt
+            nhau như các chương trong một hành trình trưởng thành.
+          </p>
+        </div>
+
+        <div class="intro-collage" data-reveal>
+          <figure class="collage-card collage-large">
+            <img src="image/Section2_1.jpg" alt="Buổi học nhóm của học sinh Hiểu-Chuyện">
+          </figure>
+          <figure class="collage-card collage-top">
+            <img src="image/Section1_1.jpg" alt="Hành trình di chuyển tới Mù Cang Chải">
+          </figure>
+          <figure class="collage-card collage-bottom">
+            <img src="image/section3_2.jpg" alt="Khoảnh khắc lắng nghe trong lớp học">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="field-story">
+      <div class="section-shell field-layout">
+        <div class="field-visual" data-reveal>
+          <div class="field-photo-frame">
+            <img id="storyImage" src="image/section3_1.jpg" alt="Tranh biện và lắng nghe trong lớp học">
+            <span class="field-stamp">Story Archive</span>
+          </div>
+
+          <div class="field-caption">
+            <span id="storyKicker">Khởi đầu từ tranh biện</span>
+            <p id="storyNote">Các bạn nhỏ học cách gọi tên quan điểm của mình, nhưng đồng thời phải hiểu điều gì nằm sau
+              quan điểm của người khác.</p>
+          </div>
+        </div>
+
+        <div class="field-steps">
+          <article class="field-step is-active" data-reveal data-image="image/section3_1.jpg"
+            data-alt="Học sinh trong một phiên tranh biện" data-kicker="Khởi đầu từ tranh biện"
+            data-note="Các bạn nhỏ học cách gọi tên quan điểm của mình, nhưng đồng thời phải hiểu điều gì nằm sau quan điểm của người khác.">
+            <span class="step-number">01</span>
+            <div class="step-body">
+              <span class="step-tag">Debate Beyond Classroom</span>
+              <h3>Tranh biện không dừng ở việc thắng thua.</h3>
+              <p>
+                Chúng tôi dùng debate như một điểm chạm đầu tiên để học sinh xây tư duy lập luận, phản biện và nhận ra
+                rằng mỗi bất đồng đều cần một nền tảng lắng nghe nghiêm túc.
+              </p>
+            </div>
+          </article>
+
+          <article class="field-step" data-reveal data-image="image/Section4_3.jpg"
+            data-alt="Khoảnh khắc học sinh kết nối với người khác" data-kicker="Đi tiếp bằng sự thấu hiểu"
+            data-note="Hiểu-Chuyện tạo ra những va chạm đủ thật để học sinh học cách đứng ở vị trí của người khác trước khi đưa ra kết luận.">
+            <span class="step-number">02</span>
+            <div class="step-body">
+              <span class="step-tag">Empathy In Practice</span>
+              <h3>Thấu hiểu là kỹ năng phải được rèn trong trải nghiệm thật.</h3>
+              <p>
+                Từ cộng đồng địa phương, thiên nhiên đến những câu chuyện sống, chương trình dẫn học sinh ra khỏi vùng
+                quen thuộc để cảm nhận một đời sống rộng hơn chính mình.
+              </p>
+            </div>
+          </article>
+
+          <article class="field-step" data-reveal data-image="image/Section4_4.jpg"
+            data-alt="Học sinh quan sát và sống cùng cộng đồng" data-kicker="Trở về để trưởng thành"
+            data-note="Sau quan sát và đối thoại là một bước lùi cần thiết để mỗi bạn nhỏ hiểu mình muốn trở thành ai trong cộng đồng mình đang sống.">
+            <span class="step-number">03</span>
+            <div class="step-body">
+              <span class="step-tag">Reflection & Growth</span>
+              <h3>Trưởng thành đến từ khả năng phản tư và tự viết lại câu chuyện của mình.</h3>
+              <p>
+                Điều chúng tôi tìm kiếm không chỉ là kiến thức mới, mà là một sự dịch chuyển bên trong: biết sống có
+                trách nhiệm, có bản lĩnh và có khả năng tạo ra giá trị.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pull-quote">
+      <div class="pull-photo">
+        <img src="image/Section1_3.jpg" alt="Những ghi chú và hành trình học tập của Hiểu-Chuyện">
+      </div>
+      <div class="quote-card" data-reveal>
+        <span class="section-kicker">A Shared Belief</span>
+        <blockquote>
+          “Không chỉ học để biết. Mà học để hiểu, để kết nối và để đủ bản lĩnh tạo ra giá trị.”
         </blockquote>
-        <p class="intro-body">
-          Tại Mù Cang Chải, chúng tôi tạo nên một môi trường để các bạn trẻ học hỏi qua tranh biện, trải nghiệm thực tế
-          và kết nối cộng đồng – từ đó trưởng thành và tạo ra những tác động tích cực.
-        </p>
+        <p>Đó là lý do Hiểu-Chuyện đặt tranh biện, cộng đồng và phản tư vào cùng một nhịp kể.</p>
+      </div>
+      <div class="pull-photo">
+        <img src="image/Section4_2.jpg" alt="Khoảnh khắc học sinh quan sát và tham gia hoạt động">
+      </div>
+    </section>
 
-        <div class="pillars">
-          <div class="pillar">
-            <div class="pillar-icon">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path
-                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-              </svg>
-            </div>
-            <strong>TRANH BIỆN</strong>
-            <p>Học cách lập luận, phản biện và diễn đạt.</p>
+    <section class="route-section">
+      <div class="section-shell route-grid">
+        <div class="route-copy" data-reveal>
+          <span class="section-kicker">Learning Route</span>
+          <h2>Một bản đồ học tập cân bằng giữa tính học thuật và trải nghiệm sống.</h2>
+          <p class="route-lead">
+            Chương trình được sắp đặt như một hành trình có nhịp, để học sinh không chỉ tiếp nhận kỹ năng mà còn
+            chuyển hóa chúng thành nhận thức và hành động.
+          </p>
+          <div class="route-note">
+            <strong>Field memo</strong>
+            <p>Khoảng trắng lớn, nhịp chuyển chậm và các điểm dừng nội dung được giữ lại để mỗi phần có độ lắng riêng,
+              đúng tinh thần documentary storytelling.</p>
           </div>
-          <div class="pillar-arrow">→</div>
-          <div class="pillar">
-            <div class="pillar-icon">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <strong>TRẢI NGHIỆM</strong>
-            <p>Học từ thực tế, thiên nhiên và con người địa phương.</p>
-          </div>
-          <div class="pillar-arrow">→</div>
-          <div class="pillar">
-            <div class="pillar-icon">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
-            <strong>THẤU HIỂU</strong>
-            <p>Lắng nghe, đồng cảm và thấu hiểu.</p>
-          </div>
-          <div class="pillar-arrow">→</div>
-          <div class="pillar">
-            <div class="pillar-icon">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M3 7l9-4 9 4v10l-9 4-9-4V7z" />
-              </svg>
-            </div>
-            <strong>TRƯỞNG THÀNH</strong>
-            <p>Tự tin, bản lĩnh và sẵn sàng tạo ra giá trị cho cộng đồng.</p>
-          </div>
+        </div>
+
+        <div class="route-board" data-reveal>
+          <div class="route-line" aria-hidden="true"></div>
+
+          <article class="route-stop stop-left">
+            <span class="stop-index">01</span>
+            <h3>Quan sát</h3>
+            <p>Bắt đầu từ đời sống thật, từ những gì hiện diện quanh mình thay vì các kết luận có sẵn.</p>
+          </article>
+
+          <article class="route-stop stop-right">
+            <span class="stop-index">02</span>
+            <h3>Tranh biện</h3>
+            <p>Rèn lập luận, biết gọi tên quan điểm và học cách đi qua bất đồng bằng lý trí lẫn sự tôn trọng.</p>
+          </article>
+
+          <article class="route-stop stop-left">
+            <span class="stop-index">03</span>
+            <h3>Thấu hiểu</h3>
+            <p>Lắng nghe để nhìn thấy những tầng ý nghĩa và trải nghiệm không hiện ra ngay trên bề mặt câu chuyện.</p>
+          </article>
+
+          <article class="route-stop stop-right">
+            <span class="stop-index">04</span>
+            <h3>Trưởng thành</h3>
+            <p>Biết phản tư, biết hành động và biết viết rõ hơn phiên bản mình muốn trở thành.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== SECTION 3: ĐỊNH VỊ ===== -->
-  <section class="debate-section">
-    <div class="debate-img debate-img-left" id="debateLeft">
-      <img src="image/section3_1.jpg" alt="Học sinh tranh biện A" />
-    </div>
-
-    <div class="debate-quote-card" id="debateQuote">
-      <span class="debate-label">DEBATE BEYOND CLASSROOM</span>
-      <blockquote class="debate-quote-text">
-        "Chúng tôi phản đối sự gia tăng hiện tượng chiếm dụng văn hóa ở các sản phẩm âm nhạc đại chúng."
-      </blockquote>
-      <p class="debate-sub">Không chỉ học cách tranh luận.<br />Chúng tôi học cách lắng nghe.</p>
-    </div>
-
-    <div class="debate-img debate-img-right" id="debateRight">
-      <img src="image/section3_2.jpg" alt="Học sinh tranh biện B" />
-    </div>
-  </section>
-
-  <!-- ===== SECTION 4: SỨ MỆNH ===== -->
-  <section class="mission">
-    <div class="mission-bg">
-      <img src="image/Section4_1.JPG" alt="Mission background" />
-      <div class="mission-overlay"></div>
-    </div>
-    <div class="mission-content">
-      <span class="section-eyebrow gold">SỨ MỆNH</span>
-      <h2 class="mission-title">Debate như hành trình<br />thấu hiểu và trưởng thành</h2>
-
-      <div class="mission-blocks">
-        <div class="mission-block" data-aos="fade-up" data-delay="0">
-          <div class="mission-img">
-            <img src="image/Section4_2.jpg" alt="Hiểu mình" />
+    <section class="mentor-section">
+      <div class="section-shell">
+        <div class="mentor-header" data-reveal>
+          <div>
+            <span class="section-kicker">Mentor Team</span>
+            <h2>Những người giữ nhịp cho hành trình học tập và trưởng thành.</h2>
           </div>
-          <div class="mission-block-arrow">→</div>
-          <div class="mission-block-body">
-            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-            </svg>
-            <h3>Hiểu mình</h3>
-            <p>Biết mình nghĩ gì, biết mình muốn gì.</p>
-          </div>
+          <p>
+            Mỗi mentor là một giọng kể riêng: có chiều sâu học thuật, có trải nghiệm thật và có khả năng đồng hành đủ
+            tinh tế để học sinh dám bước tiếp.
+          </p>
         </div>
 
-        <div class="mission-block" data-aos="fade-up" data-delay="150">
-          <div class="mission-img">
-            <img src="image/Section4_3.jpg" alt="Hiểu người" />
-          </div>
-          <div class="mission-block-arrow">→</div>
-          <div class="mission-block-body">
-            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path
-                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <h3>Hiểu người</h3>
-            <p>Biết cách người khác nghĩ gì, biết lắng nghe.</p>
-          </div>
-        </div>
+        <div class="mentor-grid">
+          <button class="mentor-card" type="button" data-mentor="0" data-reveal>
+            <span class="mentor-photo">
+              <img src="image/section5_1hung.png" alt="Nguyễn Nhật Hùng">
+            </span>
+            <span class="mentor-meta">
+              <strong>Nguyễn Nhật Hùng</strong>
+              <em>Đồng sáng lập & Giám đốc học thuật</em>
+              <small>Định hình chiều sâu học thuật của Hiểu-Chuyện qua tư duy phản biện và thiết kế trải nghiệm học tập.</small>
+            </span>
+          </button>
 
-        <div class="mission-block" data-aos="fade-up" data-delay="300">
-          <div class="mission-img">
-            <img src="image/Section4_4.jpg" alt="Hiểu đời" />
-          </div>
-          <div class="mission-block-arrow">→</div>
-          <div class="mission-block-body">
-            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
-            </svg>
-            <h3>Hiểu đời</h3>
-            <p>Biết cách sống cùng cộng đồng, và tạo ra giá trị.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <button class="mentor-card" type="button" data-mentor="1" data-reveal>
+            <span class="mentor-photo">
+              <img src="image/section5_linh.png" alt="Nguyễn Khánh Linh">
+            </span>
+            <span class="mentor-meta">
+              <strong>Nguyễn Khánh Linh</strong>
+              <em>Đồng sáng lập & Giám đốc điều hành</em>
+              <small>Kết nối tinh thần giáo dục khai phóng với cấu trúc chương trình và trải nghiệm thực tế.</small>
+            </span>
+          </button>
 
-  <!-- ===== SECTION 5: MENTOR ===== -->
-  <section class="mentor-section">
-    <div class="mentor-header">
-      <span class="section-eyebrow">ĐỘI NGŨ MENTOR</span>
-      <h2 class="mentor-title">Những điểm tựa vững chãi.</h2>
-      <p class="mentor-sub">Những người truyền cảm hứng bằng chính câu chuyện của họ.</p>
-    </div>
+          <button class="mentor-card" type="button" data-mentor="2" data-reveal>
+            <span class="mentor-photo">
+              <img src="image/section5_hoang.png" alt="Vũ Hoàng Anh">
+            </span>
+            <span class="mentor-meta">
+              <strong>Vũ Hoàng Anh</strong>
+              <em>Huấn luyện viên</em>
+              <small>Mang tới năng lượng debate hiện đại, rõ ràng và gần gũi trong các buổi luyện lập luận.</small>
+            </span>
+          </button>
 
-    <div class="mentor-carousel-wrap">
-      <button class="carousel-btn prev" id="prevBtn" aria-label="Previous">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </button>
+          <button class="mentor-card" type="button" data-mentor="3" data-reveal>
+            <span class="mentor-photo">
+              <img src="image/section5_trang.png" alt="Nguyễn Quỳnh Trang">
+            </span>
+            <span class="mentor-meta">
+              <strong>Nguyễn Quỳnh Trang</strong>
+              <em>Huấn luyện viên</em>
+              <small>Giữ nhịp học tập ổn định, sắc nét và có tính tổ chức cho các hoạt động phản biện, trình bày.</small>
+            </span>
+          </button>
 
-      <div class="mentor-track-outer">
-        <div class="mentor-track" id="mentorTrack">
+          <button class="mentor-card" type="button" data-mentor="4" data-reveal>
+            <span class="mentor-photo">
+              <img src="image/section5_anh.png" alt="Đỗ Thị Ngọc Anh">
+            </span>
+            <span class="mentor-meta">
+              <strong>Đỗ Thị Ngọc Anh</strong>
+              <em>Huấn luyện viên</em>
+              <small>Tạo ra môi trường an toàn nhưng nhiều thử thách để học sinh dám phát biểu và dám thử sức.</small>
+            </span>
+          </button>
 
-          <div class="mentor-card" data-mentor="0">
-            <div class="mentor-img-wrap">
-              <img src="image/section5_1hung.png" alt="Nguyễn Nhật Hùng" onerror="this.src='image/placeholder.jpg'" />
-            </div>
-            <div class="mentor-info">
-              <h4>Nguyễn Nhật Hùng</h4>
-              <span>Đồng sáng lập & Giám đốc học thuật</span>
-            </div>
-          </div>
-
-          <div class="mentor-card" data-mentor="1">
-            <div class="mentor-img-wrap">
-              <img src="image/section5_linh.png" alt="Nguyễn Khánh Linh" onerror="this.src='image/placeholder.jpg'" />
-            </div>
-            <div class="mentor-info">
-              <h4>Nguyễn Khánh Linh</h4>
-              <span>Đồng sáng lập & Giám đốc Điều hành</span>
-            </div>
-          </div>
-
-          <div class="mentor-card" data-mentor="2">
-            <div class="mentor-img-wrap">
-              <img src="image/section5_hoang.png" alt="Vũ Hoàng Anh" onerror="this.src='image/placeholder.jpg'" />
-            </div>
-            <div class="mentor-info">
-              <h4>Vũ Hoàng Anh</h4>
-              <span>Huấn luyện viên</span>
-            </div>
-          </div>
-
-          <div class="mentor-card" data-mentor="3">
-            <div class="mentor-img-wrap">
-              <img src="image/section5_trang.png" alt="Nguyễn Quỳnh Trang" onerror="this.src='image/placeholder.jpg'" />
-            </div>
-            <div class="mentor-info">
-              <h4>Nguyễn Quỳnh Trang</h4>
-              <span>Huấn luyện viên</span>
-            </div>
-          </div>
-
-          <div class="mentor-card" data-mentor="4">
-            <div class="mentor-img-wrap">
-              <img src="image/section5_anh.png" alt="Đỗ Thị Ngọc Anh" onerror="this.src='image/placeholder.jpg'" />
-            </div>
-            <div class="mentor-info">
-              <h4>Đỗ Thị Ngọc Anh</h4>
-              <span>Huấn luyện viên</span>
-            </div>
-          </div>
-
-          <div class="mentor-card" data-mentor="5">
-            <div class="mentor-img-wrap">
-              <img src="image/section5_haianh.png" alt="Lương Hải Anh" onerror="this.src='image/placeholder.jpg'" />
-            </div>
-            <div class="mentor-info">
-              <h4>Lương Hải Anh</h4>
-              <span>Huấn luyện viên</span>
-            </div>
-          </div>
-
+          <button class="mentor-card" type="button" data-mentor="5" data-reveal>
+            <span class="mentor-photo">
+              <img src="image/section5_haianh.png" alt="Lương Hải Anh">
+            </span>
+            <span class="mentor-meta">
+              <strong>Lương Hải Anh</strong>
+              <em>Huấn luyện viên</em>
+              <small>Khuyến khích học sinh xây dựng tiếng nói cá nhân dựa trên tư duy phản biện và sự lắng nghe.</small>
+            </span>
+          </button>
         </div>
       </div>
+    </section>
 
-      <button class="carousel-btn next" id="nextBtn" aria-label="Next">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M9 18l6-6-6-6" />
-        </svg>
-      </button>
-    </div>
+    <section class="cta-section">
+      <div class="cta-media">
+        <img src="image/section6_1.jpg" alt="Khoảnh khắc kết nối của học sinh trong hành trình Hiểu-Chuyện">
+      </div>
+      <div class="cta-overlay"></div>
 
-    <div class="carousel-dots" id="carouselDots"></div>
-  </section>
-
-  <!-- Mentor Detail Popup -->
-  <div class="mentor-popup-overlay" id="mentorOverlay">
-    <div class="mentor-popup" id="mentorPopup">
-      <button class="popup-close" id="popupClose">✕</button>
-      <div class="popup-inner">
-        <div class="popup-img">
-          <img id="popupImg" src="" alt="" />
+      <div class="section-shell cta-content" data-reveal>
+        <span class="section-kicker">Next Chapter</span>
+        <h2>Sẵn sàng bước vào hành trình của sự thấu hiểu?</h2>
+        <p>Khám phá chapter tiếp theo để thấy cách Hiểu-Chuyện đưa học sinh đi sâu vào đời sống, con người và cộng
+          đồng.</p>
+        <div class="cta-actions">
+          <a href="../hieu/index.html" class="btn btn-primary">Khám phá Hiểu</a>
+          <button class="btn btn-link btn-register-trigger" type="button">Đăng ký hành trình</button>
         </div>
-        <div class="popup-body">
-          <h3 id="popupName"></h3>
-          <p class="popup-role" id="popupRole"></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="mentor-popup-overlay" id="mentorOverlay" aria-hidden="true">
+    <div class="mentor-popup" role="dialog" aria-modal="true" aria-labelledby="popupName">
+      <button class="popup-close" id="popupClose" type="button" aria-label="Đóng thông tin mentor">&times;</button>
+      <div class="popup-layout">
+        <div class="popup-image">
+          <img id="popupImg" src="image/section5_1hung.png" alt="">
+        </div>
+        <div class="popup-content">
+          <span class="popup-kicker">Mentor Profile</span>
+          <h3 id="popupName">Nguyễn Nhật Hùng</h3>
+          <p class="popup-role" id="popupRole">Đồng sáng lập & Giám đốc học thuật</p>
           <div class="popup-detail" id="popupDetail"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ===== SECTION 6: CTA ===== -->
-  <section class="cta-section" id="dang-ky">
-    <div class="cta-bg">
-      <img src="image/section6_1.jpg" alt="CTA background" />
-      <div class="cta-overlay"></div>
-    </div>
-    <div class="cta-content">
-      <h2 class="cta-heading">Sẵn sàng bước vào hành trình<br />của sự thấu hiểu?</h2>
-      <p class="cta-text">Khám phá những con người và câu chuyện đang chờ đợi tại Mù Cang Chải.</p>
-      <a href="../hieu/index.html" class="btn-cta-gold">
-        KHÁM PHÁ HIỂU <span class="btn-arrow">→</span>
-      </a>
-    </div>
-  </section>
-
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- REGISTRATION MODAL -->
-  <div class="modal-overlay" id="registerModal">
-    <div class="modal-box form-modal">
-      <button class="modal-close" aria-label="Close modal">&times;</button>
+  <div class="modal-overlay" id="registerModal" aria-hidden="true">
+    <div class="modal-box form-modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+      <button class="modal-close" type="button" aria-label="Đóng form đăng ký">&times;</button>
       <div class="modal-scroll-container">
-        <div class="register-header text-center">
-          <h2 class="serif">ĐĂNG KÝ HÀNH TRÌNH</h2>
-          <p>Hãy cùng Hiểu-Chuyện kiến tạo nên một mùa hè ý nghĩa và đáng nhớ!</p>
+        <div class="register-header">
+          <span class="section-kicker">Registration</span>
+          <h2 id="registerTitle">Đăng ký hành trình Hiểu-Chuyện</h2>
+          <p>Đội ngũ chương trình sẽ liên hệ để tư vấn chi tiết cho bạn.</p>
         </div>
+
         <form id="registerForm" class="register-form">
           <div class="form-group">
             <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
@@ -368,15 +390,15 @@
               <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Nhập số điện thoại">
             </div>
             <div class="form-group">
-              <label for="email">Địa chỉ Email <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="email@viettel.vn">
+              <label for="email">Địa chỉ email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="email@example.com">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="birthYear">Năm sinh của học sinh</label>
-              <input type="number" id="birthYear" name="birthYear" min="2005" max="2020" placeholder="Ví dụ: 2011">
+              <input type="number" id="birthYear" name="birthYear" min="2005" max="2022" placeholder="Ví dụ: 2011">
             </div>
             <div class="form-group">
               <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
@@ -390,9 +412,9 @@
           </div>
 
           <div class="form-group">
-            <label for="message">Lời nhắn gửi hoặc điều bạn băn khoăn</label>
-            <textarea id="message" name="message" rows="3"
-              placeholder="Chia sẻ thêm thông tin hoặc những câu hỏi của bạn dành cho ban tổ chức..."></textarea>
+            <label for="message">Điều bạn đang quan tâm</label>
+            <textarea id="message" name="message" rows="4"
+              placeholder="Chia sẻ thêm điều bạn muốn tìm hiểu về chương trình..."></textarea>
           </div>
 
           <div class="form-actions">
@@ -400,14 +422,13 @@
           </div>
         </form>
 
-        <!-- Success Screen (Hidden by default) -->
-        <div id="registerSuccess" class="register-success-msg text-center" style="display: none;">
-          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-          <h3 class="serif">ĐĂNG KÝ THÀNH CÔNG!</h3>
+        <div id="registerSuccess" class="register-success-msg" hidden>
+          <div class="success-icon">✓</div>
+          <h3>Đăng ký thành công</h3>
           <p>Cảm ơn bạn đã quan tâm đến Hiểu-Chuyện Summer Camp.</p>
-          <p class="success-note">Ban tổ chức sẽ liên hệ lại với bạn qua Số điện thoại hoặc Email trong vòng 24h làm
-            việc sắp tới.</p>
-          <button class="btn btn-secondary btn-close-success">Đóng cửa sổ</button>
+          <p class="success-note">Ban tổ chức sẽ liên hệ lại với bạn qua số điện thoại hoặc email trong vòng 24 giờ làm
+            việc tiếp theo.</p>
+          <button class="btn btn-secondary btn-close-success" type="button">Đóng cửa sổ</button>
         </div>
       </div>
     </div>

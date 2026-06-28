@@ -2,558 +2,280 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tự viết câu chuyện - Hiểu-Chuyện Summer Camp</title>
-    <!-- Google Fonts: Playfair Display (Serif), Inter (Sans-serif) and Caveat (Handwritten style for feedback) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tự viết câu chuyện - Hiểu-Chuyện</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-tu-viet">
+  <header class="navbar" id="navbar">
+    <div class="section-shell nav-inner">
+      <a href="../home/index.html" class="nav-logo" aria-label="Về trang chủ Hiểu-Chuyện">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-copy">
+          <strong>Hiểu-Chuyện</strong>
+        </span>
+      </a>
 
-    <!-- Sticky Header -->
-    <header class="main-header" id="mainHeader">
-        <div class="header-container">
-            <div class="header-inner">
-                <a href="#" class="logo-area">
-                    <!-- Inline SVG Logo of Hieu-Chuyen Camp (Mountain + Sun + Text) -->
-                    <svg class="logo-svg">
+      <nav class="nav-menu" aria-label="Điều hướng chính">
+        <a href="../home/index.html">Trang chủ</a>
+        <a href="../about/index.html">About Us</a>
+        <a href="../hieu/index.html">Hiểu</a>
+        <a href="../chuyen-tro/chuyen.html">Chuyện trò</a>
+        <a href="../chuyen-tro/index.html" class="active">Tự viết câu chuyện</a>
+      </nav>
 
-                    </svg>
-                    <div class="logo-text">
-                        <span class="logo-title">HIỂU-CHUYỆN</span>
-                        <span class="logo-subtitle">SUMMER CAMP</span>
-                    </div>
-                </a>
+      <button class="btn btn-nav btn-register-trigger" type="button">Đăng ký ngay</button>
 
-                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-                <nav class="nav-menu" id="navMenu">
-                    <a href="../home/index.html" class="nav-item">Homepage</a>
-                    <a href="../about/index.html" class="nav-item">About Us</a>
-                    <a href="../hieu/index.html" class="nav-item ">Hiểu</a>
-                    <a href="../chuyen-tro/chuyen.html" class="nav-item ">Chuyện trò</a>
-                    <a href="../chuyen-tro/index.html " class="nav-item active">Tự viết câu chuyện</a>
-                </nav>
-            </div>
-            <div class="header-cta">
-                <button class="btn btn-primary btn-register-trigger">ĐĂNG KÝ NGAY</button>
-            </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../home/index.html">Trang chủ</a>
+    <a href="../about/index.html">About Us</a>
+    <a href="../hieu/index.html">Hiểu</a>
+    <a href="../chuyen-tro/chuyen.html">Chuyện trò</a>
+    <a href="../chuyen-tro/index.html" class="active">Tự viết câu chuyện</a>
+    <button class="btn btn-mobile btn-register-trigger" type="button">Đăng ký ngay</button>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media">
+        <img src="image/hero_tu_Viet.png" alt="Không gian của hành trình Tự viết câu chuyện">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="section-shell hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="section-kicker">Chapter 03 · Tự viết</span>
+          <h1>Mỗi trải nghiệm chỉ thực sự ở lại khi học sinh biết kể lại nó bằng tiếng nói của chính mình.</h1>
+          <p class="hero-lead">
+            Tự viết câu chuyện là chapter phản tư. Đây là lúc học sinh nhìn lại, sắp xếp lại cảm xúc, nhận diện điều đã
+            thay đổi và chuyển hành trình đi qua thành câu chuyện có ý nghĩa cá nhân.
+          </p>
+          <div class="hero-actions">
+            <a href="#stories" class="btn btn-primary">Đọc các câu chuyện</a>
+            <button class="btn btn-ghost btn-register-trigger" type="button">Đăng ký tư vấn</button>
+          </div>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="story-page"
-        style="background-image: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.65)), url('image/hero_tu_Viet.png');">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-badge">TỰ VIẾT</span>
-                <h1 class="hero-title">Mỗi người đều có một câu chuyện để kể.</h1>
-                <p class="hero-intro">Không phải ai cũng thay đổi sau một chuyến đi.</p>
-                <p class="hero-description">
-                    Nhưng đôi khi, chỉ một cuộc trò chuyện, một người bạn mới hay một trải nghiệm nhỏ cũng đủ để khiến
-                    chúng ta nhìn mọi thứ theo một cách khác.
-                </p>
-                <p class="hero-subtext">
-                    Đây là những câu chuyện được viết bởi chính các bạn đã từng đồng hành cùng Hiểu-Chuyện Summer Camp.
-                </p>
-
-                <div class="scroll-indicator">
-                    <div class="mouse-icon">
-                        <span class="mouse-wheel"></span>
-                    </div>
-                    <span>Cuộn để khám phá những câu chuyện</span>
-                </div>
-            </div>
-        </div>
+        <aside class="hero-note" data-reveal>
+          <span class="note-label">Reflection Brief</span>
+          <h2>Viết lại</h2>
+          <p>Chapter này giúp học sinh thấy rằng trưởng thành không chỉ là trải qua nhiều điều, mà còn là biết gọi tên
+            điều mình đã học được từ những trải nghiệm đó.</p>
+          <ul>
+            <li>Viết để hiểu mình hơn.</li>
+            <li>Nhìn lại để thấy sự thay đổi.</li>
+            <li>Biến trải nghiệm thành tiếng nói cá nhân.</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
-    <!-- Section 01: Participant Stories -->
-    <section class="stories-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-number">01</span>
-                <h2 class="section-title serif">Câu chuyện của người tham gia</h2>
-                <p class="section-subtitle">Những trải nghiệm chân thật từ các bạn học sinh sau hành trình tại Đế Xu
-                    Phình.</p>
-            </div>
-
-            <div class="stories-list">
-                <!-- Card 01 (Image left, content right) -->
-                <div class="story-card" data-aos="fade-up">
-                    <div class="story-image-wrapper">
-                        <img src="image/2.jpeg" alt="Lần đầu mình hiểu rằng lắng nghe cũng là một kỹ năng"
-                            class="story-img">
-                    </div>
-                    <div class="story-postcard">
-                        <div class="washi-tape washi-tape-top-right"></div>
-                        <div class="postmark-stamp">
-                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4"
-                                    stroke-opacity="0.3" />
-                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2" />
-                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
-                                    font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
-                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
-                                    font-size="7">SUMMER CAMP</text>
-                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2" />
-                            </svg>
-                        </div>
-                        <div class="postcard-content">
-                            <div class="postcard-meta">
-                                <span class="quote-symbol"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="badge-story-num">Câu chuyện 01</span>
-                            </div>
-                            <h3 class="story-card-title serif">Lần đầu mình hiểu rằng lắng nghe cũng là một kỹ năng</h3>
-                            <p class="story-author"><strong>Nguyễn Minh Anh</strong> • 15 tuổi</p>
-                            <p class="story-snippet">
-                                Trước đây mình luôn nghĩ ai nói to hơn sẽ là người thắng trong một cuộc tranh luận. Sau
-                                trại hè, mình nhận ra điều khiến người khác muốn lắng nghe mình lại là cách mình biết
-                                lắng nghe họ trước.
-                            </p>
-                            <button class="btn-read-story" data-story="1">Đọc câu chuyện <i
-                                    class="fa-solid fa-arrow-right-long"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 02 (Content left, image right) -->
-                <div class="story-card card-reverse" data-aos="fade-up">
-                    <div class="story-image-wrapper">
-                        <img src="image/3.jpeg"" alt=" Những người bạn mình không nghĩ sẽ gặp" class="story-img">
-                    </div>
-                    <div class="story-postcard">
-                        <div class="washi-tape washi-tape-top-left"></div>
-                        <div class="postmark-stamp">
-                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4"
-                                    stroke-opacity="0.3" />
-                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2" />
-                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
-                                    font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
-                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
-                                    font-size="7">SUMMER CAMP</text>
-                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2" />
-                            </svg>
-                        </div>
-                        <div class="postcard-content">
-                            <div class="postcard-meta">
-                                <span class="quote-symbol"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="badge-story-num">Câu chuyện 02</span>
-                            </div>
-                            <h3 class="story-card-title serif">Những người bạn mình không nghĩ sẽ gặp</h3>
-                            <p class="story-author"><strong>Lê Gia Huy</strong> • 14 tuổi</p>
-                            <p class="story-snippet">
-                                Mình đến trại hè với suy nghĩ sẽ chỉ tham gia vài hoạt động rồi về. Không ngờ điều mình
-                                nhớ nhất lại là những người bạn mới.
-                            </p>
-                            <button class="btn-read-story" data-story="2">Đọc câu chuyện <i
-                                    class="fa-solid fa-arrow-right-long"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 03 (Image left, content right) -->
-                <div class="story-card" data-aos="fade-up">
-                    <div class="story-image-wrapper">
-                        <img src="image/4.jpeg" alt="Điều mình mang về không nằm trong chiếc balo" class="story-img">
-                    </div>
-                    <div class="story-postcard">
-                        <div class="washi-tape washi-tape-top-right"></div>
-                        <div class="postmark-stamp">
-                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-dasharray="4 4"
-                                    stroke-opacity="0.3" />
-                                <circle cx="50" cy="50" r="38" stroke="currentColor" stroke-opacity="0.2" />
-                                <text x="50" y="45" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
-                                    font-size="8" font-weight="bold" letter-spacing="1">ĐẾ XU PHÌNH</text>
-                                <text x="50" y="55" text-anchor="middle" fill="currentColor" fill-opacity="0.3"
-                                    font-size="7">SUMMER CAMP</text>
-                                <line x1="20" y1="65" x2="80" y2="65" stroke="currentColor" stroke-opacity="0.2" />
-                            </svg>
-                        </div>
-                        <div class="postcard-content">
-                            <div class="postcard-meta">
-                                <span class="quote-symbol"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="badge-story-num">Câu chuyện 03</span>
-                            </div>
-                            <h3 class="story-card-title serif">Điều mình mang về không nằm trong chiếc balo</h3>
-                            <p class="story-author"><strong>Trần Khánh Linh</strong> • 16 tuổi</p>
-                            <p class="story-snippet">
-                                Điều đáng nhớ nhất sau chuyến đi không phải những món quà lưu niệm. Mà là những điều
-                                mình học được từ con người nơi đây.
-                            </p>
-                            <button class="btn-read-story" data-story="3">Đọc câu chuyện <i
-                                    class="fa-solid fa-arrow-right-long"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Section 01 -->
-            <div class="section-cta text-center">
-                <button class="btn btn-secondary" id="btnMoreStories">Xem thêm câu chuyện của các bạn <i
-                        class="fa-solid fa-arrow-right-long"></i></button>
-            </div>
+    <section class="story-section" id="stories">
+      <div class="section-shell">
+        <div class="section-header" data-reveal>
+          <span class="section-kicker">Participant Stories</span>
+          <h2>Những câu chuyện dưới đây không cố kể về “một mùa hè tuyệt vời”. Chúng kể về điều đã thực sự thay đổi.</h2>
+          <p>Mỗi bài viết là một lát cắt nhỏ: có bạn học được cách lắng nghe, có bạn mở lòng hơn với người khác, có bạn
+            mang về một cách nhìn khác với gia đình và cộng đồng.</p>
         </div>
+
+        <div class="story-list">
+          <article class="story-card" data-reveal>
+            <div class="story-image"><img src="image/2.jpeg" alt="Câu chuyện đầu tiên của học sinh sau hành trình"></div>
+            <div class="story-body">
+              <span class="story-index">Story 01</span>
+              <h3>Lần đầu mình hiểu rằng lắng nghe cũng là một kỹ năng.</h3>
+              <p class="story-author">Nguyễn Minh Anh · 15 tuổi</p>
+              <p>Trước đây, mình nghĩ ai nói nhanh hơn, mạnh hơn sẽ là người thắng trong một cuộc tranh luận. Nhưng ở
+                Hiểu-Chuyện, mentor yêu cầu cả nhóm dành thời gian chỉ để nghe trước khi phản hồi.</p>
+              <p>Sau vài buổi, mình nhận ra rất nhiều điều mình từng “phản bác” thực ra đến từ việc chưa hiểu hết câu
+                chuyện của người khác. Điều ấy làm mình nghĩ lại cả cách mình nói chuyện với bố mẹ ở nhà.</p>
+            </div>
+          </article>
+
+          <article class="story-card reverse" data-reveal>
+            <div class="story-image"><img src="image/3.jpeg" alt="Câu chuyện về tình bạn và kết nối"></div>
+            <div class="story-body">
+              <span class="story-index">Story 02</span>
+              <h3>Những người bạn mình không nghĩ sẽ gặp.</h3>
+              <p class="story-author">Lê Gia Huy · 14 tuổi</p>
+              <p>Mình vốn khá hướng nội và nghĩ mình chỉ đi một chuyến rồi về. Nhưng khi phải cùng nấu ăn, chuẩn bị cho
+                hoạt động nhóm và đi qua nhiều khoảnh khắc rất thật, mình bắt đầu kết nối với những người trước đó còn
+                là người lạ.</p>
+              <p>Điều mình mang về không chỉ là kỷ niệm, mà là cảm giác rằng kết bạn và mở lòng không khó như mình từng
+                nghĩ.</p>
+            </div>
+          </article>
+
+          <article class="story-card" data-reveal>
+            <div class="story-image"><img src="image/4.jpeg" alt="Câu chuyện về điều mang về sau chuyến đi"></div>
+            <div class="story-body">
+              <span class="story-index">Story 03</span>
+              <h3>Điều mình mang về không nằm trong chiếc balo.</h3>
+              <p class="story-author">Trần Khánh Linh · 16 tuổi</p>
+              <p>Điều đáng nhớ nhất sau chuyến đi không phải đồ lưu niệm. Mà là cách mình bắt đầu trân trọng hơn những
+                điều tưởng như bình thường: bữa cơm, cuộc trò chuyện, cơ hội học tập và thời gian ở cùng gia đình.</p>
+              <p>Khi viết lại hành trình, mình mới thấy rõ nhất mình đã đổi khác ở đâu.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Section 02: Feedback from Parents and Teachers -->
     <section class="feedback-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-number">02</span>
-                <h2 class="section-title serif">Feedback từ phụ huynh và giáo viên</h2>
-                <p class="section-subtitle">Những thay đổi của các bạn không chỉ được cảm nhận bởi chính mình mà còn
-                    được nhìn thấy từ những người đồng hành mỗi ngày.</p>
-            </div>
-
-            <div class="corkboard">
-                <!-- Feedback Card 01 - Yellow note -->
-                <div class="sticky-note note-yellow" style="--rotation: -1.5deg;">
-                    <div class="pin"></div>
-                    <div class="note-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <div class="note-body">
-                        “Sau trại hè, con chủ động kể cho cả nhà nghe nhiều câu chuyện hơn trước.”
-                    </div>
-                    <div class="note-author">
-                        <span class="author-name">Chị Nguyễn Thu Hà</span>
-                        <span class="author-role">Phụ huynh học sinh</span>
-                    </div>
-                    <div class="note-doodle doodle-heart">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path
-                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                stroke-dasharray="100" stroke-dashoffset="0" />
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Feedback Card 02 - Blue note -->
-                <div class="sticky-note note-blue" style="--rotation: 1.2deg;">
-                    <div class="washi-tape washi-tape-note"></div>
-                    <div class="note-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <div class="note-body">
-                        “Em biết lắng nghe bạn bè trong các hoạt động nhóm thay vì vội phản bác như trước.”
-                    </div>
-                    <div class="note-author">
-                        <span class="author-name">Thầy Phạm Minh Trung</span>
-                        <span class="author-role">Giáo viên</span>
-                    </div>
-                </div>
-
-                <!-- Feedback Card 03 - Cream note -->
-                <div class="sticky-note note-cream" style="--rotation: -0.8deg;">
-                    <div class="pin pin-blue"></div>
-                    <div class="note-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <div class="note-body">
-                        “Con tự giác hơn trong sinh hoạt hằng ngày và chủ động giúp đỡ bố mẹ.”
-                    </div>
-                    <div class="note-author">
-                        <span class="author-name">Anh Lê Quang Huy</span>
-                        <span class="author-role">Phụ huynh</span>
-                    </div>
-                    <div class="note-doodle doodle-smile">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10" stroke-dasharray="100" />
-                            <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke-linecap="round" />
-                            <line x1="9" y1="9" x2="9.01" y2="9" stroke-linecap="round" stroke-width="2" />
-                            <line x1="15" y1="9" x2="15.01" y2="9" stroke-linecap="round" stroke-width="2" />
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Feedback Card 04 - Green note -->
-                <div class="sticky-note note-green" style="--rotation: 1.8deg;">
-                    <div class="washi-tape washi-tape-note-slant"></div>
-                    <div class="note-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <div class="note-body">
-                        “Điều tôi ấn tượng nhất là các em tự tin hơn khi trình bày ý kiến nhưng vẫn tôn trọng góc nhìn
-                        của người khác.”
-                    </div>
-                    <div class="note-author">
-                        <span class="author-name">Cô Vũ Mai Anh</span>
-                        <span class="author-role">Giáo viên đồng hành</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Section 02 -->
-            <div class="section-cta text-center">
-                <button class="btn btn-outline" id="btnMoreFeedback">Xem thêm feedback <i
-                        class="fa-solid fa-arrow-right-long"></i></button>
-            </div>
+      <div class="section-shell">
+        <div class="section-header" data-reveal>
+          <span class="section-kicker">Feedback Wall</span>
+          <h2>Những thay đổi ấy cũng được nhìn thấy từ những người đồng hành gần nhất.</h2>
+          <p>Phụ huynh và giáo viên thường nhận ra rất nhanh sự chuyển biến trong cách học sinh lắng nghe, chia sẻ và tự
+            giác hơn với chính cuộc sống của mình.</p>
         </div>
+
+        <div class="feedback-board" data-reveal>
+          <article class="feedback-note note-yellow">
+            <span class="note-pin"></span>
+            <p>“Sau trại hè, con chủ động kể cho cả nhà nghe nhiều câu chuyện hơn trước.”</p>
+            <small>Phụ huynh học sinh</small>
+          </article>
+
+          <article class="feedback-note note-blue">
+            <span class="note-tape"></span>
+            <p>“Em biết nghe bạn bè trong hoạt động nhóm thay vì phản bác ngay như trước.”</p>
+            <small>Giáo viên</small>
+          </article>
+
+          <article class="feedback-note note-green">
+            <span class="note-pin note-pin-blue"></span>
+            <p>“Con tự giác hơn trong sinh hoạt và chủ động giúp đỡ bố mẹ.”</p>
+            <small>Gia đình học sinh</small>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer & Final CTA -->
-    <footer class="footer-section">
-        <!-- Subtle Mountain Line Drawing Overlay -->
-        <div class="mountain-overlay">
-            <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M0,224L120,202.7C240,181,480,139,720,144C960,149,1200,203,1320,229.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-                    fill="#071424" fill-opacity="0.3"></path>
-                <path
-                    d="M0,192L80,213.3C160,235,320,277,480,288C640,299,800,277,960,256C1120,235,1280,213,1360,202.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-                    fill="#050e1b" fill-opacity="0.5"></path>
-            </svg>
+    <section class="showcase-section">
+      <div class="section-shell showcase-grid">
+        <div class="showcase-copy" data-reveal>
+          <span class="section-kicker">Story To Action</span>
+          <h2>Khi câu chuyện được viết lại rõ hơn, học sinh bắt đầu thấy mình có thể làm gì với nó.</h2>
+          <p class="showcase-sapo">
+            Việc phản tư không kết thúc ở cảm xúc. Nó dẫn đến khả năng trình bày dự án, kể lại hành trình, chia sẻ quan
+            điểm và nhận diện cách mình muốn đóng góp sau chuyến đi.
+          </p>
+          <p>
+            Từ những bài viết tay, phần trình bày, hoạt động dự án đến khoảnh khắc nhận chứng nhận, chapter cuối là nơi
+            tiếng nói cá nhân được định hình rõ hơn và bền hơn.
+          </p>
         </div>
 
-        <div class="container footer-container">
-            <div class="footer-cta-box">
-                <div class="paper-plane-decoration">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                        class="paper-plane-svg">
-                        <path d="M22 2L2 8.66L11.5 12.5L22 2ZM22 2L15.33 22L11.5 12.5L22 2Z" />
-                        <path d="M11.5 12.5L14.5 15.5" />
-                        <!-- Wind trails -->
-                        <path d="M2 17C5 17 6 15 8 16" stroke-dasharray="2 2" />
-                        <path d="M5 20C8 20 9 18 11 19" stroke-dasharray="2 2" />
-                    </svg>
-                </div>
-                <div class="footer-cta-text">
-                    <h2 class="serif">Câu chuyện tiếp theo có thể là của bạn.</h2>
-                    <p class="cta-bold">Mỗi người sẽ có một hành trình khác nhau.</p>
-                    <p class="cta-normal">Điều quan trọng không phải bạn thay đổi nhanh đến đâu, mà là bạn sẵn sàng bắt
-                        đầu từ những trải nghiệm đầu tiên.</p>
-                </div>
-                <div class="footer-cta-action">
-                    <button class="btn btn-primary btn-cta-large btn-register-trigger">Đăng ký Hiểu-Chuyện Summer Camp
-                        <i class="fa-solid fa-chevron-right"></i></button>
-                    <span class="footer-note-text">Cùng nhau tạo nên một mùa hè đáng nhớ!</span>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 HIỂU-CHUYỆN Summer Camp. All Rights Reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Trang chủ</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Liên hệ</a>
-                </div>
-            </div>
+        <div class="showcase-collage" data-reveal>
+          <figure class="showcase-large"><img src="image/1.jpeg" alt="Khoảnh khắc tổng kết và trình bày dự án"></figure>
+          <figure><img src="image/5.jpeg" alt="Viết tay và phản tư sau trải nghiệm"></figure>
+          <figure><img src="image/6.jpeg" alt="Trình bày câu chuyện của bản thân"></figure>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- ==================== MODALS / POPUPS ==================== -->
+    <section class="cta-section">
+      <div class="cta-media">
+        <img src="image/1.jpeg" alt="Khoảnh khắc khép lại hành trình Hiểu-Chuyện">
+      </div>
+      <div class="cta-overlay"></div>
 
-    <!-- Modal 1: Individual Story Popup (Template updated dynamically via JS) -->
-    <div class="modal-overlay" id="storyModal">
-        <div class="modal-box postcard-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="story-modal-header">
-                    <span class="badge-story-num" id="modalStoryBadge">Câu chuyện 01</span>
-                    <h2 class="story-modal-title serif" id="modalStoryTitle">Tiêu đề câu chuyện</h2>
-                    <p class="story-modal-author" id="modalStoryAuthor">Nguyễn Minh Anh • 15 tuổi</p>
-                </div>
-
-                <div class="story-modal-body">
-                    <div class="story-full-text" id="modalStoryText">
-                        <!-- Full story paragraphs loaded by JS -->
-                    </div>
-
-                    <!-- Timeline Flow visualization -->
-                    <div class="story-timeline-wrapper">
-                        <h4 class="timeline-title serif">Hành trình của mình</h4>
-                        <div class="story-timeline" id="modalStoryTimeline">
-                            <!-- Timeline steps loaded by JS -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="section-shell cta-content" data-reveal>
+        <span class="section-kicker">Complete Journey</span>
+        <h2>Khi một bạn nhỏ hiểu đời sống, biết chuyện trò và có thể tự viết câu chuyện của mình, hành trình ấy mới đủ
+          trọn.</h2>
+        <p>Đây là chapter cuối của web, nhưng cũng là nơi người xem nhìn rõ nhất ý nghĩa của toàn bộ chương trình.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-register-trigger" type="button">Tham gia hành trình</button>
+          <a href="../about/index.html" class="btn btn-link">Quay lại About Us</a>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="registerModal" aria-hidden="true">
+    <div class="modal-box form-modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+      <button class="modal-close" type="button" aria-label="Đóng form đăng ký">&times;</button>
+      <div class="modal-scroll-container">
+        <div class="register-header">
+          <span class="section-kicker">Registration</span>
+          <h2 id="registerTitle">Đăng ký hành trình Hiểu-Chuyện</h2>
+          <p>Điền thông tin để đội ngũ chương trình liên hệ và tư vấn chi tiết cho bạn.</p>
+        </div>
+
+        <form id="registerForm" class="register-form">
+          <div class="form-group">
+            <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Nhập đầy đủ họ và tên">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phoneNumber">Số điện thoại liên hệ <span class="required">*</span></label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Nhập số điện thoại">
+            </div>
+            <div class="form-group">
+              <label for="email">Địa chỉ email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="email@example.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="birthYear">Năm sinh của học sinh</label>
+              <input type="number" id="birthYear" name="birthYear" min="2005" max="2022" placeholder="Ví dụ: 2011">
+            </div>
+            <div class="form-group">
+              <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Chọn vai trò</option>
+                <option value="parent">Phụ huynh học sinh</option>
+                <option value="student">Học sinh tự đăng ký</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Điều bạn đang quan tâm</label>
+            <textarea id="message" name="message" rows="4"
+              placeholder="Chia sẻ thêm điều bạn muốn tìm hiểu về chương trình..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">Gửi thông tin đăng ký</button>
+          </div>
+        </form>
+
+        <div id="registerSuccess" class="register-success-msg" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h3>Đăng ký thành công</h3>
+          <p>Cảm ơn bạn đã quan tâm tới Hiểu-Chuyện Summer Camp.</p>
+          <p class="success-note">Đội ngũ chương trình sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+          <button class="btn btn-secondary btn-close-success" type="button">Đóng cửa sổ</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Modal 2: "Xem thêm câu chuyện của các bạn" Popup -->
-    <div class="modal-overlay" id="moreStoriesModal">
-        <div class="modal-box list-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="modal-header-simple text-center">
-                    <h2 class="serif modal-main-title">Những câu chuyện khác</h2>
-                    <p class="modal-main-desc">Góc nhìn đa chiều từ những người đồng hành trong hành trình trải nghiệm
-                    </p>
-                </div>
-                <div class="other-stories-grid">
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-feather-pointed"></i></div>
-                        <div class="other-story-body">
-                            <p>Lần đầu mình dám đứng trước đám đông.</p>
-                        </div>
-                    </div>
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-heart"></i></div>
-                        <div class="other-story-body">
-                            <p>Chuyến đi giúp mình hiểu mẹ hơn.</p>
-                        </div>
-                    </div>
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                        <div class="other-story-body">
-                            <p>Người bạn đầu tiên ở Đế Xu Phình.</p>
-                        </div>
-                    </div>
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-bowl-food"></i></div>
-                        <div class="other-story-body">
-                            <p>Một bữa cơm mình sẽ nhớ rất lâu.</p>
-                        </div>
-                    </div>
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-comment-dots"></i></div>
-                        <div class="other-story-body">
-                            <p>Mình không còn sợ nói sai.</p>
-                        </div>
-                    </div>
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-child"></i></div>
-                        <div class="other-story-body">
-                            <p>Điều mình học được từ một em nhỏ trong bản.</p>
-                        </div>
-                    </div>
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-seedling"></i></div>
-                        <div class="other-story-body">
-                            <p>Trưởng thành từ những việc rất nhỏ.</p>
-                        </div>
-                    </div>
-                    <div class="other-story-item">
-                        <div class="other-story-icon"><i class="fa-solid fa-camera"></i></div>
-                        <div class="other-story-body">
-                            <p>Mình mang về nhiều hơn một tấm ảnh.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: "Xem thêm feedback" Popup -->
-    <div class="modal-overlay" id="moreFeedbackModal">
-        <div class="modal-box list-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="modal-header-simple text-center">
-                    <h2 class="serif modal-main-title">Những chia sẻ khác</h2>
-                    <p class="modal-main-desc">Ghi chép và đánh giá từ thầy cô và phụ huynh học sinh</p>
-                </div>
-                <div class="other-feedbacks-list">
-                    <div class="other-feedback-item">
-                        <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Con dành nhiều thời gian trò chuyện với gia đình hơn sau chương
-                            trình.”</p>
-                        <span class="other-feedback-author">— Phụ huynh</span>
-                    </div>
-                    <div class="other-feedback-item">
-                        <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Em chủ động tham gia các hoạt động của lớp và tự tin hơn khi làm
-                            việc nhóm.”</p>
-                        <span class="other-feedback-author">— Giáo viên</span>
-                    </div>
-                    <div class="other-feedback-item">
-                        <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Điều con mang về không chỉ là kiến thức mà còn là những người
-                            bạn rất đặc biệt.”</p>
-                        <span class="other-feedback-author">— Phụ huynh</span>
-                    </div>
-                    <div class="other-feedback-item">
-                        <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Các em biết quan sát, lắng nghe và hỗ trợ nhau nhiều hơn trong
-                            các hoạt động.”</p>
-                        <span class="other-feedback-author">— Mentor</span>
-                    </div>
-                    <div class="other-feedback-item">
-                        <span class="other-feedback-quote"><i class="fa-solid fa-quote-left"></i></span>
-                        <p class="other-feedback-text">“Con trưởng thành hơn trong cách suy nghĩ và biết quan tâm đến
-                            cảm xúc của người khác.”</p>
-                        <span class="other-feedback-author">— Phụ huynh</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4: Registration Form Popup -->
-    <div class="modal-overlay" id="registerModal">
-        <div class="modal-box form-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="register-header text-center">
-                    <h2 class="serif">ĐĂNG KÝ HÀNH TRÌNH</h2>
-                    <p>Hãy cùng Hiểu-Chuyện kiến tạo nên một mùa hè ý nghĩa và đáng nhớ!</p>
-                </div>
-                <form id="registerForm" class="register-form">
-                    <div class="form-group">
-                        <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Nhập đầy đủ họ và tên">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phoneNumber">Số điện thoại liên hệ <span class="required">*</span></label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required
-                                placeholder="Nhập số điện thoại">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Địa chỉ Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="email@viettel.vn">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="birthYear">Năm sinh của học sinh</label>
-                            <input type="number" id="birthYear" name="birthYear" min="2005" max="2020"
-                                placeholder="Ví dụ: 2011">
-                        </div>
-                        <div class="form-group">
-                            <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
-                            <select id="role" name="role" required>
-                                <option value="" disabled selected>Chọn vai trò</option>
-                                <option value="parent">Phụ huynh học sinh</option>
-                                <option value="student">Học sinh tự đăng ký</option>
-                                <option value="other">Khác</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Lời nhắn gửi hoặc điều bạn băn khoăn</label>
-                        <textarea id="message" name="message" rows="3"
-                            placeholder="Chia sẻ thêm thông tin hoặc những câu hỏi của bạn dành cho ban tổ chức..."></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-block">Gửi thông tin đăng ký</button>
-                    </div>
-                </form>
-
-                <!-- Success Screen (Hidden by default) -->
-                <div id="registerSuccess" class="register-success-msg text-center" style="display: none;">
-                    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <h3 class="serif">ĐĂNG KÝ THÀNH CÔNG!</h3>
-                    <p>Cảm ơn bạn đã quan tâm đến Hiểu-Chuyện Summer Camp.</p>
-                    <p class="success-note">Ban tổ chức sẽ liên hệ lại với bạn qua Số điện thoại hoặc Email trong vòng
-                        24h làm việc sắp tới.</p>
-                    <button class="btn btn-secondary btn-close-success">Đóng cửa sổ</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script file -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

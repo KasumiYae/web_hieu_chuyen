@@ -1,384 +1,325 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiểu - Hiểu-Chuyện Summer Camp</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiểu - Hiểu-Chuyện</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <header class="navbar" id="navbar">
+    <div class="section-shell nav-inner">
+      <a href="../home/index.html" class="nav-logo" aria-label="Về trang chủ Hiểu-Chuyện">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-copy">
+          <strong>Hiểu-Chuyện</strong>
+        </span>
+      </a>
 
-    <!-- NAVBAR & HERO BANNER -->
-    <header class="hero-section" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),url('image/anh_nen_hero.png');">
-        <nav class="navbar">
-            <div class="navbar-inner">
-            <div CLASS="logo-area">
-            <svg class="logo-svg">  
-            </svg>
-            <div class="logo">HIỂU-CHUYỆN </div>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+      <nav class="nav-menu" aria-label="Điều hướng chính">
+        <a href="../home/index.html">Trang chủ</a>
+        <a href="../about/index.html">About Us</a>
+        <a href="../hieu/index.html" class="active">Hiểu</a>
+        <a href="../chuyen-tro/chuyen.html">Chuyện trò</a>
+        <a href="../chuyen-tro/index.html">Tự viết câu chuyện</a>
+      </nav>
 
-            <nav class="nav-menu" id="navMenu">
-                <a href="../home/index.html" class="nav-item">Homepage</a>
-                <a href="../about/index.html" class="nav-item" >About Us</a>
-                <a href="../hieu/index.html" class="nav-item active" >Hiểu</a>
-                <a href="../chuyen-tro/chuyen.html" class="nav-item" >Chuyện trò</a>
-                <a href="../chuyen-tro/index.html" class="nav-item" >Tự viết câu chuyện</a>
-            </nav>
-            </div>
-            <button class="btn-cta-nav btn-register-trigger btn-yellow">ĐĂNG KÝ NGAY</button>
-        </nav>
-        
-        <div class="hero-content">
-            <h1>HIỂU</h1>
-            <p class="hero-subtitle">Lắng nghe để thấu hiểu những câu chuyện phía sau mỗi góc nhìn.</p>
-            <p class="hero-body">Trước khi học cách tranh biện một vấn đề, chúng ta cần học cách hiểu câu chuyện đằng sau nó.</p>
-            <div class="scroll-indicator">↓ Kéo xuống để khám phá</div>
+      <button class="btn btn-nav btn-register-trigger" type="button">Đăng ký ngay</button>
+
+      <button class="hamburger" id="hamburger" type="button" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../home/index.html">Trang chủ</a>
+    <a href="../about/index.html">About Us</a>
+    <a href="../hieu/index.html" class="active">Hiểu</a>
+    <a href="../chuyen-tro/chuyen.html">Chuyện trò</a>
+    <a href="../chuyen-tro/index.html">Tự viết câu chuyện</a>
+    <button class="btn btn-mobile btn-register-trigger" type="button">Đăng ký ngay</button>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media">
+        <img src="image/anh_nen_hero.png" alt="Không gian hoạt động của hành trình Hiểu">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="section-shell hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="section-kicker">Chapter 01 · Hiểu</span>
+          <h1>Trước khi tranh biện về một vùng đất, ta cần học cách bước vào đời sống của nó.</h1>
+          <p class="hero-lead">
+            Hành trình Hiểu đưa học sinh ra khỏi suy đoán, đặt các em vào quan sát trực tiếp về nơi ở, văn hóa, giáo
+            dục và những nhịp sống rất thật của cộng đồng người Mông tại Mù Cang Chải.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#field-notes" class="btn btn-primary">Đi vào field notes</a>
+            <button class="btn btn-ghost btn-register-trigger" type="button">Đăng ký tư vấn</button>
+          </div>
         </div>
-        <div class="wave-shape"></div>
-    </header>
 
-    <!-- SECTION 2: 3 KHỐI NỘI DUNG (HIỂU ĐỜI SỐNG) -->
-    <section class="content-cards-section">
-        <div class="section-header">
-            <div class="mountain-icon">
-                <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 19L9 7L14 14L23 2L31 19H1Z" stroke="#102A43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <h2>HIỂU ĐỜI SỐNG CỦA NGƯỜI MÔNG</h2>
-            <p>Bước ra khỏi vùng an toàn, chạm vào thực tế nguyên sơ.</p>
-        </div>
-
-        <div class="cards-container">
-            <!-- Card 01 -->
-            <div class="card-item">
-                <div class="card-info">
-                    <span class="card-num">01</span>
-                    <h3>VỊ TRÍ & NƠI Ở</h3>
-                    <p>Những bản làng nằm giữa núi cao, nơi con đường đến trường là cả một hành trình.</p>
-                    <button class="btn-explore" onclick="openPopup('popup-card1')">Khám phá &rarr;</button>
-                </div>
-                <div class="card-img" style="background-image: url('image/khu_vuc_2_1.jpg');"></div>
-            </div>
-
-            <!-- Card 02 -->
-            <div class="card-item">
-                <div class="card-info">
-                    <span class="card-num">02</span>
-                    <h3>VĂN HÓA</h3>
-                    <p>Những nếp sống, phong tục và giá trị truyền thống được gìn giữ qua bao thế hệ.</p>
-                    <button class="btn-explore" onclick="openPopup('popup-card2')">Khám phá &rarr;</button>
-                </div>
-                <div class="card-img" style="background-image: url('image/khu_vuc_2_4.jpg');"></div>
-            </div>
-
-            <!-- Card 03 -->
-            <div class="card-item">
-                <div class="card-info">
-                    <span class="card-num">03</span>
-                    <h3>GIÁO DỤC</h3>
-                    <p>Khát vọng con chữ và những cuộc đối thoại ngang hàng giữa hai thế hệ trẻ.</p>
-                    <button class="btn-explore" onclick="openPopup('popup-card3')">Khám phá &rarr;</button>
-                </div>
-                <div class="card-img" style="background-image: url('image/khu_vuc_2_8.jpg');"></div>
-            </div>
-        </div>
+        <aside class="hero-note" data-reveal>
+          <span class="note-label">Field Brief</span>
+          <h2>Dế Xu Phình</h2>
+          <p>Không chỉ là một địa điểm. Đây là bối cảnh sống nơi địa hình, sinh hoạt cộng đồng và trường học cùng tạo
+            nên chất liệu quan sát đầu tiên.</p>
+          <ul>
+            <li>Quan sát trước khi kết luận.</li>
+            <li>Lắng nghe trước khi gọi tên vấn đề.</li>
+            <li>Đặt tri thức cạnh đời sống thực.</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
-    <!-- SECTION 3: MAP SECTION -->
+    <section class="intro" id="field-notes">
+      <div class="section-shell intro-grid">
+        <div class="intro-copy" data-reveal>
+          <span class="section-kicker">Field Notes</span>
+          <h2>Hiểu không phải là gom thông tin. Hiểu là nhìn thấy cách con người sống cùng hoàn cảnh của họ.</h2>
+          <p class="intro-sapo">
+            Trang này được dựng như một cuốn sổ thực địa: từng chương mở ra một lớp quan sát về vùng đất, con người và
+            những điều kiện sống đã định hình nên câu chuyện của cộng đồng.
+          </p>
+          <blockquote>
+            “Khi một bạn nhỏ hiểu được bối cảnh, các em sẽ bớt vội vàng đánh giá và bắt đầu biết đặt câu hỏi tốt hơn.”
+          </blockquote>
+          <p>
+            Từ địa hình, nhà ở, trang phục, chợ phiên đến hành trình đến trường, mỗi chi tiết đều không đứng riêng. Chúng
+            nối vào nhau để giúp học sinh hiểu rằng không có quan điểm nào thực sự sâu nếu nó không đi qua việc hiểu bối
+            cảnh sống của người khác.
+          </p>
+        </div>
+
+        <div class="intro-collage" data-reveal>
+          <figure class="collage-large"><img src="image/khu_vuc_2_1.jpg" alt="Không gian lớp học và sinh hoạt tại Dế Xu Phình"></figure>
+          <figure class="collage-top"><img src="image/khu_vuc_2_4.jpg" alt="Chất liệu văn hóa trong hành trình Hiểu"></figure>
+          <figure class="collage-bottom"><img src="image/khu_vuc_2_8.jpg" alt="Giáo dục và khát vọng đến trường"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapters">
+      <div class="section-shell chapter-layout">
+        <div class="chapter-visual" data-reveal>
+          <div class="chapter-frame">
+            <img id="chapterImage" src="image/khu_vuc_2_1.jpg" alt="Quan sát về nơi ở và đời sống">
+            <span class="frame-label">Field Archive</span>
+          </div>
+
+          <div class="chapter-caption">
+            <span id="chapterKicker">Chương 01 · Nơi ở</span>
+            <p id="chapterNote">Địa hình và không gian sống không chỉ là bối cảnh, mà là điều kiện trực tiếp định hình
+              nhịp sống mỗi ngày.</p>
+          </div>
+        </div>
+
+        <div class="chapter-steps">
+          <article class="chapter-step is-active" data-reveal data-image="image/khu_vuc_2_1.jpg"
+            data-alt="Quan sát về nơi ở và đời sống" data-kicker="Chương 01 · Nơi ở"
+            data-note="Địa hình và không gian sống không chỉ là bối cảnh, mà là điều kiện trực tiếp định hình nhịp sống mỗi ngày.">
+            <span class="step-number">01</span>
+            <div class="step-body">
+              <span class="step-tag">Landscape</span>
+              <h3>Vị trí và nơi ở.</h3>
+              <p>
+                Dế Xu Phình nằm giữa địa hình đồi núi, nơi khoảng cách không chỉ được đo bằng kilomet mà còn bằng thời
+                gian, sức lực và điều kiện thời tiết. Khi nhìn vào nhà ở, ruộng bậc thang và đường đi, học sinh bắt đầu
+                hiểu sâu hơn về mối quan hệ giữa con người và địa hình.
+              </p>
+            </div>
+          </article>
+
+          <article class="chapter-step" data-reveal data-image="image/khu_vuc_2_4.jpg"
+            data-alt="Quan sát về văn hóa và cộng đồng" data-kicker="Chương 02 · Văn hóa"
+            data-note="Văn hóa hiện diện trong trang phục, cách sinh hoạt, chợ phiên và những thói quen được sống mỗi ngày.">
+            <span class="step-number">02</span>
+            <div class="step-body">
+              <span class="step-tag">Culture</span>
+              <h3>Văn hóa không nằm trong trưng bày, mà nằm trong đời sống.</h3>
+              <p>
+                Học sinh tiếp cận văn hóa người Mông không phải như một “điều thú vị để xem”, mà như một phần đang vận
+                hành của cộng đồng: từ trang phục, lễ hội, chợ phiên đến cách gia đình và bản làng gắn kết với nhau.
+              </p>
+            </div>
+          </article>
+
+          <article class="chapter-step" data-reveal data-image="image/khu_vuc_2_8.jpg"
+            data-alt="Quan sát về trường học và giáo dục" data-kicker="Chương 03 · Giáo dục"
+            data-note="Con đường đến trường giúp học sinh hiểu rằng cơ hội học tập chưa bao giờ là điều hiển nhiên.">
+            <span class="step-number">03</span>
+            <div class="step-body">
+              <span class="step-tag">Education</span>
+              <h3>Hiểu giáo dục qua những điều tưởng như rất hiển nhiên.</h3>
+              <p>
+                Từ quãng đường đến lớp, trường bán trú đến vai trò của thầy cô trong đời sống vùng cao, chương này giúp
+                học sinh nhìn rõ hơn giá trị của cơ hội học tập và những chênh lệch rất thực giữa các bối cảnh sống.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="map-section">
-        <div class="map-left-content">
-            <h2>VỊ TRÍ & NƠI Ở</h2>
-            <p class="map-subtitle">Bước ra khỏi vùng an toàn, chạm vào thực tế nguyên sơ.</p>
-            <p class="map-body">Dế Xu Phình - một xã vùng cao thuộc huyện Mù Cang Chải, Yên Bái, nơi thiên nhiên hùng vĩ và con người sống chan hòa giữa núi rừng.</p>
-            
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-icon">🏔️</div>
-                    <div class="stat-val">~1.500m</div>
-                    <div class="stat-lbl">độ cao so với mặt nước biển</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">🛣️</div>
-                    <div class="stat-val">>30km</div>
-                    <div class="stat-lbl">đường đồi núi từ trung tâm huyện</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">🏠</div>
-                    <div class="stat-val">>90%</div>
-                    <div class="stat-lbl">là đồng bào dân tộc H'Mông</div>
-                </div>
-            </div>
+      <div class="section-shell map-grid">
+        <div class="map-copy" data-reveal>
+          <span class="section-kicker">Geography & Route</span>
+          <h2>Một bản đồ không chỉ cho biết nơi chốn. Nó còn cho thấy những điều kiện sống đang nằm bên dưới câu chuyện.</h2>
+          <p class="map-lead">
+            Khi đặt Dế Xu Phình vào bản đồ, học sinh có thêm một tầng hiểu về khoảng cách, độ cao, sự chia cắt của địa
+            hình và cách những yếu tố đó ảnh hưởng trực tiếp đến việc đi học, giao thương và sinh hoạt.
+          </p>
+
+          <div class="map-stats">
+            <article class="map-stat">
+              <strong>~1.500m</strong>
+              <span>độ cao ước tính so với mực nước biển</span>
+            </article>
+            <article class="map-stat">
+              <strong>>30km</strong>
+              <span>cung đường đồi núi từ trung tâm huyện</span>
+            </article>
+            <article class="map-stat">
+              <strong>>90%</strong>
+              <span>cộng đồng dân cư là người Mông</span>
+            </article>
+          </div>
         </div>
-        <div class="map-right-visual" style="background-image: url('image/khu_vuc_3_1.jpg');">
-            <div class="map-overlay-card" onclick="openPopup('popup-map')">
-                <div class="map-card-icon">🗺️</div>
-                <div class="map-card-text">
-                    <h4>Hành trình đến Dế Xu Phình</h4>
-                    <span>Xem bản đồ và lộ trình &rarr;</span>
-                </div>
-            </div>
+
+        <div class="map-visual" data-reveal>
+          <figure class="map-photo"><img src="image/khu_vuc_3_1.jpg" alt="Khung cảnh địa hình tại Dế Xu Phình"></figure>
+          <figure class="map-diagram"><img src="image/khu_vuc_3_2.png" alt="Bản đồ lộ trình đến Dế Xu Phình"></figure>
         </div>
+      </div>
     </section>
 
-    <!-- SECTION 4: IMAGE SLIDER -->
-    <section class="slider-section">
-        <h2>NHỮNG KHOẢNH KHẮC ĐỜI THƯỜNG</h2>
-        <div class="slider-wrapper">
-            <button class="slider-btn prev-btn" aria-label="Previous slide">&larr;</button>
-            <div class="slider-track-container">
-                <div class="slider-track">
-                    <div class="slide"><img src="image/khu_vuc_4_1.jpg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_2.jpg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_3.JPG" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_4.jpg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_5.JPG" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_6.jpeg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_7.jpeg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_8.jpeg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_9.jpeg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_10.jpeg" alt="Khoảnh khắc"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_11.jpeg" alt="Khoảnh khắc đời thường cùng người dân"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_12.jpeg" alt="Bếp lửa và bữa ăn đời thường vùng cao"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_13.jpeg" alt="Khung cảnh sinh hoạt trước hiên nhà"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_14.jpeg" alt="Các bạn nhỏ trải nghiệm hoạt động thủ công"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_15.jpeg" alt="Trải nghiệm xay ngô tại nhà người dân"></div>
-                    <div class="slide"><img src="image/khu_vuc_4_16.jpeg" alt="Khoảnh khắc học hỏi cùng người dân bản địa"></div>
-                </div>
-            </div>
-            <button class="slider-btn next-btn" aria-label="Next slide">&rarr;</button>
+    <section class="gallery-section">
+      <div class="section-shell">
+        <div class="section-header" data-reveal>
+          <span class="section-kicker">Daily Moments</span>
+          <h2>Những chi tiết rất đời thường cũng là tư liệu để học cách hiểu.</h2>
+          <p>Thay vì chỉ nhìn vào “điểm nổi bật”, học sinh được dẫn dắt để nhận ra giá trị của những khoảnh khắc nhỏ:
+            một lớp học, một bữa ăn, một ánh nhìn, một buổi sinh hoạt chung.</p>
         </div>
+
+        <div class="gallery-grid" data-reveal>
+          <figure class="gallery-tall"><img src="image/khu_vuc_4_11.jpeg" alt="Khoảnh khắc lớp học tại vùng cao"></figure>
+          <figure><img src="image/khu_vuc_4_12.jpeg" alt="Sinh hoạt đời thường"></figure>
+          <figure><img src="image/khu_vuc_4_13.jpeg" alt="Nhịp sống cộng đồng"></figure>
+          <figure><img src="image/khu_vuc_4_14.jpeg" alt="Hoạt động thủ công và trải nghiệm"></figure>
+          <figure class="gallery-wide"><img src="image/khu_vuc_4_16.jpeg" alt="Khoảnh khắc học hỏi cùng người dân bản địa"></figure>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION 5: QUOTE BLOCK -->
     <section class="quote-section">
-        <div class="quote-box">
-            <span class="quote-mark">“</span>
-            <p class="quote-text">Khi chúng ta hiểu một con người, chúng ta không còn tranh luận để thắng - mà để tạo ra sự thay đổi.</p>
-        </div>
+      <div class="section-shell quote-box" data-reveal>
+        <span class="quote-mark">“</span>
+        <p class="quote-text">Hiểu một vùng đất không phải là nhớ thật nhiều dữ kiện về nó, mà là nhìn ra vì sao con
+          người ở đó sống theo cách họ đang sống.</p>
+      </div>
     </section>
 
-    <!-- SECTION 6: FOOTER CTA FORM -->
-    <footer class="footer-cta">
-        <div class="footer-container">
-            <div class="footer-content">
-                <h3>Nhận những câu chuyện đầu tiên từ hành trình Hiểu-chuyện.</h3>
-                <p>Đăng ký để không bỏ lỡ những thước phim và câu chuyện đời thực từ Mù Cang Chải.</p>
-                <form class="subscribe-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdWT-OEQNEdGnJjxMEb5JeJTMoPLL8IZgJX_9yKinmZUm02Xg/viewform" target="_blank" method="GET">
-                    <input type="email" name="emailAddress" placeholder="Nhập email của bạn" required>
-                    <button type="submit">ĐĂNG KÝ NHẬN TIN</button>
-                </form>
-            </div>
-        </div>
-        <div class="mountain-graphic"></div>
-    </footer>
+    <section class="cta-section">
+      <div class="cta-media">
+        <img src="image/khu_vuc_4_3.JPG" alt="Không gian hoạt động nhóm trong hành trình Hiểu">
+      </div>
+      <div class="cta-overlay"></div>
 
-    <!-- POPUP CONTAINER 1 -->
-    <div id="popup-card1" class="popup-overlay">
-        <div class="popup-content">
-            <button class="close-popup" onclick="closePopup('popup-card1')">&times;</button>
-            <div class="popup-inner">
-                <h2>VỊ TRÍ & NƠI Ở</h2>
-                <h3>DẾ XU PHÌNH - NƠI CUỘC SỐNG BẮT ĐẦU TỪ NHỮNG TRIỀN NÚI</h3>
-                <img src="image/khu_vuc_2_2.jpeg" alt="Dế Xu Phình">
-                <p>Muốn hiểu một vùng đất, trước hết hãy nhìn vào nơi con người chọn để sinh sống.</p>
-                <p>Dế Xu Phình là một xã vùng cao thuộc huyện Mù Cang Chải, tỉnh Yên Bái (theo đơn vị hành chính tại thời điểm nhiều tài liệu về địa phương được ghi nhận). Nằm trên sườn phía đông của dãy Hoàng Liên Sơn, nơi đây được bao bọc bởi núi non trùng điệp, các thung lũng hẹp và những tầng ruộng bậc thang uốn lượn theo sườn đồi. Địa hình dốc cùng sự chia cắt của núi rừng đã tạo nên một không gian sống rất khác so với vùng đồng bằng.</p>
-                <p>Ở Dế Xu Phình, các bản làng không tập trung thành từng cụm lớn mà phân bố rải rác trên các sườn núi. Mỗi bản được kết nối với nhau bằng những con đường quanh co men theo triền đồi hoặc các con đèo. Có những đoạn đường phải vượt qua nhiều khúc cua và dốc cao mới đến được một bản làng khác. Chính điều kiện địa hình ấy khiến khoảng cách không chỉ được tính bằng số kilomet, mà còn bằng thời gian và sự kiên trì của mỗi hành trình.</p>
-                
-                <h3>NƠI Ở GẮN LIỀN VỚI NƯƠNG RẪY</h3>
-                <img src="image/khu_vuc_2_3.jpg" alt="Nơi ở gắn liền nương rẫy">
-                <p>Đối với người Mông, nơi dựng nhà không đơn thuần là chọn một khoảng đất bằng phẳng. Vị trí ngôi nhà thường gắn với điều kiện sản xuất, nguồn nước và diện tích canh tác của gia đình. Vì vậy, nhiều ngôi nhà nằm tựa lưng vào núi, phía trước hướng ra thung lũng hoặc những thửa ruộng bậc thang.</p>
-                <p>Từ ngôi nhà của mình, người dân có thể đi bộ đến nương ngô, ruộng lúa hoặc khu chăn nuôi. Nhịp sống hằng ngày vì thế luôn gắn với thiên nhiên. Buổi sáng bắt đầu bằng con đường lên nương, chiều trở về khi ánh nắng dần khuất sau những dãy núi.</p>
-                <p>Việc các hộ gia đình sinh sống cách nhau một khoảng nhất định cũng khiến mỗi bản làng giữ được không gian yên tĩnh đặc trưng của vùng cao. Tuy vậy, cộng đồng vẫn duy trì sự gắn kết thông qua các phiên chợ, ngày lễ truyền thống và những dịp cùng nhau lao động hoặc giúp đỡ nhau trong mùa vụ.</p>
-                
-                <h3>ĐỊA HÌNH TẠO NÊN CÁCH CON NGƯỜI THÍCH NGHI</h3>
-                <img src="image/khu_vuc_1_1.jpeg" alt="Địa hình">
-                <p>Đất canh tác ở vùng núi dốc không nhiều. Để có thể trồng lúa nước, người Mông đã tạo nên những thửa ruộng bậc thang men theo sườn núi. Đây là kết quả của quá trình khai phá và canh tác được tích lũy qua nhiều thế hệ, đồng thời là minh chứng cho khả năng thích nghi của con người với điều kiện tự nhiên.</p>
-                <p>Ruộng bậc thang không chỉ giúp giữ nước và hạn chế xói mòn đất mà còn phản ánh sự gắn bó lâu dài giữa con người với núi rừng. Mỗi mùa trong năm, cảnh quan nơi đây lại thay đổi theo chu kỳ sản xuất: mùa nước đổ phản chiếu bầu trời trên từng thửa ruộng, mùa cấy phủ sắc xanh non, còn mùa lúa chín nhuộm vàng cả sườn núi.</p>
-                <p>Địa hình vùng cao cũng ảnh hưởng đến việc đi học, khám chữa bệnh, trao đổi hàng hóa và kết nối với các khu vực khác. Đối với nhiều người dân, việc di chuyển là một phần quen thuộc của cuộc sống hằng ngày.</p>
-                
-                <h3>KHÔNG CHỈ LÀ MỘT ĐỊA ĐIỂM</h3>
-                <p>Khi nhìn Dế Xu Phình trên bản đồ, bạn sẽ thấy đây chỉ là một điểm nhỏ giữa núi rừng Tây Bắc. Nhưng khi đặt chân đến nơi đây, bạn sẽ nhận ra rằng mỗi con đường, mỗi ngôi nhà và mỗi thửa ruộng đều kể một câu chuyện về cách con người thích nghi với thiên nhiên.</p>
-                <p>Có lẽ vì thế mà để hiểu cuộc sống của người Mông, chúng ta không thể chỉ nhìn vào những bức ảnh ruộng bậc thang hay cảnh sắc hùng vĩ. Điều quan trọng hơn là hiểu vì sao họ sống ở đây, vì sao những bản làng lại nằm trên lưng chừng núi và vì sao thiên nhiên luôn là một phần không thể tách rời trong cuộc sống của họ.</p>
-                
-                <div class="popup-didyouknow">
-                    <strong>Bạn có biết?</strong>
-                    <ul>
-                        <li>Dế Xu Phình nằm trong vùng núi Hoàng Liên Sơn, nơi địa hình chủ yếu là núi cao và các thung lũng hẹp.</li>
-                        <li>Ruộng bậc thang ở Mù Cang Chải là kết quả của nhiều thế hệ người Mông cải tạo địa hình để canh tác trên sườn núi dốc.</li>
-                        <li>Cảnh quan ruộng bậc thang Mù Cang Chải đã được công nhận là Danh lam thắng cảnh quốc gia, góp phần tạo nên giá trị nổi bật của khu vực.</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="section-shell cta-content" data-reveal>
+        <span class="section-kicker">Next Chapter</span>
+        <h2>Sau khi hiểu bối cảnh, học sinh mới thực sự sẵn sàng bước vào những cuộc chuyện trò có chiều sâu.</h2>
+        <p>Tiếp tục sang chapter kế tiếp để thấy cách Hiểu-Chuyện biến quan sát thành đối thoại và đối thoại thành
+          thấu hiểu.</p>
+        <div class="cta-actions">
+          <a href="../chuyen-tro/chuyen.html" class="btn btn-primary">Đi tới Chuyện trò</a>
+          <button class="btn btn-link btn-register-trigger" type="button">Đăng ký hành trình</button>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="registerModal" aria-hidden="true">
+    <div class="modal-box form-modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+      <button class="modal-close" type="button" aria-label="Đóng form đăng ký">&times;</button>
+      <div class="modal-scroll-container">
+        <div class="register-header">
+          <span class="section-kicker">Registration</span>
+          <h2 id="registerTitle">Đăng ký hành trình Hiểu-Chuyện</h2>
+          <p>Điền thông tin để đội ngũ chương trình liên hệ và tư vấn chi tiết cho bạn.</p>
+        </div>
+
+        <form id="registerForm" class="register-form">
+          <div class="form-group">
+            <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Nhập đầy đủ họ và tên">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phoneNumber">Số điện thoại liên hệ <span class="required">*</span></label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Nhập số điện thoại">
+            </div>
+            <div class="form-group">
+              <label for="email">Địa chỉ email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="email@example.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="birthYear">Năm sinh của học sinh</label>
+              <input type="number" id="birthYear" name="birthYear" min="2005" max="2022" placeholder="Ví dụ: 2011">
+            </div>
+            <div class="form-group">
+              <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Chọn vai trò</option>
+                <option value="parent">Phụ huynh học sinh</option>
+                <option value="student">Học sinh tự đăng ký</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Điều bạn đang quan tâm</label>
+            <textarea id="message" name="message" rows="4"
+              placeholder="Chia sẻ thêm điều bạn muốn tìm hiểu về chương trình..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">Gửi thông tin đăng ký</button>
+          </div>
+        </form>
+
+        <div id="registerSuccess" class="register-success-msg" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h3>Đăng ký thành công</h3>
+          <p>Cảm ơn bạn đã quan tâm tới Hiểu-Chuyện Summer Camp.</p>
+          <p class="success-note">Đội ngũ chương trình sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+          <button class="btn btn-secondary btn-close-success" type="button">Đóng cửa sổ</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- POPUP CONTAINER 2 -->
-    <div id="popup-card2" class="popup-overlay">
-        <div class="popup-content">
-            <button class="close-popup" onclick="closePopup('popup-card2')">&times;</button>
-            <div class="popup-inner">
-                <h2>VĂN HÓA</h2>
-                <h3>HIỂU VĂN HÓA NGƯỜI MÔNG KHI TRUYỀN THỐNG VẪN HIỆN DIỆN TRONG ĐỜI SỐNG HẰNG NGÀY</h3>
-                <p>Đến Dế Xu Phình, điều khiến nhiều người ấn tượng không chỉ là cảnh sắc núi rừng mà còn là cách cộng đồng người Mông gìn giữ những giá trị văn hóa qua từng thế hệ. Văn hóa ở đây không nằm trong bảo tàng hay những buổi biểu diễn dành cho du khách, mà hiện diện trong ngôi nhà, bữa cơm, bộ trang phục, tiếng khèn, những phiên chợ và cả nhịp sống thường ngày của người dân.</p>
-                <p>Đối với người Mông, truyền thống không phải là điều để nhắc nhớ, mà là một phần của cuộc sống.</p>
-                
-                <h3>TRANG PHỤC - DẤU ẤN CỦA BẢN SẮC</h3>
-                <img src="image/khu_vuc_2_5.jpg" alt="Trang phục">
-                <p>Trang phục truyền thống của người Mông nổi bật với kỹ thuật dệt vải lanh, nhuộm chàm và thêu họa tiết bằng tay. Mỗi đường kim mũi chỉ không chỉ mang giá trị thẩm mỹ mà còn phản ánh sự khéo léo, kiên nhẫn và kinh nghiệm được truyền từ mẹ sang con gái qua nhiều thế hệ.</p>
-                <p>Trong các dịp lễ, Tết hay chợ phiên, many người vẫn mặc trang phục truyền thống như một cách thể hiện niềm tự hào về bản sắc dân tộc. Những gam màu rực rỡ cùng hoa văn tinh xảo tạo nên hình ảnh đặc trưng của cộng đồng người Mông giữa núi rừng Tây Bắc.</p>
-                
-                <h3>ÂM NHẠC VÀ LỄ HỘI</h3>
-                <img src="image/khu_vuc_2_6.jpg" alt="Âm nhạc và lễ hội">
-                <p>Âm nhạc giữ một vị trí đặc biệt trong đời sống tinh thần của người Mông. Tiếng khèn Mông từ lâu đã trở thành biểu tượng văn hóa, xuất hiện trong các dịp lễ hội, ngày Tết và nhiều sự kiện cộng đồng. Không chỉ là một nhạc cụ, chiếc khèn còn là phương tiện để bày tỏ cảm xúc, giao tiếp và gắn kết con người.</p>
-                <p>Bên cạnh đó, các lễ hội truyền thống đầu năm là dịp để người dân gặp gỡ, vui chơi, thi đấu các trò chơi dân gian và cầu mong một năm mới bình an, mùa màng thuận lợi. Đây cũng là lúc những giá trị văn hóa được trao truyền tự nhiên từ thế hệ lớn tuổi sang lớp trẻ.</p>
-                
-                <h3>PHIÊN CHỢ - KHÔNG CHỈ ĐỂ MUA BÁN</h3>
-                <img src="image/khu_vuc_2_7.jpg" alt="Phiên chợ">
-                <p>Ở vùng cao, chợ phiên không đơn thuần là nơi trao đổi hàng hóa. Đây còn là không gian gặp gỡ của các cộng đồng dân tộc, nơi mọi người trò chuyện, chia sẻ câu chuyện mùa màng, thưởng thức món ăn địa phương và duy trì các mối quan hệ trong cộng đồng.</p>
-                <p>Nhiều người đi chợ không chỉ để bán nông sản hay mua nhu yếu phẩm, mà còn để gặp người thân, bạn bè sau những ngày làm nương. Chính vì vậy, chợ phiên luôn mang ý nghĩa văn hóa nhiều hơn ý nghĩa kinh tế.</p>
-                
-                <h3>GIA ĐÌNH VÀ CỘNG ĐỒNG</h3>
-                <p>Trong đời sống của người Mông, gia đình và cộng đồng có mối liên kết chặt chẽ. Người dân thường hỗ trợ nhau trong mùa gieo cấy, thu hoạch hoặc khi dựng nhà mới. Những công việc cần nhiều sức người thường được thực hiện với sự chung tay của bà con trong bản.</p>
-                <p>Tinh thần cộng đồng ấy giúp các bản làng duy trì sự gắn kết giữa điều kiện tự nhiên còn nhiều khó khăn. Với người Mông, sống cùng nhau không chỉ là ở gần nhau, mà còn là cùng chia sẻ trách nhiệm và giúp đỡ nhau trong cuộc sống.</p>
-                
-                <h3>VĂN HÓA LÀ ĐIỀU ĐƯỢC SỐNG MỖI NGÀY</h3>
-                <p>Có thể nhiều giá trị sẽ thay đổi theo thời gian, nhưng ở Dế Xu Phình, văn hóa vẫn hiện diện trong những điều bình dị nhất: một bộ váy được thêu bằng tay, tiếng khèn vang giữa núi, bữa cơm quây quần hay lời chào hỏi giữa những người cùng bản.</p>
-                <p>Hiểu văn hóa của người Mông không chỉ là biết họ có những phong tục gì, mà còn là nhận ra cách họ gìn giữ bản sắc trong cuộc sống hiện đại. Chính những điều tưởng như rất nhỏ ấy đã tạo nên bản sắc riêng của Dế Xu Phình và góp phần làm nên sự đa dạng văn hóa của vùng Tây Bắc.</p>
-                
-                <div class="popup-didyouknow">
-                    <strong>Bạn có biết?</strong>
-                    <ul>
-                        <li>Người Mông là một trong những cộng đồng cư dân sinh sống lâu đời tại khu vực Mù Cang Chải.</li>
-                        <li>Nghề dệt vải lanh, nhuộm chàm và thêu hoa văn truyền thống là những kỹ thuật thủ công đặc trưng của nhiều nhóm người Mông.</li>
-                        <li>Khèn Mông là nhạc cụ truyền thống gắn liền với đời sống văn hóa và đã được ghi danh là Di sản văn hóa phi vật thể quốc gia tại Việt Nam.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- POPUP CONTAINER 3 -->
-    <div id="popup-card3" class="popup-overlay">
-        <div class="popup-content">
-            <button class="close-popup" onclick="closePopup('popup-card3')">&times;</button>
-            <div class="popup-inner">
-                <h2>GIÁO DỤC</h2>
-                <h3>HÀNH TRÌNH ĐẾN LỚP GIỮA NÚI RỪNG</h3>
-                <p>Ở Dế Xu Phình, trường học không chỉ là nơi truyền đạt kiến thức mà còn là cầu nối giúp trẻ em vùng cao tiếp cận nhiều cơ hội hơn trong tương lai. Trong nhiều năm qua, cùng với sự đầu tư của Nhà nước và sự đồng hành của các tổ chức, điều kiện học tập của học sinh nơi đây đã từng bước được cải thiện, từ cơ sở vật chất đến chính sách hỗ trợ dành cho học sinh vùng khó khăn.</p>
-                <p>Tuy nhiên, việc học ở một xã vùng cao vẫn chịu ảnh hưởng lớn bởi điều kiện tự nhiên và địa hình.</p>
-                
-                <h3>KHI CON ĐƯỜNG ĐẾN TRƯỜNG KHÔNG PHẲNG</h3>
-                <p>Địa hình đồi núi khiến nhiều bản làng nằm cách xa trung tâm xã. Đối với nhiều học sinh, việc đến trường đồng nghĩa với quãng đường phải đi bộ hoặc di chuyển qua những tuyến đường dốc, đặc biệt khó khăn vào mùa mưa khi đường trơn trượt hoặc có nguy cơ sạt lở.</p>
-                <p>Chính vì vậy, một số học sinh ở các điểm bản xa được học tại các điểm trường hoặc ở bán trú để việc học không bị gián đoạn. Mô hình trường phổ thông dân tộc bán trú đã góp phần giúp nhiều em có điều kiện duy trì việc học ổn định hơn.</p>
-                
-                <h3>NGÔI TRƯỜNG KHÔNG CHỈ DẠY CHỮ</h3>
-                <p>Đối với nhiều em nhỏ ở Dế Xu Phình, trường học còn là nơi được chăm sóc, vui chơi và giao lưu với bạn bè. Ngoài các môn học theo chương trình giáo dục, học sinh còn được tham gia các hoạt động văn nghệ, thể thao và tìm hiểu văn hóa truyền thống của dân tộc mình.</p>
-                <p>Ở nhiều trường vùng cao, giáo viên không chỉ giảng dạy mà còn đồng hành cùng học sinh trong sinh hoạt hằng ngày, đặc biệt tại các trường bán trú. Sự gắn bó ấy góp phần tạo nên môi trường học tập gần gũi và khuyến khích các em tiếp tục đến trường.</p>
-                
-                <h3>GIỮ GÌN BẢN SẮC, MỞ RA TƯƠNG LAI</h3>
-                <p>Đối với trẻ em người Mông, việc học không đồng nghĩa với việc rời xa bản sắc văn hóa. Bên cạnh kiến thức phổ thông, nhiều hoạt động tại trường cũng khuyến khích học sinh tìm hiểu tiếng nói, trang phục, lễ hội và những giá trị truyền thống của cộng đồng mình.</p>
-                <p>Giáo dục vì thế không chỉ mở ra cơ hội phát triển trong tương lai mà còn góp phần giúp thế hệ trẻ hiểu, gìn giữ và tiếp nối những nét đẹp văn hóa của quê hương.</p>
-                
-                <h3>NHỮNG BƯỚC ĐI NHỎ CHO MỘT TƯƠNG LAI DÀI</h3>
-                <p>Mỗi ngày đến trường ở Dế Xu Phình có thể bắt đầu từ những con đường quanh co giữa núi rừng, nhưng cũng chính từ những bước chân ấy, nhiều ước mơ được nuôi dưỡng.</p>
-                <p>Giữa điều kiện tự nhiên còn nhiều thử thách, sự nỗ lực của học sinh, thầy cô, gia đình và cộng đồng đã góp phần tạo nên những thay đổi tích cực trong giáo dục vùng cao. Mỗi lớp học được xây dựng, mỗi học sinh tiếp tục đến trường đều là một bước tiến trên hành trình phát triển của địa phương.</p>
-                
-                <div class="popup-didyouknow">
-                    <strong>Bạn có biết?</strong>
-                    <ul>
-                        <li>Dế Xu Phình có hệ thống trường học phục vụ học sinh từ bậc mầm non đến trung học cơ sở theo mạng lưới giáo dục của địa phương.</li>
-                        <li>Mô hình trường phổ thông dân tộc bán trú được triển khai tại nhiều xã vùng cao của Mù Cang Chải nhằm hỗ trợ học sinh ở các bản xa có điều kiện học tập thuận lợi hơn.</li>
-                        <li>Nhà nước hiện áp dụng nhiều chính sách hỗ trợ học sinh vùng đồng bào dân tộc thiểu số và miền núi, bao gồm hỗ trợ học tập, ăn ở và cơ sở vật chất trường học.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- POPUP MAP -->
-    <div id="popup-map" class="popup-overlay">
-        <div class="popup-content">
-            <button class="close-popup" onclick="closePopup('popup-map')">&times;</button>
-            <div class="popup-inner" style="text-align: center;">
-                <h2>BẢN ĐỒ LỘ TRÌNH ĐẾN DẾ XU PHÌNH</h2>
-                <img src="image/khu_vuc_3_2.png" alt="Bản đồ lộ trình" style="max-width: 100%; height: auto; margin-top: 15px; border-radius: 8px;">
-            </div>
-        </div>
-    </div>
-
-    <!-- REGISTRATION MODAL -->
-    <div class="modal-overlay" id="registerModal">
-        <div class="modal-box form-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="register-header text-center">
-                    <h2 class="serif">ĐĂNG KÝ HÀNH TRÌNH</h2>
-                    <p>Hãy cùng Hiểu-Chuyện kiến tạo nên một mùa hè ý nghĩa và đáng nhớ!</p>
-                </div>
-                <form id="registerForm" class="register-form">
-                    <div class="form-group">
-                        <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Nhập đầy đủ họ và tên">
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phoneNumber">Số điện thoại liên hệ <span class="required">*</span></label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Nhập số điện thoại">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Địa chỉ Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="email@viettel.vn">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="birthYear">Năm sinh của học sinh</label>
-                            <input type="number" id="birthYear" name="birthYear" min="2005" max="2020" placeholder="Ví dụ: 2011">
-                        </div>
-                        <div class="form-group">
-                            <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
-                            <select id="role" name="role" required>
-                                <option value="" disabled selected>Chọn vai trò</option>
-                                <option value="parent">Phụ huynh học sinh</option>
-                                <option value="student">Học sinh tự đăng ký</option>
-                                <option value="other">Khác</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Lời nhắn gửi hoặc điều bạn băn khoăn</label>
-                        <textarea id="message" name="message" rows="3" placeholder="Chia sẻ thêm thông tin hoặc những câu hỏi của bạn dành cho ban tổ chức..."></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-block">Gửi thông tin đăng ký</button>
-                    </div>
-                </form>
-
-                <!-- Success Screen (Hidden by default) -->
-                <div id="registerSuccess" class="register-success-msg text-center" style="display: none;">
-                    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <h3 class="serif">ĐĂNG KÝ THÀNH CÔNG!</h3>
-                    <p>Cảm ơn bạn đã quan tâm đến Hiểu-Chuyện Summer Camp.</p>
-                    <p class="success-note">Ban tổ chức sẽ liên hệ lại với bạn qua Số điện thoại hoặc Email trong vòng 24h làm việc sắp tới.</p>
-                    <button class="btn btn-secondary btn-close-success">Đóng cửa sổ</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

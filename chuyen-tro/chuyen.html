@@ -2,484 +2,318 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chuyện - Hiểu-Chuyện Summer Camp</title>
-    <!-- Google Fonts: Playfair Display (Serif), Inter (Sans-serif) and Caveat (Handwritten style for feedback) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyện trò - Hiểu-Chuyện</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-chuyen">
+  <header class="navbar" id="navbar">
+    <div class="section-shell nav-inner">
+      <a href="../home/index.html" class="nav-logo" aria-label="Về trang chủ Hiểu-Chuyện">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-copy">
+          <strong>Hiểu-Chuyện</strong>
+        </span>
+      </a>
 
-    <!-- Sticky Header -->
-    <header class="main-header" id="mainHeader">
-        <div class="header-container">
-            <div class="header-inner">
-                <a href="#" class="logo-area">
-                    <!-- Inline SVG Logo of Hieu-Chuyen Camp (Mountain + Sun + Text) -->
+      <nav class="nav-menu" aria-label="Điều hướng chính">
+        <a href="../home/index.html">Trang chủ</a>
+        <a href="../about/index.html">About Us</a>
+        <a href="../hieu/index.html">Hiểu</a>
+        <a href="../chuyen-tro/chuyen.html" class="active">Chuyện trò</a>
+        <a href="../chuyen-tro/index.html">Tự viết câu chuyện</a>
+      </nav>
 
-                    <svg class="logo-svg">
+      <button class="btn btn-nav btn-register-trigger" type="button">Đăng ký ngay</button>
 
-                    </svg>
-                    <div class="logo-text">
-                        <span class="logo-title">HIỂU-CHUYỆN</span>
-                    </div>
-                </a>
-
-                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
-                <nav class="nav-menu" id="navMenu">
-                    <a href="../home/index.html" class="nav-item">Homepage</a>
-                    <a href="../about/index.html" class="nav-item">About Us</a>
-                    <a href="../hieu/index.html" class="nav-item ">Hiểu</a>
-                    <a href="../chuyen-tro/chuyen.html" class="nav-item active">Chuyện trò</a>
-                    <a href="../chuyen-tro/index.html" class="nav-item">Tự viết câu chuyện</a>
-                </nav>
-            </div>
-
-            <div class="header-cta">
-                <button class="btn btn-primary btn-register-trigger">ĐĂNG KÝ NGAY</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="story-page"
-        style="background-image: linear-gradient(rgba(10, 25, 47, 0.45), rgba(10, 25, 47, 0.7)), url('image/hero_chuyen_tro.png');">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-badge">CHUYỆN</span>
-                <h1 class="hero-title">Những cuộc trò chuyện mở ra sự thấu hiểu.</h1>
-                <p class="hero-intro">Mỗi câu chuyện được lắng nghe là một bước tiến gần hơn đến sự đồng cảm.</p>
-
-                <div class="scroll-indicator">
-                    <div class="mouse-icon">
-                        <span class="mouse-wheel"></span>
-                    </div>
-                    <span>Kéo xuống để khám phá</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 01: Parents' worries -->
-    <section class="stories-section">
-        <div class="container">
-            <div class="parent-worries-layout">
-                <div class="parent-worries-text" data-aos="fade-right">
-                    <span class="section-number">01</span>
-                    <h2 class="section-title serif">Nỗi sợ “không đủ tốt” của bố mẹ</h2>
-                    <div class="parent-worries-desc">
-                        <p>Đằng sau những kỳ vọng về điểm số hay thành tích là mong muốn rất giản dị của nhiều bậc phụ
-                            huynh: con có thể tự tin bước vào cuộc sống với góc nhìn rộng mở và khả năng thích nghi với
-                            những thay đổi của tương lai.</p>
-                        <p>Nhưng để trưởng thành, đôi khi con cần không phải thêm một chứng chỉ, mà là những trải nghiệm
-                            thật để hiểu bản thân và thế giới xung quanh.</p>
-                    </div>
-                    <button class="btn-read-story btn-read-parent-story">Đọc thêm câu chuyện của phụ huynh <i
-                            class="fa-solid fa-arrow-right-long"></i></button>
-                </div>
-
-                <div class="parent-worries-board" data-aos="fade-left">
-                    <div class="doodle-heart-bg">
-                        <svg viewBox="0 0 100 100" fill="none" stroke="rgba(226, 138, 56, 0.2)" stroke-width="1.5">
-                            <path d="M50 80C50 80 20 60 20 40C20 25 35 15 50 30C65 15 80 25 80 40C80 60 50 80 50 80Z" />
-                        </svg>
-                    </div>
-
-                    <!-- Note 1 -->
-                    <div class="sticky-note note-yellow parent-note note-p1" style="--rotation: -5deg;">
-                        <div class="washi-tape washi-tape-note"></div>
-                        <div class="note-body">“Tôi chỉ mong con hạnh phúc.”</div>
-                        <div class="note-author">
-                            <span class="author-name">— Mẹ của An, 13 tuổi</span>
-                        </div>
-                    </div>
-
-                    <!-- Note 2 -->
-                    <div class="sticky-note note-blue parent-note note-p2" style="--rotation: 6deg;">
-                        <div class="pin pin-blue"></div>
-                        <div class="note-body">“Tôi sợ mình chưa làm đủ.”</div>
-                        <div class="note-author">
-                            <span class="author-name">— Bố của Nam, 14 tuổi</span>
-                        </div>
-                    </div>
-
-                    <!-- Note 3 -->
-                    <div class="sticky-note note-green parent-note note-p3" style="--rotation: -2deg;">
-                        <div class="washi-tape washi-tape-note-slant"></div>
-                        <div class="note-body">“Tôi không cần con đứng đầu lớp.”</div>
-                        <div class="note-author">
-                            <span class="author-name">— Mẹ của Minh, 12 tuổi</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 02: Anonymous Confession Wall -->
-    <section class="feedback-section confession-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-number">02</span>
-                <h2 class="section-title serif">Bức tường tâm sự ẩn danh</h2>
-                <p class="section-subtitle">Có những điều rất khó để nói thành lời. Ở đây, mọi cảm xúc đều được lắng
-                    nghe và trân trọng.</p>
-            </div>
-
-            <!-- Confession Carousel Component -->
-            <div class="confession-carousel-container" data-aos="fade-up">
-                <button class="carousel-nav-btn prev-btn" id="confessionPrev" aria-label="Previous confession">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div class="confession-carousel-track-wrapper">
-                    <div class="confession-carousel-track" id="confessionTrack">
-                        <!-- Confession Card 1 (Left/Prev) -->
-                        <div class="confession-card note-cream" data-index="0">
-                            <div class="confession-badge">CONFESSION</div>
-                            <div class="confession-body">
-                                Con cảm thấy áp lực khi phải luôn giỏi.
-                            </div>
-                            <div class="confession-footer">
-                                <span class="confession-author">Ẩn danh - 15 tuổi</span>
-                                <button class="confession-like-btn" data-liked="false">
-                                    <i class="fa-regular fa-heart"></i> <span class="like-count">128</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Confession Card 2 (Center/Active) -->
-                        <div class="confession-card note-blue active" data-index="1">
-                            <div class="confession-badge">CONFESSION</div>
-                            <div class="confession-body">
-                                Con sợ làm bố mẹ thất vọng. Con muốn mọi người tự hào về con, nhưng đôi khi con chỉ muốn
-                                được là chính mình.
-                            </div>
-                            <div class="confession-footer">
-                                <span class="confession-author">Ẩn danh - 15 tuổi</span>
-                                <button class="confession-like-btn" data-liked="false">
-                                    <i class="fa-regular fa-heart"></i> <span class="like-count">342</span>
-                                </button>
-                            </div>
-                            <div class="confession-swipe-hint">
-                                <i class="fa-solid fa-hand-pointer"></i> Lướt để đọc thêm
-                            </div>
-                        </div>
-
-                        <!-- Confession Card 3 (Right/Next) -->
-                        <div class="confession-card note-yellow" data-index="2">
-                            <div class="confession-badge">CONFESSION</div>
-                            <div class="confession-body">
-                                Con không biết mình muốn gì nữa.
-                            </div>
-                            <div class="confession-footer">
-                                <span class="confession-author">Ẩn danh - 16 tuổi</span>
-                                <button class="confession-like-btn" data-liked="false">
-                                    <i class="fa-regular fa-heart"></i> <span class="like-count">95</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="carousel-nav-btn next-btn" id="confessionNext" aria-label="Next confession">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-
-            <!-- Dots Indicators -->
-            <div class="carousel-dots" id="carouselDots">
-                <span class="dot" data-index="0"></span>
-                <span class="dot active" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-            </div>
-
-            <!-- Action buttons -->
-            <div class="confession-actions text-center">
-                <button class="btn btn-secondary" id="btnOpenConfessionForm"><i class="fa-solid fa-pencil"></i> GỬI TÂM
-                    SỰ ẨN DANH</button>
-                <div class="confession-secure-note">
-                    <i class="fa-solid fa-lock"></i> Hoàn toàn ẩn danh và bảo mật
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 03: Mentor Quote/Testimonial -->
-    <section class="mentor-testimonial-section">
-        <div class="container">
-            <div class="mentor-card" data-aos="fade-up">
-                <div class="mentor-avatar-box">
-                    <img src="image/section5_1hung.png" alt="Nguyễn Minh Khang" class="mentor-avatar">
-                    <div class="mentor-info">
-                        <span class="mentor-name">Nguyễn Minh Khang</span>
-                        <span class="mentor-role">Mentor Debate</span>
-                    </div>
-                </div>
-
-                <div class="mentor-quote-box">
-                    <div class="mentor-big-quote"><i class="fa-solid fa-quote-left"></i></div>
-                    <h3 class="serif mentor-quote-title">Tranh biện không phải để thắng, mà để thấu hiểu.</h3>
-                    <blockquote class="mentor-blockquote">
-                        “Khi con biết bóc tách vấn đề bằng logic, những bất đồng với gia đình sẽ không còn là sự bùng nổ
-                        cảm xúc. Đó sẽ là những cuộc trò chuyện đa chiều để cha mẹ và con cái thực sự hiểu nhau.”
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 04: Articles Grid -->
-    <section class="stories-section articles-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-number">04</span>
-                <h2 class="section-title serif">Lắng nghe không bắt đầu bằng việc phản hồi.</h2>
-                <p class="section-subtitle">Mà bắt đầu bằng việc hiện diện.</p>
-            </div>
-
-            <div class="articles-grid">
-                <!-- Card 1 -->
-                <div class="article-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="article-img-wrapper">
-                        <img src="image/7b313d15-1285-4545-8894-1e22c718a4a0.jpeg" alt="Viết ra để hiểu mình hơn"
-                            class="article-img">
-                    </div>
-                    <div class="article-info">
-                        <h3 class="article-title serif">Viết ra để hiểu mình hơn.</h3>
-                        <p class="article-desc">Những dòng chữ giúp con nhìn rõ cảm xúc của chính mình.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="article-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="article-img-wrapper">
-                        <img src="image/a5d90750-e225-40bd-9081-ded504c79cad.jpeg" alt="Một lá thư, nghìn lời yêu"
-                            class="article-img">
-                    </div>
-                    <div class="article-info">
-                        <h3 class="article-title serif">Một lá thư, nghìn lời yêu.</h3>
-                        <p class="article-desc">Cha mẹ cùng con học cách hiểu con mỗi ngày.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="article-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="article-img-wrapper">
-                        <img src="image/dae79e7c-a5fb-4560-bd85-2a1ab24640c5.jpeg" alt="Trò chuyện để đồng hành"
-                            class="article-img">
-                    </div>
-                    <div class="article-info">
-                        <h3 class="article-title serif">Trò chuyện để đồng hành.</h3>
-                        <p class="article-desc">Mentor không chỉ dạy kiến thức, mà còn lắng nghe và thấu hiểu.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer & Final CTA -->
-    <footer class="footer-section">
-        <!-- Subtle Mountain Line Drawing Overlay -->
-        <div class="mountain-overlay">
-            <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M0,224L120,202.7C240,181,480,139,720,144C960,149,1200,203,1320,229.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-                    fill="#071424" fill-opacity="0.3"></path>
-                <path
-                    d="M0,192L80,213.3C160,235,320,277,480,288C640,299,800,277,960,256C1120,235,1280,213,1360,202.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-                    fill="#050e1b" fill-opacity="0.5"></path>
-            </svg>
-        </div>
-
-        <div class="container footer-container">
-            <div class="footer-cta-box">
-                <div class="paper-plane-decoration">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                        class="paper-plane-svg">
-                        <path d="M22 2L2 8.66L11.5 12.5L22 2ZM22 2L15.33 22L11.5 12.5L22 2Z" />
-                        <path d="M11.5 12.5L14.5 15.5" />
-                        <!-- Wind trails -->
-                        <path d="M2 17C5 17 6 15 8 16" stroke-dasharray="2 2" />
-                        <path d="M5 20C8 20 9 18 11 19" stroke-dasharray="2 2" />
-                    </svg>
-                </div>
-                <div class="footer-cta-text">
-                    <h2 class="serif">Mỗi câu chuyện đều xứng đáng được lắng nghe.</h2>
-                    <p class="cta-bold">Chia sẻ câu chuyện của bạn và cùng nhau tạo nên một cộng đồng thấu hiểu.</p>
-                    <p class="cta-normal">Mỗi trải nghiệm, mỗi bất đồng hay mỗi sự chuyển biến nhỏ đều là những mảnh
-                        ghép đáng giá tạo nên hành trình khôn lớn của con.</p>
-                </div>
-                <div class="footer-cta-action">
-                    <a href="index.html" class="btn btn-primary btn-cta-large">TỰ VIẾT CÂU CHUYỆN CỦA BẠN <i
-                            class="fa-solid fa-arrow-right-long"></i></a>
-                    <span class="footer-note-text">Cùng nhau tạo nên một mùa hè đáng nhớ!</span>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 HIỂU-CHUYỆN Summer Camp. All Rights Reserved.</p>
-                <div class="footer-links">
-                    <a href="index.html">Trang chủ</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Liên hệ</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ==================== MODALS / POPUPS ==================== -->
-
-    <!-- Modal 1: Read Parent Story Popup -->
-    <div class="modal-overlay" id="parentStoryModal">
-        <div class="modal-box postcard-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="story-modal-header">
-                    <span class="badge-story-num">GÓC PHỤ HUYNH</span>
-                    <h2 class="story-modal-title serif">Nỗi sợ “không đủ tốt” của bố mẹ</h2>
-                    <p class="story-modal-author">Chia sẻ thực tế từ cha mẹ học sinh</p>
-                </div>
-
-                <div class="story-modal-body">
-                    <div class="story-full-text">
-                        <p>Chúng tôi luôn sợ mình làm không đủ tốt cho con, sợ con thua thiệt với bạn bè. Để chuẩn bị
-                            tốt nhất cho tương lai của con, nhiều lúc chúng tôi vô tình đặt lên vai con những áp lực vô
-                            hình từ điểm số đến các chứng chỉ ngoại khóa.</p>
-                        <p>Nhưng sau cuộc trò chuyện trực tiếp cùng các mentor tại Đế Xu Phình, nhìn thấy con lần đầu
-                            tiên tự tin trình bày quan điểm logic trên sân khấu tranh biện, tôi mới hiểu rằng điều con
-                            cần nhất chính là không gian để thử thách bản thân và sự thấu hiểu, tin tưởng của cha mẹ chứ
-                            không phải là thêm những tấm bằng khen áp lực.</p>
-                        <p>Con đã biết chủ động kể cho cả nhà nghe về những người bạn mới, biết quan tâm đến những điều
-                            nhỏ nhặt xung quanh và chủ động chia sẻ nhiều hơn. Đó là sự trưởng thành thật sự mà chúng
-                            tôi tìm kiếm.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <!-- Modal 2: Send Anonymous Confession Form Modal -->
-    <div class="modal-overlay" id="confessionFormModal">
-        <div class="modal-box form-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="register-header text-center">
-                    <h2 class="serif">GỬI TÂM SỰ ẨN DANH</h2>
-                    <p>Chia sẻ những suy nghĩ thầm kín, áp lực hoặc câu chuyện của bạn. Chúng tôi luôn lắng nghe.</p>
-                </div>
-                <form id="confessionForm" class="register-form">
-                    <div class="form-group">
-                        <label for="confessionAge">Độ tuổi của bạn <span class="required">*</span></label>
-                        <input type="number" id="confessionAge" name="confessionAge" required min="10" max="100"
-                            placeholder="Ví dụ: 15">
-                    </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../home/index.html">Trang chủ</a>
+    <a href="../about/index.html">About Us</a>
+    <a href="../hieu/index.html">Hiểu</a>
+    <a href="../chuyen-tro/chuyen.html" class="active">Chuyện trò</a>
+    <a href="../chuyen-tro/index.html">Tự viết câu chuyện</a>
+    <button class="btn btn-mobile btn-register-trigger" type="button">Đăng ký ngay</button>
+  </div>
 
-                    <div class="form-group">
-                        <label for="confessionText">Nội dung tâm sự của bạn <span class="required">*</span></label>
-                        <textarea id="confessionText" name="confessionText" rows="5" required
-                            placeholder="Viết những điều bạn khó mở lời nói cùng cha mẹ hoặc bạn bè..."></textarea>
-                    </div>
+  <main>
+    <section class="hero">
+      <div class="hero-media">
+        <img src="image/hero_chuyen_tro.png" alt="Không gian của hành trình Chuyện trò">
+      </div>
+      <div class="hero-overlay"></div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-secondary btn-block">Gửi tâm sự của bạn</button>
-                    </div>
-                </form>
-
-                <!-- Confession Success Message -->
-                <div id="confessionSuccess" class="register-success-msg text-center" style="display: none;">
-                    <div class="success-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
-                    <h3 class="serif">TÂM SỰ ĐÃ ĐƯỢC GỬI!</h3>
-                    <p>Cảm ơn bạn đã can đảm chia sẻ câu chuyện của mình.</p>
-                    <p class="success-note">Thông điệp của bạn sẽ được ẩn danh hoàn toàn và hiển thị trên bức tường tâm
-                        sự sau khi ban tổ chức kiểm duyệt.</p>
-                    <button class="btn btn-outline btn-close-confession-success">Đóng cửa sổ</button>
-                </div>
-            </div>
+      <div class="section-shell hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="section-kicker">Chapter 02 · Chuyện trò</span>
+          <h1>Những cuộc trò chuyện đủ an toàn có thể thay đổi cách một bạn nhỏ nhìn chính mình.</h1>
+          <p class="hero-lead">
+            Chuyện trò không phải một phần “phụ” sau trải nghiệm. Đây là nơi học sinh học cách gọi tên cảm xúc, đối
+            thoại với áp lực và bước vào khác biệt bằng sự tôn trọng.
+          </p>
+          <div class="hero-actions">
+            <a href="#worries" class="btn btn-primary">Đi vào chapter</a>
+            <button class="btn btn-ghost btn-register-trigger" type="button">Đăng ký tư vấn</button>
+          </div>
         </div>
-    </div>
 
-    <!-- Modal 3: Registration Form Popup -->
-    <div class="modal-overlay" id="registerModal">
-        <div class="modal-box form-modal">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-scroll-container">
-                <div class="register-header text-center">
-                    <h2 class="serif">ĐĂNG KÝ HÀNH TRÌNH</h2>
-                    <p>Hãy cùng Hiểu-Chuyện kiến tạo nên một mùa hè ý nghĩa và đáng nhớ!</p>
-                </div>
-                <form id="registerForm" class="register-form">
-                    <div class="form-group">
-                        <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Nhập đầy đủ họ và tên">
-                    </div>
+        <aside class="hero-note" data-reveal>
+          <span class="note-label">Conversation Brief</span>
+          <h2>Lắng nghe</h2>
+          <p>Trước khi phản hồi, học sinh được dẫn dắt để hiện diện cùng một câu chuyện, một cảm xúc và một người đối
+            diện.</p>
+          <ul>
+            <li>Đối thoại với cha mẹ và kỳ vọng.</li>
+            <li>Đối thoại với áp lực và sự bất an cá nhân.</li>
+            <li>Đối thoại với bạn bè, mentor và cộng đồng.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phoneNumber">Số điện thoại liên hệ <span class="required">*</span></label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required
-                                placeholder="Nhập số điện thoại">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Địa chỉ Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="email@viettel.vn">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="birthYear">Năm sinh của học sinh</label>
-                            <input type="number" id="birthYear" name="birthYear" min="2005" max="2020"
-                                placeholder="Ví dụ: 2011">
-                        </div>
-                        <div class="form-group">
-                            <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
-                            <select id="role" name="role" required>
-                                <option value="" disabled selected>Chọn vai trò</option>
-                                <option value="parent">Phụ huynh học sinh</option>
-                                <option value="student">Học sinh tự đăng ký</option>
-                                <option value="other">Khác</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Lời nhắn gửi hoặc điều bạn băn khoăn</label>
-                        <textarea id="message" name="message" rows="3"
-                            placeholder="Chia sẻ thêm thông tin hoặc những câu hỏi của bạn dành cho ban tổ chức..."></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-block">Gửi thông tin đăng ký</button>
-                    </div>
-                </form>
-
-                <!-- Success Screen (Hidden by default) -->
-                <div id="registerSuccess" class="register-success-msg text-center" style="display: none;">
-                    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <h3 class="serif">ĐĂNG KÝ THÀNH CÔNG!</h3>
-                    <p>Cảm ơn bạn đã quan tâm đến Hiểu-Chuyện Summer Camp.</p>
-                    <p class="success-note">Ban tổ chức sẽ liên hệ lại với bạn qua Số điện thoại hoặc Email trong vòng
-                        24h làm việc sắp tới.</p>
-                    <button class="btn btn-secondary btn-close-success">Đóng cửa sổ</button>
-                </div>
-            </div>
+    <section class="worries-section" id="worries">
+      <div class="section-shell worries-grid">
+        <div class="worries-copy" data-reveal>
+          <span class="section-kicker">Parents & Pressure</span>
+          <h2>Nhiều cuộc chuyện trò bắt đầu từ những điều gia đình rất muốn nói với nhau nhưng chưa tìm được cách nói.</h2>
+          <p class="worries-sapo">
+            Đằng sau thành tích và điểm số thường là mong muốn rất thật của bố mẹ: con được an toàn, tự tin và có tương
+            lai tốt hơn. Nhưng cũng ở đó, áp lực dễ âm thầm lớn lên nếu thiếu một không gian đối thoại đúng cách.
+          </p>
+          <p>
+            Chuyện trò giúp học sinh và phụ huynh bước ra khỏi cách phản ứng tức thời. Thay vào đó, các em học cách đặt
+            câu hỏi, lắng nghe và hiểu rằng mỗi bên đều đang cố gắng theo cách của mình.
+          </p>
         </div>
-    </div>
 
-    <!-- Script file -->
-    <script src="script.js"></script>
+        <div class="worries-board" data-reveal>
+          <div class="sticky-note note-yellow note-a">
+            <span class="note-pin"></span>
+            <p>“Tôi chỉ mong con hạnh phúc.”</p>
+            <small>Mẹ của An, 13 tuổi</small>
+          </div>
+
+          <div class="sticky-note note-blue note-b">
+            <span class="note-tape"></span>
+            <p>“Tôi sợ mình chưa làm đủ cho con.”</p>
+            <small>Bố của Nam, 14 tuổi</small>
+          </div>
+
+          <div class="sticky-note note-green note-c">
+            <span class="note-pin note-pin-blue"></span>
+            <p>“Tôi không cần con đứng đầu lớp, tôi cần con hiểu mình.”</p>
+            <small>Mẹ của Minh, 12 tuổi</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="confession-section">
+      <div class="section-shell">
+        <div class="section-header" data-reveal>
+          <span class="section-kicker">Anonymous Wall</span>
+          <h2>Có những điều rất khó nói thành lời. Nhưng khi được viết ra, chúng bắt đầu có cơ hội được hiểu.</h2>
+          <p>“Bức tường tâm sự” là một phép thử của sự an toàn: học sinh được chia sẻ điều mình đang giữ lại, và nhận ra
+            rằng rất nhiều cảm xúc không chỉ thuộc về riêng một người.</p>
+        </div>
+
+        <div class="confession-shell" data-reveal>
+          <button class="carousel-btn" type="button" id="confessionPrev" aria-label="Tâm sự trước">&#8249;</button>
+
+          <div class="confession-window">
+            <div class="confession-track" id="confessionTrack">
+              <article class="confession-card is-active">
+                <span class="confession-label">Confession 01</span>
+                <p>Con cảm thấy áp lực khi phải luôn giỏi.</p>
+                <footer>
+                  <small>Ẩn danh · 15 tuổi</small>
+                  <button class="like-btn" type="button"><span>128</span> ♥</button>
+                </footer>
+              </article>
+
+              <article class="confession-card">
+                <span class="confession-label">Confession 02</span>
+                <p>Con sợ làm bố mẹ thất vọng. Có lúc con chỉ muốn được là chính mình mà không phải chứng minh gì thêm.</p>
+                <footer>
+                  <small>Ẩn danh · 15 tuổi</small>
+                  <button class="like-btn" type="button"><span>342</span> ♥</button>
+                </footer>
+              </article>
+
+              <article class="confession-card">
+                <span class="confession-label">Confession 03</span>
+                <p>Con không biết mình muốn gì nữa. Nhưng ít nhất ở đây, lần đầu con thấy mình có thể nói thật điều đó.</p>
+                <footer>
+                  <small>Ẩn danh · 16 tuổi</small>
+                  <button class="like-btn" type="button"><span>95</span> ♥</button>
+                </footer>
+              </article>
+            </div>
+          </div>
+
+          <button class="carousel-btn" type="button" id="confessionNext" aria-label="Tâm sự tiếp">&#8250;</button>
+        </div>
+
+        <div class="confession-dots" id="confessionDots" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="mentor-section">
+      <div class="section-shell mentor-card" data-reveal>
+        <div class="mentor-portrait">
+          <img src="image/section5_1hung.png" alt="Mentor của hành trình Chuyện trò">
+          <div class="mentor-meta">
+            <strong>Nguyễn Nhật Hùng</strong>
+            <span>Mentor học thuật</span>
+          </div>
+        </div>
+
+        <div class="mentor-quote">
+          <span class="section-kicker">Mentor Reflection</span>
+          <h2>Tranh biện không làm cuộc trò chuyện lạnh đi. Nếu được hướng dẫn đúng, nó làm cuộc trò chuyện sâu hơn.</h2>
+          <blockquote>
+            “Khi học sinh biết cấu trúc suy nghĩ của mình và gọi tên cảm xúc của người đối diện, bất đồng không còn là
+            thứ phải né tránh. Nó trở thành cơ hội để hiểu nhau rõ hơn.”
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-section">
+      <div class="section-shell">
+        <div class="section-header" data-reveal>
+          <span class="section-kicker">After Conversations</span>
+          <h2>Một cuộc chuyện trò tốt không dừng ở việc nói ra. Nó để lại một cách nhìn mới.</h2>
+          <p>Ba mảnh ghép dưới đây cho thấy chuyện trò có thể trở thành nền cho phản tư, đồng hành và tự viết câu chuyện
+            của mình như thế nào.</p>
+        </div>
+
+        <div class="article-grid">
+          <article class="article-card" data-reveal>
+            <img src="image/7b313d15-1285-4545-8894-1e22c718a4a0.jpeg" alt="Viết ra để hiểu mình hơn">
+            <div class="article-body">
+              <h3>Viết ra để hiểu mình hơn.</h3>
+              <p>Sau khi được lắng nghe, học sinh bắt đầu có từ vựng để gọi tên điều mình đang trải qua.</p>
+            </div>
+          </article>
+
+          <article class="article-card" data-reveal>
+            <img src="image/a5d90750-e225-40bd-9081-ded504c79cad.jpeg" alt="Lá thư kết nối gia đình">
+            <div class="article-body">
+              <h3>Một lá thư có thể mở lại nhịp đối thoại trong gia đình.</h3>
+              <p>Không phải cuộc chuyện trò nào cũng diễn ra ngay trên sân khấu hay trong lớp học.</p>
+            </div>
+          </article>
+
+          <article class="article-card" data-reveal>
+            <img src="image/dae79e7c-a5fb-4560-bd85-2a1ab24640c5.jpeg" alt="Mentor đồng hành trong đối thoại">
+            <div class="article-body">
+              <h3>Mentor là người giữ nhịp an toàn cho đối thoại.</h3>
+              <p>Khi có người đồng hành đúng cách, học sinh dám nói thật hơn và cũng biết lắng nghe tốt hơn.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-media">
+        <img src="image/hero_tu_Viet.png" alt="Không gian dẫn sang chapter Tự viết câu chuyện">
+      </div>
+      <div class="cta-overlay"></div>
+
+      <div class="section-shell cta-content" data-reveal>
+        <span class="section-kicker">Next Chapter</span>
+        <h2>Sau khi nói ra và được lắng nghe, học sinh mới thật sự bắt đầu viết lại câu chuyện của chính mình.</h2>
+        <p>Đi tiếp sang chapter cuối để thấy cách trải nghiệm và đối thoại được chuyển thành phản tư cá nhân.</p>
+        <div class="cta-actions">
+          <a href="../chuyen-tro/index.html" class="btn btn-primary">Đi tới Tự viết</a>
+          <button class="btn btn-link btn-register-trigger" type="button">Đăng ký hành trình</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="registerModal" aria-hidden="true">
+    <div class="modal-box form-modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+      <button class="modal-close" type="button" aria-label="Đóng form đăng ký">&times;</button>
+      <div class="modal-scroll-container">
+        <div class="register-header">
+          <span class="section-kicker">Registration</span>
+          <h2 id="registerTitle">Đăng ký hành trình Hiểu-Chuyện</h2>
+          <p>Điền thông tin để đội ngũ chương trình liên hệ và tư vấn chi tiết cho bạn.</p>
+        </div>
+
+        <form id="registerForm" class="register-form">
+          <div class="form-group">
+            <label for="fullName">Họ và tên học sinh / phụ huynh <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Nhập đầy đủ họ và tên">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phoneNumber">Số điện thoại liên hệ <span class="required">*</span></label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Nhập số điện thoại">
+            </div>
+            <div class="form-group">
+              <label for="email">Địa chỉ email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="email@example.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="birthYear">Năm sinh của học sinh</label>
+              <input type="number" id="birthYear" name="birthYear" min="2005" max="2022" placeholder="Ví dụ: 2011">
+            </div>
+            <div class="form-group">
+              <label for="role">Bạn đăng ký với vai trò là <span class="required">*</span></label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Chọn vai trò</option>
+                <option value="parent">Phụ huynh học sinh</option>
+                <option value="student">Học sinh tự đăng ký</option>
+                <option value="other">Khác</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Điều bạn đang quan tâm</label>
+            <textarea id="message" name="message" rows="4"
+              placeholder="Chia sẻ thêm điều bạn muốn tìm hiểu về chương trình..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">Gửi thông tin đăng ký</button>
+          </div>
+        </form>
+
+        <div id="registerSuccess" class="register-success-msg" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h3>Đăng ký thành công</h3>
+          <p>Cảm ơn bạn đã quan tâm tới Hiểu-Chuyện Summer Camp.</p>
+          <p class="success-note">Đội ngũ chương trình sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+          <button class="btn btn-secondary btn-close-success" type="button">Đóng cửa sổ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

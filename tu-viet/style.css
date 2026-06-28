@@ -1,0 +1,92 @@
+:root {
+  --royal-blue: #0d3b8e;
+  --forest-green: #2e6b3e;
+  --golden-yellow: #f4b400;
+  --warm-white: #faf8f4;
+  --charcoal-navy: #1a2233;
+  --paper-shadow: 0 24px 60px rgba(26, 34, 51, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  color: var(--charcoal-navy);
+  background:
+    linear-gradient(135deg, rgba(13, 59, 142, 0.9), rgba(46, 107, 62, 0.82)),
+    url("hero_tu_Viet.png") center/cover no-repeat;
+}
+
+.redirect-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: linear-gradient(180deg, rgba(250, 248, 244, 0.16), rgba(250, 248, 244, 0.05));
+}
+
+.redirect-panel {
+  width: min(640px, 100%);
+  padding: 48px 40px;
+  border-radius: 28px;
+  background: rgba(250, 248, 244, 0.94);
+  box-shadow: var(--paper-shadow);
+  text-align: center;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--royal-blue);
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  line-height: 1.08;
+}
+
+p {
+  margin: 0 auto 28px;
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.redirect-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--charcoal-navy);
+  text-decoration: none;
+  background: var(--golden-yellow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.redirect-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(244, 180, 0, 0.28);
+}
+
+@media (max-width: 640px) {
+  .redirect-page {
+    padding: 20px;
+  }
+
+  .redirect-panel {
+    padding: 36px 24px;
+    border-radius: 24px;
+  }
+}

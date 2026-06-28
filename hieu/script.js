@@ -1,196 +1,174 @@
-// script.js
-// DEBUG ASSET
-// SECTION 1: khu_vuc_1_1.jpeg
-// SECTION 2: khu_vuc_2_1.jpg, khu_vuc_2_2.jpeg, khu_vuc_2_3.jpg, khu_vuc_2_4.jpg, khu_vuc_2_5.jpg, khu_vuc_2_6.jpg, khu_vuc_2_7.jpg, khu_vuc_2_8.jpg
-// SECTION 3: khu_vuc_3_1.jpg, khu_vuc_3_2.png
-// SECTION 4: khu_vuc_4_1.jpg, khu_vuc_4_2.jpg, khu_vuc_4_3.JPG, khu_vuc_4_4.jpg, khu_vuc_4_5.JPG, khu_vuc_4_6.jpeg, khu_vuc_4_7.jpeg, khu_vuc_4_8.jpeg, khu_vuc_4_9.jpeg, khu_vuc_4_10.jpeg, khu_vuc_4_11.jpeg, khu_vuc_4_12.jpeg, khu_vuc_4_13.jpeg, khu_vuc_4_14.jpeg, khu_vuc_4_15.jpeg, khu_vuc_4_16.jpeg
-
-// Global Navigation Missing Page Handler
-function handleMissingPage(event) {
-    event.preventDefault();
-    alert("Trang đang được phát triển");
-    return false;
-}
-
-// Mobile Navbar Hamburger Toggle Engine
-function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    if (navLinks) {
-        navLinks.classList.toggle('active');
-    }
-}
-
-// Popups Management Engine
-function openPopup(id) {
-    const popup = document.getElementById(id);
-    if (popup) {
-        popup.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-// Popups Closer Engine
-function closePopup(id) {
-    const popup = document.getElementById(id);
-    if (popup) {
-        popup.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Background Overlay Click Dismissal
-document.querySelectorAll('.popup-overlay').forEach(overlay => {
-    overlay.addEventListener('click', function(e) {
-        if (e.target === this) {
-            closePopup(this.id);
-        }
-    });
-});
-
-// Interactive Image Carousel Engine
-document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.slider-track');
-    const nextBtn = document.querySelector('.next-btn');
-    const prevBtn = document.querySelector('.prev-btn');
-    
-    if (!track || !nextBtn || !prevBtn) return;
-
-    let currentIndex = 0;
-
-    function getSlidesPerView() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 4;
-    }
-
-    function updateSlider() {
-        const slides = document.querySelectorAll('.slide');
-        const maxIndex = slides.length - getSlidesPerView();
-        
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        if (currentIndex < 0) currentIndex = 0;
-
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        const gap = 20; // sync with CSS layout gap
-        const amountToMove = currentIndex * (slideWidth + gap);
-        
-        track.style.transform = `translateX(-${amountToMove}px)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-        const slides = document.querySelectorAll('.slide');
-        const maxIndex = slides.length - getSlidesPerView();
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Wrap back loop
-        }
-        updateSlider();
-    });
-
-    prevBtn.addEventListener('click', () => {
-        const slides = document.querySelectorAll('.slide');
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = slides.length - getSlidesPerView(); // Wrap forward loop
-        }
-        updateSlider();
-    });
-
-    window.addEventListener('resize', updateSlider);
-});
-
-// ==========================================================================
-// REGISTRATION MODAL FUNCTIONALITY
-// ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-    // Modal control utilities
-    function openModal(modalEl) {
-        modalEl.classList.add("open");
-        document.body.style.overflow = "hidden";
+  const navbar = document.getElementById("navbar");
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const registerModal = document.getElementById("registerModal");
+
+  function syncBodyLock() {
+    const shouldLock =
+      mobileMenu?.classList.contains("open") ||
+      registerModal?.classList.contains("open");
+
+    document.body.style.overflow = shouldLock ? "hidden" : "";
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu || !hamburger) {
+      return;
     }
 
-    function closeModal(modalEl) {
-        modalEl.classList.remove("open");
-        document.body.style.overflow = "";
+    mobileMenu.classList.remove("open");
+    hamburger.classList.remove("is-open");
+    syncBodyLock();
+  }
+
+  window.addEventListener("scroll", () => {
+    navbar?.classList.toggle("scrolled", window.scrollY > 24);
+  });
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      hamburger.classList.toggle("is-open");
+      syncBodyLock();
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+  }
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      closeMobileMenu();
     }
+  });
 
-    // Set up generic close buttons for all modals
-    const closeButtons = document.querySelectorAll(".modal-close");
-    closeButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            const openModalEl = e.target.closest(".modal-overlay");
-            if (openModalEl) closeModal(openModalEl);
-        });
-    });
-
-    // Close modal on overlay click
-    const modalOverlays = document.querySelectorAll(".modal-overlay");
-    modalOverlays.forEach(overlay => {
-        overlay.addEventListener("click", (e) => {
-            if (e.target === overlay) {
-                closeModal(overlay);
-            }
-        });
-    });
-
-    // Escape Key listener to close modal
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            const activeModal = document.querySelector(".modal-overlay.open");
-            if (activeModal) closeModal(activeModal);
+  const revealItems = document.querySelectorAll("[data-reveal]");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          revealObserver.unobserve(entry.target);
         }
-    });
+      });
+    },
+    { threshold: 0.18 }
+  );
 
-    // Registration form modal
-    const registerModal = document.getElementById("registerModal");
-    const registerForm = document.getElementById("registerForm");
-    const registerSuccess = document.getElementById("registerSuccess");
-    const regTriggers = document.querySelectorAll(".btn-register-trigger");
+  revealItems.forEach((item) => revealObserver.observe(item));
 
-    regTriggers.forEach(btn => {
-        btn.addEventListener("click", () => {
-            registerForm.reset();
-            registerForm.style.display = "flex";
-            registerSuccess.style.display = "none";
-            openModal(registerModal);
-        });
-    });
+  const chapterImage = document.getElementById("chapterImage");
+  const chapterKicker = document.getElementById("chapterKicker");
+  const chapterNote = document.getElementById("chapterNote");
+  const chapterSteps = Array.from(document.querySelectorAll(".chapter-step"));
 
-    // Form Submission
-    if (registerForm) {
-        registerForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            
-            const formData = {
-                fullName: document.getElementById("fullName").value,
-                phone: document.getElementById("phoneNumber").value,
-                email: document.getElementById("email").value,
-                birthYear: document.getElementById("birthYear").value,
-                role: document.getElementById("role").value,
-                message: document.getElementById("message").value,
-            };
-            
-            console.log("Submitting Register Form:", formData);
-
-            const submitBtn = registerForm.querySelector("button[type='submit']");
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Đang gửi thông tin...";
-
-            setTimeout(() => {
-                registerForm.style.display = "none";
-                registerSuccess.style.display = "block";
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Gửi thông tin đăng ký";
-            }, 1200);
-        });
+  function activateChapter(step) {
+    if (!step || !chapterImage || !chapterKicker || !chapterNote) {
+      return;
     }
 
-    const btnCloseSuccess = document.querySelector(".btn-close-success");
-    if (btnCloseSuccess) {
-        btnCloseSuccess.addEventListener("click", () => {
-            closeModal(registerModal);
-        });
+    chapterSteps.forEach((item) => item.classList.remove("is-active"));
+    step.classList.add("is-active");
+
+    chapterImage.style.opacity = "0.3";
+    window.setTimeout(() => {
+      chapterImage.src = step.dataset.image || chapterImage.src;
+      chapterImage.alt = step.dataset.alt || "";
+      chapterKicker.textContent = step.dataset.kicker || "";
+      chapterNote.textContent = step.dataset.note || "";
+      chapterImage.style.opacity = "1";
+    }, 140);
+  }
+
+  if (chapterSteps.length > 0) {
+    activateChapter(chapterSteps[0]);
+
+    const chapterObserver = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible[0]) {
+          activateChapter(visible[0].target);
+        }
+      },
+      {
+        threshold: [0.35, 0.55, 0.75],
+        rootMargin: "-12% 0px -28% 0px",
+      }
+    );
+
+    chapterSteps.forEach((step) => chapterObserver.observe(step));
+  }
+
+  const registerForm = document.getElementById("registerForm");
+  const registerSuccess = document.getElementById("registerSuccess");
+  const registerTriggers = document.querySelectorAll(".btn-register-trigger");
+  const closeModalButton = registerModal?.querySelector(".modal-close");
+  const closeSuccessButton = registerModal?.querySelector(".btn-close-success");
+
+  function openRegisterModal() {
+    if (!registerModal || !registerForm || !registerSuccess) {
+      return;
     }
+
+    registerForm.reset();
+    registerForm.hidden = false;
+    registerSuccess.hidden = true;
+    registerModal.classList.add("open");
+    registerModal.setAttribute("aria-hidden", "false");
+    closeMobileMenu();
+    syncBodyLock();
+  }
+
+  function closeRegisterModal() {
+    if (!registerModal) {
+      return;
+    }
+
+    registerModal.classList.remove("open");
+    registerModal.setAttribute("aria-hidden", "true");
+    syncBodyLock();
+  }
+
+  registerTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", openRegisterModal);
+  });
+
+  closeModalButton?.addEventListener("click", closeRegisterModal);
+  closeSuccessButton?.addEventListener("click", closeRegisterModal);
+
+  registerModal?.addEventListener("click", (event) => {
+    if (event.target === registerModal) {
+      closeRegisterModal();
+    }
+  });
+
+  registerForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const submitButton = registerForm.querySelector("button[type='submit']");
+    if (!(submitButton instanceof HTMLButtonElement) || !registerSuccess) {
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Đang gửi thông tin...";
+
+    window.setTimeout(() => {
+      registerForm.hidden = true;
+      registerSuccess.hidden = false;
+      submitButton.disabled = false;
+      submitButton.textContent = "Gửi thông tin đăng ký";
+    }, 900);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && registerModal?.classList.contains("open")) {
+      closeRegisterModal();
+    }
+  });
 });
